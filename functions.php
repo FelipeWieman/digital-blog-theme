@@ -12,6 +12,24 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
+add_filter('show_admin_bar', '__return_false');
+
+
+
+
+function my_theme_enqueue_assets()
+{
+	// Подключение основного стиля темы
+	wp_enqueue_style('main-style', get_stylesheet_uri());
+
+	// Подключение дополнительных стилей
+	wp_enqueue_style('custom-style', get_template_directory_uri() . '/public/css/tailwind.css');
+
+	// Подключение скриптов
+	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/custom.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *

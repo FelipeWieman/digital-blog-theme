@@ -631,24 +631,6 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
- @font-face {
-     font-family: 'TT Norms Pro';
-     src: url('/fonts/TT-Norms-Pro-Normal.otf') format('opentype');
-     font-weight: normal;
-     font-style: normal;
- }
- @font-face {
-     font-family: 'TT Norms Pro';
-     src: url('/fonts/TT-Norms-Pro-DemiBold.otf') format('opentype');
-     font-weight: 600;
-     font-style: normal;
- }
- @font-face {
-     font-family: 'TT Norms Pro';
-     src: url('/fonts/TT-Norms-Pro-Bold.otf') format('opentype');
-     font-weight: bold;
-     font-style: normal;
- }
  .hover\:scale-\[1\.3\]:hover{
   --tw-scale-x: 1.3;
   --tw-scale-y: 1.3;
