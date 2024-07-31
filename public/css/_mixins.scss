@@ -1,0 +1,292 @@
+// _mixins.scss
+
+@mixin section-header($text-color, $span-bg-color, $span-text-color) {
+    color: $text-color;
+    text-transform: uppercase;
+    padding-left: 13rem;
+    padding-right: 4rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 1440px) {
+        padding-left: 10rem;
+        padding-right: 3rem;
+    }
+
+    @media (max-width: 1025px) {
+        padding-left: 5rem;
+        padding-right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        padding-left: 5rem;
+        padding-right: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 605px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-bottom: 0rem;
+    }
+
+    .section-header-left {
+        width: 70%;
+
+        @media (max-width: 1025px) {
+            width: 70%;
+        }
+
+        @media (max-width: 750px) {
+            width: 70%;
+        }
+
+        @media (max-width:605px) {
+            width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 2rem;
+            font-size: 3.75rem;
+
+            @media (max-width: 1025px) {
+                padding-bottom: 1.5rem;
+                font-size: 3.15rem;
+            }
+
+            @media (max-width: 815px) {
+                padding-bottom: 1.2rem;
+                font-size: 2.5rem;
+            }
+
+
+
+            @media (max-width: 426px) {
+                padding-bottom: 1rem;
+                padding-top: .4rem;
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-weight: 700;
+            line-height: 1.5;
+            font-size: 1rem;
+
+            @media (max-width: 1025px) {
+                padding-bottom: 1.6rem;
+            }
+
+            @media (max-width: 768px) {
+                font-size: .8rem;
+
+            }
+
+            @media (max-width: 426px) {
+                font-size: .7rem;
+            }
+
+            span {
+                display: inline-block;
+                background-color: $span-bg-color;
+                color: $span-text-color;
+            }
+        }
+    }
+
+    .section-header-right {
+        font-size: 4rem;
+        font-weight: bold;
+
+
+        @media (max-width: 768px) {
+            font-size: 3rem;
+        }
+
+        @media (max-width: 605px) {
+            display: none;
+        }
+    }
+}
+
+@mixin card-preview-style {
+    background: white;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    color: #313131;
+    border: 2px black solid;
+
+    @media (max-width: 1500px) {
+        border-radius: 1.7rem;
+    }
+
+    img {
+        width: 100%;
+        height: 50%;
+        display: block;
+        background-size: cover;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+
+        @media (max-width: 1440px) {
+            padding: 1.3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+
+            @media (max-width: 1440px) {
+                font-size: 1.4rem;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+
+            @media (max-width: 1440px) {
+                font-size: 0.9rem;
+            }
+        }
+
+        .author-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+
+            @media(max-width: 1630px) {
+                font-size: 0.8rem;
+            }
+
+            @media(max-width: 1450px) {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+
+@mixin section-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    align-self: center;
+    margin-bottom: 2rem;
+    padding: 0rem 2rem;
+
+    @media (max-width: 1500px) {
+        grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+    }
+
+    @media (max-width: 1350px) {
+        grid-template-columns: repeat(2, minmax(265px, 1fr));
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        gap: 1rem;
+    }
+
+    @media (max-width: 605px) {
+        padding: 0rem 1rem;
+    }
+
+    .card {
+        @include card-preview-style;
+    }
+}
+
+@mixin explore-button-container($button-bg, $button-color, $button-hover-bg, $button-hover-color) {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    min-height: 100px;
+
+    @media (max-width: 426px) {
+        min-height: 80px;
+        padding-top: 1rem;
+    }
+
+    .explore-button {
+        background-color: $button-bg;
+        border-radius: 1rem;
+        color: $button-color;
+        padding: 1rem 2rem 1rem 2rem;
+        display: inline-block;
+        transition: all 200ms;
+        font-weight: bold;
+        font-size: 1.7rem;
+
+
+
+        @media (max-width: 1441px) {
+            font-size: 1.5rem;
+            padding: 1rem 2rem 1rem 2rem;
+        }
+
+        @media (max-width: 426px) {
+            font-size: 1.1rem;
+            padding: .8rem 1rem .8rem 1rem;
+        }
+
+        &:hover {
+            background-color: $button-hover-bg;
+            border: 2px black solid;
+            border-radius: 2rem;
+            color: $button-hover-color;
+        }
+    }
+}
+
+@mixin section-main-page-style($bg-color, $text-color, $span-bg-color, $span-text-color, $button-bg, $button-color, $button-hover-bg, $button-hover-color) {
+    min-height: calc(100vh - 5.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10rem 2rem 2rem 2rem;
+    width: 90%;
+    max-width: 1800px;
+    margin-bottom: 7rem;
+    background-color: $bg-color;
+
+    @media (max-width: 1440px) {
+        padding: 6rem 1.2rem 2rem 1.2rem;
+        width: 92%;
+    }
+
+    @media (max-width: 1025px) {
+        margin-bottom: 5rem;
+        padding: 4rem 1rem 2rem 1rem;
+    }
+
+    @media (max-width: 605px) {
+        margin-bottom: 3rem;
+        width: 95%;
+        padding: 2rem .2rem .2rem .1rem;
+    }
+
+    .section-header {
+        @include section-header($text-color, $span-bg-color, $span-text-color);
+    }
+
+    .section-content {
+        @include section-content;
+    }
+
+    .explore-button-container {
+        @include explore-button-container($button-bg, $button-color, $button-hover-bg, $button-hover-color);
+    }
+}

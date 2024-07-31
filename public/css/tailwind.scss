@@ -1,0 +1,71 @@
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+ //  @import './_mixins.scss';
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+
+ @font-face {
+     font-family: 'TT Norms Pro';
+     src: url('/fonts/TT-Norms-Pro-Normal.otf') format('opentype');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'TT Norms Pro';
+     src: url('/fonts/TT-Norms-Pro-DemiBold.otf') format('opentype');
+     font-weight: 600;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'TT Norms Pro';
+     src: url('/fonts/TT-Norms-Pro-Bold.otf') format('opentype');
+     font-weight: bold;
+     font-style: normal;
+ }
+
+ @layer base {
+
+
+
+     html,
+     body {
+         font-family: 'TT Norms Pro';
+         height: 100%;
+         margin: 0;
+     }
+
+
+
+     button html {
+         font-family: "interhyp", sans-serif;
+     }
+
+     h1 {
+         @apply text-6xl font-bold;
+     }
+
+     h2 {
+         @apply text-5xl font-bold;
+     }
+
+     h3 {
+         @apply text-4xl font-bold;
+     }
+
+     h4 {
+         @apply text-3xl font-bold;
+     }
+
+     h5 {
+         @apply text-2xl font-bold;
+     }
+
+     h6 {
+         @apply text-xl font-bold;
+     }
+ }
+
+ @layer components {}

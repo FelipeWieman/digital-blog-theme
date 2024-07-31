@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "build:tailwind": "postcss public/css/tailwind.scss -o public/css/tailwind.css",
-    "build:scss": "node-sass --include-path scss public/css/styles.scss public/css/styles.css && node-sass --include-path scss public/css/styles.scss style.css",
+    "build:scss": "node-sass --include-path scss public/css/styles.scss public/css/styles.css",
     "build:css": "npm run build:tailwind && npm run build:scss",
-    "watch:tailwind": "postcss public/css/tailwind.scss -o public/css/tailwind.css --watch && postcss public/css/tailwind.scss -o public/css/tailwind2.css --watch",
+    "watch:tailwind": "postcss public/css/tailwind.scss -o public/css/tailwind.css --watch",
     "watch:scss": "node-sass --include-path scss public/css/styles.scss public/css/styles.css --watch",
     "watch:css": "concurrently \"npm run watch:tailwind\" \"npm run watch:scss\"",
     "start": "node server.js",

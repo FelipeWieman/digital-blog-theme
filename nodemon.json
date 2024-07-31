@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "server.js",
+        "views",
+        "public/css/styles.scss",
+        "public/css/tailwind.scss",
+        "public/css/_mixins.scss"
+    ],
+    "ext": "js,ejs,css",
+    "exec": "npm run build:css && node server.js"
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="min-h-screen   text-zinc-50">
+    <div class="wrapper ">
+        <%- include('../partials/header'); %>
+            <main class="main pb-[5rem]">
+                <section class="section-single">
+                    <div class="single-header">
+
+                        <p class="single-author">Peter Kollmer</p>
+                        <h1 class="single-title">Testing Email in Pre-Production: Custom SMTP Proxy Server</h1>
+
+                        <div class="single-picture">
+                            <div class="picture-container">
+                                <img src="/images/macbook_pro_laptop-wallpaper-3840x2400-1.jpg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="single-content">
+                        <div class="content-info"><span>06 August 2023</span><span>Schlagwörter: E-Mail, SMTP,
+                                Testing</span></div>
+                        <div class="content-body">
+                            <h2>Introduction</h2>
+                            <p>Testing email functionality during the pre-production phase is critical to ensuring that
+                                emails are delivered correctly and with the necessary content. However, test-users or
+                                test
+                                data frameworks might create existing email addresses and it is not always easy to setup
+                                send-restrictions on the existing SMTP infrastructure. To ensure that no external emails
+                                are
+                                sent from the system while testing emails and layouts in as many actual email clients as
+                                possible, a few unique issues arise throughout this process. In this blog article, we
+                                will
+                                examine traditional methods for testing email functionality and present a novel strategy
+                                that we have found to be very successful.</p>
+
+                            <h2>Common Approaches</h2>
+                            <p>Using email sinks like cloud or on-premises fakeSMTP services is one frequent method for
+                                testing email functionality. The drawback of these solutions is that you do not actually
+                                get
+                                a real email preview, despite how simple they are to set up. Another strategy is to use
+                                custom code to take out any external mail or send to shared mailboxes in the mail
+                                delivering
+                                application. This method, meanwhile, has several drawbacks, including changing the
+                                original
+                                content and being prone to mistakes because of frequent changes in the application.</p>
+
+                            <h2>New Approach</h2>
+                            <p>The best configuration for testing email functionality, according to our research, is to
+                                send
+                                emails to both specialized test-email addresses as well as central test-mailboxes using
+                                a
+                                bespoke SMTP proxy server that makes sure no non-whitelisted external emails spread. We
+                                used
+                                a small custom-coded microservice to do this, which we would like to provide in this
+                                blog.
+                            </p>
+
+                            <h2>Setup</h2>
+                            <p>The mail-sending program, the SMTP proxy server, and the test mailboxes make up the
+                                configuration. The mail-sending program sends emails to the SMTP proxy server, which
+                                filters
+                                out
+                                any external emails and forwards the filtered emails to the test-mailboxes.
+                                A whitelist is used by the SMTP proxy server, a specially programmed microservice, to
+                                guarantee
+                                that only authorized email addresses may be transmitted. Every email traffic is
+                                intercepted,
+                                and
+                                any emails not on the whitelist are filtered out. Then, test-mailboxes get the filtered
+                                emails.
+
+                                A group of email addresses called the test-mailboxes are used to get the filtered emails
+                                from
+                                the SMTP proxy server. To ensure that emails are being sent successfully and that they
+                                display
+                                as expected in various email clients, these mailboxes may be examined.
+                            </p>
+
+
+
+                            <h2> Code</h2>
+                            <p> To implement the custom SMTP proxy server approach, we used the subethasmtp library,
+                                which
+                                is a
+                                lightweight SMTP server written in Java. Here is how to set up the dependency in Gradle:
+                            </p>
+                            <img src="/images/post-pic.png" alt="">
+
+                        </div>
+                        <div class="comments">
+                            <div class="comment-field">
+                                <p>Write a comment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+            </main>
+
+            <footer class="footer">
+                <%- include('../partials/footer'); %>
+            </footer>
+    </div>
+</body>
+
+</html>
