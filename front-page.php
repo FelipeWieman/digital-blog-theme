@@ -1,12 +1,13 @@
 <?php
-// front-page.php
+/*
+Template Name: Front Page
+*/
 get_header(); ?>
 
 <section id="hero" class="section-hero">
-    <div class="hero-text"> Our space for <br />technology 👾, design 🎨
-        and
-        innovation
-        🚀.</div>
+    <div class="hero-text">
+        <?php echo get_theme_mod('slogan_text', 'Our space for technology 👾, design 🎨 and innovation 🚀.'); ?>
+    </div>
     <div class="hero-cards-container">
         <div class="card bg-[#ffe005] group ">
             <div class="card-content">
@@ -41,7 +42,7 @@ get_header(); ?>
                 </div>
                 <div class="card-bottom ">
                     <div class="bottom-text">Number of Digital Nerds</div>
-                    <div class="bottom-number">33</div>
+                    <div class="bottom-number"><?php the_field('number_of_digital_nerds'); ?></div>
                 </div>
             </div>
         </div>
@@ -70,24 +71,14 @@ get_header(); ?>
 
 </section>
 <section id="info" class="section-info ">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <span class="text-zinc-50">At
-            vero eos et accusam et justo duo dolores et ea rebum.</span> Stet clita kasd gubergren, no
-        sea
-        takimata sanctus est Lorem ipsum
-        dolor sit amet.</p>
+    <p><?php echo get_theme_mod('moto_text', 'Say something'); ?></p>
 </section>
 <section class="section-blog bg-[#ffe005] rounded-[2rem]  px-[5rem] pb-[1rem]">
     <div class="section-header flex justify-between">
         <div class="section-header-left">
             <h1>Digital Blog</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ea
-                harum
-                voluptatem
-                suscipit <span> &nbsp;fugiat ad, esse fuga, &nbsp;</span> aperiam nostrum temporibus
-                sapiente, hic
-                reiciendis odio
-                accusantium aut magnam? Sint, culpa ex.</p>
+            <?php the_field('digital_blog_description') ?>
+
         </div>
         <div class="section-header-right">32</div>
     </div>
@@ -214,22 +205,63 @@ get_header(); ?>
     </div>
 </section>
 
-<section class="section-about-us bg-[#5f369c] rounded-[2rem]  px-[5rem] pb-[1rem]">
+<section class="section-about-us rounded-[2rem]  px-[5rem] pb-[1rem]">
     <div class="section-header flex justify-between">
         <div class="section-header-left">
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ea
-                harum
-                voluptatem
-                suscipit <span> &nbsp;fugiat ad, esse fuga, &nbsp;</span> aperiam nostrum temporibus
-                sapiente, hic
-                reiciendis odio
-                accusantium aut magnam? Sint, culpa ex.</p>
+            <h1><?php echo get_theme_mod('about_us_title', 'About Us'); ?></h1>
+            <p><?php echo get_theme_mod('about_us_description'); ?></p>
         </div>
         <div class="section-header-right"> </div>
     </div>
     <div class="section-content">
-        <div class="card">
+
+        <?php
+        $cards = array();
+        for ($i = 1; $i <= 4; $i++) {
+            if (get_theme_mod("about_us_card_{$i}_enabled", true)) {
+                $cards[] = array(
+                    'order' => get_theme_mod("about_us_card_{$i}_order", $i),
+                    'image' => get_theme_mod("about_us_card_{$i}_image"),
+                    'text' => get_theme_mod("about_us_card_{$i}_text"),
+                    'title' => get_theme_mod("about_us_card_{$i}_title"),
+                );
+            }
+        }
+
+        usort($cards, function ($a, $b) {
+            return $a['order'] - $b['order'];
+        });
+
+        foreach ($cards as $card): ?>
+            <div class="card">
+                <img src="<?php echo $card['image']; ?>" alt="Card">
+                <div class="card-body">
+                    <h2>
+                        <?php echo $card['title']; ?>
+                    </h2>
+
+                    <p><?php echo $card['text']; ?></p>
+
+                    <div class="author-info flex">
+                        <div class="author-left">
+                        </div>
+                        <div class="author-right flex w-[2rem] hover:scale-[1.3] transition-all cursor-pointer">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
+
+
+        <!-- <div class="card">
             <img src="<?php echo get_template_directory_uri(); ?>/images/about_us_pic.png" alt="Image 1">
 
             <div class="card-body">
@@ -328,10 +360,11 @@ get_header(); ?>
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="explore-button-container">
-        <a href="/about"> <button class="explore-button">More about us</button></a>
+        <a href="<?php echo get_theme_mod('about_us_button_url', '/about'); ?>"> <button
+                class="explore-button"><?php echo get_theme_mod('about_us_button_text', 'More about us'); ?></button></a>
     </div>
 </section>
 

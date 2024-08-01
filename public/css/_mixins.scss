@@ -86,7 +86,7 @@
             }
 
             span {
-                display: inline-block;
+                display: inline;
                 background-color: $span-bg-color;
                 color: $span-text-color;
             }
@@ -289,4 +289,6 @@
     .explore-button-container {
         @include explore-button-container($button-bg, $button-color, $button-hover-bg, $button-hover-color);
     }
+
+
 }

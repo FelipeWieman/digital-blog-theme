@@ -12,23 +12,384 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
-add_filter('show_admin_bar', '__return_false');
-
-
+add_filter('show_admin_bar', '__return_true');
 
 
 function my_theme_enqueue_assets()
 {
-	// Подключение основного стиля темы
 	wp_enqueue_style('main-style', get_stylesheet_uri());
 
-	// Подключение дополнительных стилей
 	wp_enqueue_style('custom-style', get_template_directory_uri() . '/public/css/tailwind.css');
 
-	// Подключение скриптов
 	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/custom.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
+
+
+function my_theme_setup()
+{
+	// Регистрация меню
+	register_nav_menus(
+		array(
+			'primary' => __('Primary Menu', 'blog-theme')
+		)
+	);
+}
+add_action('after_setup_theme', 'my_theme_setup');
+
+
+
+function blog_theme_customizer($wp_customize)
+{
+	// header section
+	$wp_customize->add_section(
+		'header_section',
+		array(
+			'title' => __('Header Settings', 'blog-theme'),
+			'priority' => 30,
+		)
+	);
+
+	// Settings for text in Header
+	$wp_customize->add_setting(
+		'header_text',
+		array(
+			'default' => __('FOR DIGITAL NERDS', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'header_text',
+		array(
+			'label' => __('Header Text', 'blog-theme'),
+			'section' => 'header_section',
+			'type' => 'text',
+		)
+	);
+
+	// Settings for logo in header
+	$wp_customize->add_setting(
+		'header_logo',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_control(
+			$wp_customize,
+			'header_logo',
+			array(
+				'label' => __('Header Logo', 'blog-theme'),
+				'section' => 'header_section',
+				'settings' => 'header_logo',
+				'mime_type' => 'image/svg+xml',
+			)
+		)
+	);
+
+	// Adding slogan section
+	$wp_customize->add_section(
+		'hero_section',
+		array(
+			'title' => __('Hero Section', 'blog-theme'),
+			'priority' => 30,
+		)
+	);
+
+	// Setting slogan text
+	$wp_customize->add_setting(
+		'slogan_text',
+		array(
+			'default' => __('Our space for technology 👾, design 🎨 and innovation 🚀.', 'blog-theme'),
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		'slogan_text',
+		array(
+			'label' => __('Slogan Text', 'blog-theme'),
+			'section' => 'hero_section',
+			'type' => 'textarea',
+		)
+	);
+
+
+	// Adding big-text-area section
+	$wp_customize->add_section(
+		'moto_section',
+		array(
+			'title' => __('Moto-section', 'blog-theme'),
+			'priority' => 30,
+		)
+	);
+
+	// Setting slogan text
+	$wp_customize->add_setting(
+		'moto_text',
+		array(
+			'default' => __('Say something'),
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		'moto_text',
+		array(
+			'label' => __('Moto Text', 'blog-theme'),
+			'section' => 'moto_section',
+			'type' => 'textarea',
+		)
+	);
+
+	// ADDING ABOUT US SECTION //
+	// ADDING ABOUT US SECTION //
+	// ADDING ABOUT US SECTION //
+	// ADDING ABOUT US SECTION //
+	$wp_customize->add_section(
+		'about_us_section',
+		array(
+			'title' => __('About Us Section', 'blog-theme'),
+			'priority' => 30,
+		)
+	);
+
+	// SETUP FOR HEADER
+	$wp_customize->add_setting(
+		'about_us_title',
+		array(
+			'default' => __('About Us', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_us_title',
+		array(
+			'label' => __('Title', 'blog-theme'),
+			'section' => 'about_us_section',
+			'type' => 'text',
+		)
+	);
+
+	// SETUP FOR DESCRIPTION
+	$wp_customize->add_setting(
+		'about_us_description',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_us_description',
+		array(
+			'label' => __('Description', 'blog-theme'),
+			'section' => 'about_us_section',
+			'type' => 'textarea',
+		)
+	);
+
+
+
+	// SETUP BUTTON TEXT
+	$wp_customize->add_setting(
+		'about_us_button_text',
+		array(
+			'default' => __('More about us', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_us_button_text',
+		array(
+			'label' => __('Button Text', 'blog-theme'),
+			'section' => 'about_us_section',
+			'type' => 'text',
+		)
+	);
+
+	// SETUP BUTTON LINK
+	$wp_customize->add_setting(
+		'about_us_button_url',
+		array(
+			'default' => '#',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_us_button_url',
+		array(
+			'label' => __('Button URL', 'blog-theme'),
+			'section' => 'about_us_section',
+			'type' => 'url',
+		)
+	);
+
+	// SETTINGS FOR CARDS
+	for ($i = 1; $i <= 4; $i++) {
+
+		// Turn the card on/off
+		$wp_customize->add_setting(
+			"about_us_card_{$i}_enabled",
+			array(
+				'default' => true,
+				'sanitize_callback' => 'wp_validate_boolean',
+			)
+		);
+
+		$wp_customize->add_control(
+			"about_us_card_{$i}_enabled",
+			array(
+				'label' => __("Enable Card {$i}", 'blog-theme'),
+				'section' => 'about_us_section',
+				'type' => 'checkbox',
+			)
+		);
+
+		// Card title
+		$wp_customize->add_setting(
+			"about_us_card_{$i}_title",
+			array(
+				'default' => '',
+				'sanitize_callback' => 'wp_kses_post',
+			)
+		);
+
+		$wp_customize->add_control(
+			"about_us_card_{$i}_title",
+			array(
+				'label' => __("Card {$i} Title", 'blog-theme'),
+				'section' => 'about_us_section',
+				'type' => 'textarea',
+			)
+		);
+
+		// Card title
+		$wp_customize->add_setting(
+			"about_us_card_{$i}_text",
+			array(
+				'default' => '',
+				'sanitize_callback' => 'wp_kses_post',
+			)
+		);
+
+		$wp_customize->add_control(
+			"about_us_card_{$i}_text",
+			array(
+				'label' => __("Card {$i} Text", 'blog-theme'),
+				'section' => 'about_us_section',
+				'type' => 'textarea',
+			)
+		);
+
+		// Card Image
+		$wp_customize->add_setting("about_us_card_{$i}_image");
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				"about_us_card_{$i}_image",
+				array(
+					'label' => __("Card {$i} Image", 'blog-theme'),
+					'section' => 'about_us_section',
+				)
+			)
+		);
+
+
+		// Cards order
+		$wp_customize->add_setting(
+			"about_us_card_{$i}_order",
+			array(
+				'default' => $i,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			"about_us_card_{$i}_order",
+			array(
+				'label' => __("Card {$i} Order", 'blog-theme'),
+				'section' => 'about_us_section',
+				'type' => 'select',
+				'choices' => array(
+					1 => __('1', 'blog-theme'),
+					2 => __('2', 'blog-theme'),
+					3 => __('3', 'blog-theme'),
+					4 => __('4', 'blog-theme'),
+				),
+			)
+		);
+	}
+}
+
+add_action('customize_register', 'blog_theme_customizer');
+
+
+function blog_theme_mime_types($mimes)
+{
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'blog_theme_mime_types');
+
+// Safety SVG Loading
+function blog_theme_fix_svg()
+{
+	echo '<style type="text/css">
+        .attachment-266x266, .thumbnail img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>';
+}
+add_action('admin_head', 'blog_theme_fix_svg');
+
+
+//CREATING CUSTOM TYPE OF POST
+
+function create_about_us_cards_post_type()
+{
+	register_post_type(
+		'about_us_card',
+		array(
+			'labels' => array(
+				'name' => __('About Us Cards'),
+				'singular_name' => __('About Us Card')
+			),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array('title', 'editor', 'thumbnail'),
+		)
+	);
+}
+add_action('init', 'create_about_us_cards_post_type');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -68,7 +429,7 @@ function blog_theme_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__('Primary', 'blog_theme'),
+			'primary' => __('Primary Menu', 'blog-theme')
 		)
 	);
 

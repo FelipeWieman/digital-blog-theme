@@ -5,6 +5,26 @@
  @tailwind utilities;
 
 
+ @font-face {
+     font-family: 'TT Norms Pro';
+     src: url('/fonts/TT-Norms-Pro-Normal.otf') format('opentype');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'TT Norms Pro';
+     src: url('/fonts/TT-Norms-Pro-DemiBold.otf') format('opentype');
+     font-weight: 600;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'TT Norms Pro';
+     src: url('/fonts/TT-Norms-Pro-Bold.otf') format('opentype');
+     font-weight: bold;
+     font-style: normal;
+ }
 
 
  @layer base {
