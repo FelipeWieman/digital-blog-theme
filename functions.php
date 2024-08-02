@@ -13,6 +13,11 @@ if (!defined('_S_VERSION')) {
 }
 
 add_filter('show_admin_bar', '__return_true');
+function custom_excerpt_length($length)
+{
+	return 30; // Замените 20 на нужное вам количество слов
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
 
 function my_theme_enqueue_assets()
@@ -41,6 +46,20 @@ add_action('after_setup_theme', 'my_theme_setup');
 
 function blog_theme_customizer($wp_customize)
 {
+	//PANEL  MAIN PAGE
+	//PANEL  MAIN PAGE
+	//PANEL  MAIN PAGE
+	//PANEL  MAIN PAGE
+	$wp_customize->add_panel(
+		'front_page_panel',
+		array(
+			'title' => __('Front Page', 'blog-theme'),
+			'description' => __('Settings for the front page of the theme.', 'blog-theme'),
+			'priority' => 10, // panel priority
+		)
+	);
+
+
 	// header section
 	$wp_customize->add_section(
 		'header_section',
@@ -90,11 +109,21 @@ function blog_theme_customizer($wp_customize)
 		)
 	);
 
-	// Adding slogan section
+
+
+	// SLOGAN SECTION
+	// SLOGAN SECTION
+	// SLOGAN SECTION
+	// SLOGAN SECTION
+	// SLOGAN SECTION
+
+
+
 	$wp_customize->add_section(
-		'hero_section',
+		'slogan_section',
 		array(
-			'title' => __('Hero Section', 'blog-theme'),
+			'title' => __('Slogan Section', 'blog-theme'),
+			'panel' => 'front_page_panel',
 			'priority' => 30,
 		)
 	);
@@ -112,10 +141,220 @@ function blog_theme_customizer($wp_customize)
 		'slogan_text',
 		array(
 			'label' => __('Slogan Text', 'blog-theme'),
-			'section' => 'hero_section',
+			'section' => 'slogan_section',
 			'type' => 'textarea',
 		)
 	);
+
+
+	//FRONT PAGE COLORS SECTION
+	$wp_customize->add_section(
+		'front_page_main_colors',
+		array(
+			'title' => __('FRONT PAGE colors', 'blog-theme'),
+			'panel' => 'front_page_panel',
+			'priority' => 20,
+		)
+	);
+	//BLOG COLOR
+	$wp_customize->add_setting(
+		'main_color_1',
+		array(
+			'default' => '#ffe005',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'main_color_1',
+			array(
+				'label' => __('Main color 1 (Blog color)', 'blog-theme'),
+				'section' => 'front_page_main_colors',
+			)
+		)
+	);
+
+	//About Us COLOR
+	$wp_customize->add_setting(
+		'main_color_2',
+		array(
+			'default' => '#5f369c',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'main_color_2',
+			array(
+				'label' => __('Main color 2 (About us color)', 'blog-theme'),
+				'section' => 'front_page_main_colors',
+			)
+		)
+	);
+
+	//Tech Stack COLOR
+	$wp_customize->add_setting(
+		'main_color_3',
+		array(
+			'default' => '#d63798',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'main_color_3',
+			array(
+				'label' => __('Main color 3 (Tech Stack color)', 'blog-theme'),
+				'section' => 'front_page_main_colors',
+			)
+		)
+	);
+
+
+
+	// Three color cards section
+	// Three color cards section
+	// Three color cards section
+	// Three color cards section
+	// Three color cards section
+
+
+	$wp_customize->add_section(
+		'color_cards_section',
+		array(
+			'title' => __('Three color cards', 'blog-theme'),
+			'panel' => 'front_page_panel',
+			'priority' => 20,
+		)
+	);
+
+	// First card
+	$wp_customize->add_setting(
+		'card_1_title',
+		array(
+			'default' => 'Blog',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'card_1_title',
+		array(
+			'label' => __('Card 1 Title', 'blog-theme'),
+			'section' => 'color_cards_section',
+			'type' => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(        // FOR BLOG SECTION AS WELL //
+		'card_1_background_color',     // FOR BLOG SECTION AS WELL //
+		array(                         // FOR BLOG SECTION AS WELL //
+			'default' => '#ffe005',    // FOR BLOG SECTION AS WELL //
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'card_1_background_color',
+			array(
+				'label' => __('Card 1 Background Color', 'blog-theme'),
+				'section' => 'color_cards_section',
+			)
+		)
+	);
+
+	// Second card
+	$wp_customize->add_setting(
+		'card_2_title',
+		array(
+			'default' => 'About Us',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'card_2_title',
+		array(
+			'label' => __('Card 2 Title', 'blog-theme'),
+			'section' => 'color_cards_section',
+			'type' => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'card_2_count',
+		array(
+			'default' => '122',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'card_2_count',
+		array(
+			'label' => __('Count of Digital Nerds', 'blog-theme'),
+			'section' => 'color_cards_section',
+			'type' => 'number',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'card_2_background_color',
+		array(
+			'default' => '#5f369c',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'card_2_background_color',
+			array(
+				'label' => __('Card 2 Background Color', 'blog-theme'),
+				'section' => 'color_cards_section',
+			)
+		)
+	);
+
+
+	// Third card
+	$wp_customize->add_setting(
+		'card_3_title',
+		array(
+			'default' => 'About Us',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'card_3_title',
+		array(
+			'label' => __('Card 3 Title', 'blog-theme'),
+			'section' => 'color_cards_section',
+			'type' => 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'card_3_background_color',
+		array(
+			'default' => '#d63798',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'card_3_background_color',
+			array(
+				'label' => __('Card 3 Background Color', 'blog-theme'),
+				'section' => 'color_cards_section',
+			)
+		)
+	);
+
+
+
 
 
 	// Adding big-text-area section
@@ -123,6 +362,7 @@ function blog_theme_customizer($wp_customize)
 		'moto_section',
 		array(
 			'title' => __('Moto-section', 'blog-theme'),
+			'panel' => 'front_page_panel',
 			'priority' => 30,
 		)
 	);
@@ -145,6 +385,114 @@ function blog_theme_customizer($wp_customize)
 		)
 	);
 
+
+	//BLOG SECTION //
+	//BLOG SECTION //
+	//BLOG SECTION //
+	//BLOG SECTION //
+
+	$wp_customize->add_section(
+		'blog_section',
+		array(
+			'title' => __('Blog Section', 'blog-theme'),
+			'panel' => 'front_page_panel',
+			'priority' => 30,
+		)
+	);
+
+	// Blog-section title
+	$wp_customize->add_setting(
+		'blog_section_title',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_section_title',
+		array(
+			'label' => __('Section Title', 'blog-theme'),
+			'section' => 'blog_section',
+			'type' => 'text',
+		)
+	);
+
+	// Blog description
+	$wp_customize->add_setting(
+		'blog_section_description',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_section_description',
+		array(
+			'label' => __('Section Description', 'blog-theme'),
+			'section' => 'blog_section',
+			'type' => 'textarea',
+		)
+	);
+
+	//Posts count
+	$wp_customize->add_setting(
+		'blog_section_post_count',
+		array(
+			'default' => 4,
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_section_post_count',
+		array(
+			'label' => __('Number of Posts', 'blog-theme'),
+			'section' => 'blog_section',
+			'type' => 'number',
+		)
+	);
+
+	// Button's text
+	$wp_customize->add_setting(
+		'blog_section_button_text',
+		array(
+			'default' => __('Explore all posts', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_section_button_text',
+		array(
+			'label' => __('Button Text', 'blog-theme'),
+			'section' => 'blog_section',
+			'type' => 'text',
+		)
+	);
+
+	// Button's url
+	$wp_customize->add_setting(
+		'blog_section_button_url',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_section_button_url',
+		array(
+			'label' => __('Button URL', 'blog-theme'),
+			'section' => 'blog_section',
+			'type' => 'url',
+		)
+	);
+
+
+
+
 	// ADDING ABOUT US SECTION //
 	// ADDING ABOUT US SECTION //
 	// ADDING ABOUT US SECTION //
@@ -153,6 +501,7 @@ function blog_theme_customizer($wp_customize)
 		'about_us_section',
 		array(
 			'title' => __('About Us Section', 'blog-theme'),
+			'panel' => 'front_page_panel',
 			'priority' => 30,
 		)
 	);

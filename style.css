@@ -28,6 +28,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   font-style: normal; }
 
 body {
+  cursor: default;
   color: #f7f7f7;
   font-family: 'TT Norms Pro';
   height: 100%;
@@ -933,7 +934,10 @@ body {
               width: 100%;
               height: 50%;
               display: block;
-              background-size: cover; }
+              background-size: cover;
+              height: 15rem;
+              /* aspect-ratio: 1; */
+              object-fit: cover; }
             body .wrapper .main .section-blog .section-content .card .card-body {
               padding: 1.5rem;
               display: flex;
@@ -943,18 +947,19 @@ body {
               @media (max-width: 1440px) {
                 body .wrapper .main .section-blog .section-content .card .card-body {
                   padding: 1.3rem; } }
-              body .wrapper .main .section-blog .section-content .card .card-body h2 {
+              body .wrapper .main .section-blog .section-content .card .card-body .card-top h2 {
                 font-size: 1.5rem;
-                margin-bottom: 0.5rem; }
+                margin-bottom: 0.5rem;
+                line-height: 1.8rem; }
                 @media (max-width: 1440px) {
-                  body .wrapper .main .section-blog .section-content .card .card-body h2 {
+                  body .wrapper .main .section-blog .section-content .card .card-body .card-top h2 {
                     font-size: 1.4rem; } }
-              body .wrapper .main .section-blog .section-content .card .card-body p {
+              body .wrapper .main .section-blog .section-content .card .card-body .card-top p {
                 font-size: 1rem;
                 margin-bottom: 1rem;
                 flex-grow: 1; }
                 @media (max-width: 1440px) {
-                  body .wrapper .main .section-blog .section-content .card .card-body p {
+                  body .wrapper .main .section-blog .section-content .card .card-body .card-top p {
                     font-size: 0.9rem; } }
               body .wrapper .main .section-blog .section-content .card .card-body .author-info {
                 display: flex;
@@ -1137,7 +1142,10 @@ body {
               width: 100%;
               height: 50%;
               display: block;
-              background-size: cover; }
+              background-size: cover;
+              height: 15rem;
+              /* aspect-ratio: 1; */
+              object-fit: cover; }
             body .wrapper .main .section-about-us .section-content .card .card-body {
               padding: 1.5rem;
               display: flex;
@@ -1147,18 +1155,19 @@ body {
               @media (max-width: 1440px) {
                 body .wrapper .main .section-about-us .section-content .card .card-body {
                   padding: 1.3rem; } }
-              body .wrapper .main .section-about-us .section-content .card .card-body h2 {
+              body .wrapper .main .section-about-us .section-content .card .card-body .card-top h2 {
                 font-size: 1.5rem;
-                margin-bottom: 0.5rem; }
+                margin-bottom: 0.5rem;
+                line-height: 1.8rem; }
                 @media (max-width: 1440px) {
-                  body .wrapper .main .section-about-us .section-content .card .card-body h2 {
+                  body .wrapper .main .section-about-us .section-content .card .card-body .card-top h2 {
                     font-size: 1.4rem; } }
-              body .wrapper .main .section-about-us .section-content .card .card-body p {
+              body .wrapper .main .section-about-us .section-content .card .card-body .card-top p {
                 font-size: 1rem;
                 margin-bottom: 1rem;
                 flex-grow: 1; }
                 @media (max-width: 1440px) {
-                  body .wrapper .main .section-about-us .section-content .card .card-body p {
+                  body .wrapper .main .section-about-us .section-content .card .card-body .card-top p {
                     font-size: 0.9rem; } }
               body .wrapper .main .section-about-us .section-content .card .card-body .author-info {
                 display: flex;
@@ -1605,7 +1614,10 @@ body {
               width: 100%;
               height: 50%;
               display: block;
-              background-size: cover; }
+              background-size: cover;
+              height: 15rem;
+              /* aspect-ratio: 1; */
+              object-fit: cover; }
             body .wrapper .main .section-blog-blog .blog-grid .card .card-body {
               padding: 1.5rem;
               display: flex;
@@ -1615,18 +1627,19 @@ body {
               @media (max-width: 1440px) {
                 body .wrapper .main .section-blog-blog .blog-grid .card .card-body {
                   padding: 1.3rem; } }
-              body .wrapper .main .section-blog-blog .blog-grid .card .card-body h2 {
+              body .wrapper .main .section-blog-blog .blog-grid .card .card-body .card-top h2 {
                 font-size: 1.5rem;
-                margin-bottom: 0.5rem; }
+                margin-bottom: 0.5rem;
+                line-height: 1.8rem; }
                 @media (max-width: 1440px) {
-                  body .wrapper .main .section-blog-blog .blog-grid .card .card-body h2 {
+                  body .wrapper .main .section-blog-blog .blog-grid .card .card-body .card-top h2 {
                     font-size: 1.4rem; } }
-              body .wrapper .main .section-blog-blog .blog-grid .card .card-body p {
+              body .wrapper .main .section-blog-blog .blog-grid .card .card-body .card-top p {
                 font-size: 1rem;
                 margin-bottom: 1rem;
                 flex-grow: 1; }
                 @media (max-width: 1440px) {
-                  body .wrapper .main .section-blog-blog .blog-grid .card .card-body p {
+                  body .wrapper .main .section-blog-blog .blog-grid .card .card-body .card-top p {
                     font-size: 0.9rem; } }
               body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info {
                 display: flex;

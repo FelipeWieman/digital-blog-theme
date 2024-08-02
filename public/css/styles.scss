@@ -34,7 +34,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 }
 
 body {
-
+    cursor: default;
     color: rgb(247, 247, 247);
     font-family: 'TT Norms Pro';
     height: 100%;
@@ -928,6 +928,7 @@ body {
 
                                     .card-name {
                                         span {
+
                                             padding: .5rem 1rem;
                                             background: transparent;
                                             color: rgb(255, 255, 255);
