@@ -97,37 +97,6 @@ get_header();
 		endif;
 		?>
 
-		<!-- <div class="card">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/macbook_pro_laptop-wallpaper-3840x2400-1.jpg"
-				alt="Image 1">
-			<div class="card-body">
-				<h2>Lorem Ipsum dolor</h2>
-				<p>Introduction Testing email functionality
-					during the
-					pre-production
-					phase is critical to ensuring that emails are delivered correctly and with the
-					necessary…</p>
-				<div class="author-info flex">
-					<div class="author-left">
-						<div class="font-bold">Marta Musterfrau</div>
-						<div class="text-[0.8rem]">06 August 2023 &bull; 0 Comments</div>
-					</div>
-					<div class="author-right flex w-[2rem] hover:scale-[1.3] transition-all cursor-pointer">
-						<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<g>
-								<path d="M0 0h24v24H0z" fill="none" />
-								<path
-									d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
-							</g>
-						</svg>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	
-	 -->
-
 
 
 	</div>
@@ -138,4 +107,4 @@ get_header();
 
 <?php
 
-get_footer();
+get_footer(); ?>

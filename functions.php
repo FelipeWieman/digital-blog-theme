@@ -26,7 +26,6 @@ function my_theme_enqueue_assets()
 
 	wp_enqueue_style('custom-style', get_template_directory_uri() . '/public/css/tailwind.css');
 
-	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/load-more.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 
@@ -43,29 +42,11 @@ function my_theme_setup()
 add_action('after_setup_theme', 'my_theme_setup');
 
 
-//Support code-Highlits
-function enqueue_syntaxhighlighter()
-{
-	wp_enqueue_style('syntaxhighlighter-core', plugins_url('syntaxhighlighter/syntaxhighlighter3/styles/shCore.css'));
-	wp_enqueue_style('syntaxhighlighter-theme', plugins_url('syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css'));
-	wp_enqueue_script('syntaxhighlighter-core', plugins_url('syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'), array('jquery'), null, true);
-	wp_enqueue_script('syntaxhighlighter-brush', plugins_url('syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js'), array('syntaxhighlighter-core'), null, true);
-	wp_add_inline_script('syntaxhighlighter-core', 'SyntaxHighlighter.all();');
-}
-add_action('wp_enqueue_scripts', 'enqueue_syntaxhighlighter');
+//  
 
 
 
 
-
-
-// function enqueue_prism()
-// {
-// 	wp_enqueue_style('prism-css', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css');
-// 	wp_enqueue_script('prism-js', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js', array(), null, true);
-// 	wp_enqueue_script('prism-groovy', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-groovy.min.js', array('prism-js'), null, true);
-// }
-// add_action('wp_enqueue_scripts', 'enqueue_prism');
 
 
 
@@ -853,7 +834,7 @@ function create_tech_stack_cards_post_type()
 				'singular_name' => __('Tech Stack Card')
 			),
 			'public' => true,
-			'has_archive' => false,
+			'has_archive' => true,
 			'supports' => array('title', 'editor', 'thumbnail'),
 		)
 	);
