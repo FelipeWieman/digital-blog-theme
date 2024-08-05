@@ -457,19 +457,33 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
     style="background-color:<?php echo get_theme_mod('main_color_3', '#d63798'); ?>">
     <div class="section-header">
         <div class="section-header-left">
-            <h1>Tech Stack</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ea
-                harum
-                voluptatem
-                suscipit <span> &nbsp;fugiat ad, esse fuga, &nbsp;</span> aperiam nostrum temporibus
-                sapiente, hic
-                reiciendis odio
-                accusantium aut magnam? Sint, culpa ex.</p>
+            <h1><?php echo get_theme_mod('tech_stack_title', 'Tech Stack'); ?></h1>
+            <p><?php echo get_theme_mod('tech_stack_description', ''); ?></p>
         </div>
         <div class="section-header-right"> </div>
     </div>
     <div class="section-content">
-        <div class="tech-card">
+        <?php
+        $args = array(
+            'post_type' => 'tech_stack_card',
+            'posts_per_page' => -1,
+        );
+        $tech_stack_query = new WP_Query($args);
+        if ($tech_stack_query->have_posts()):
+            while ($tech_stack_query->have_posts()):
+                $tech_stack_query->the_post(); ?>
+                <div class="tech-card">
+                    <div class="tech-card-image">
+                        <?php the_post_thumbnail('medium'); ?>
+                    </div>
+                    <p><?php the_title(); ?></p>
+                </div>
+            <?php endwhile;
+            wp_reset_postdata();
+        endif; ?>
+
+
+        <!-- <div class="tech-card">
             <div class="tech-card-image">
                 <img class="translate-y-[-3rem]" src="<?php echo get_template_directory_uri(); ?>/images/js.png" alt="">
             </div>
@@ -605,12 +619,15 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                 <img src="<?php echo get_template_directory_uri(); ?>/images/apache-tomcat.png" alt="">
             </div>
             <p class="">Apache Tomcat</p>
-        </div>
+        </div> -->
 
 
     </div>
     <div class="explore-button-container">
-        <button class="explore-button">How we code</button>
+        <a href="<?php echo get_theme_mod('tech_stack_button_url', '/about'); ?>">
+            <button
+                class="explore-button"><?php echo get_theme_mod('tech_stack_button_text', 'How we code'); ?></button>
+        </a>
     </div>
 </section>
 

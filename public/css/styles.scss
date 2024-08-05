@@ -1818,6 +1818,7 @@ body {
                     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
                     gap: 3rem 1.5rem;
                     padding: 2rem;
+                    width: 90%;
 
                     @media (max-width:732px) {
                         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1840,6 +1841,7 @@ body {
                     .card {
                         @include card-preview-style;
                         border: 2px rgb(128, 128, 128) solid;
+                        font-size: 1rem;
                     }
                 }
 

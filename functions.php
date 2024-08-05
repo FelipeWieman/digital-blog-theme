@@ -46,8 +46,7 @@ add_action('after_setup_theme', 'my_theme_setup');
 
 function blog_theme_customizer($wp_customize)
 {
-	//PANEL  MAIN PAGE
-	//PANEL  MAIN PAGE
+
 	//PANEL  MAIN PAGE
 	//PANEL  MAIN PAGE
 	$wp_customize->add_panel(
@@ -56,6 +55,18 @@ function blog_theme_customizer($wp_customize)
 			'title' => __('Front Page', 'blog-theme'),
 			'description' => __('Settings for the front page of the theme.', 'blog-theme'),
 			'priority' => 10, // panel priority
+		)
+	);
+
+	//PANEL BLOG PAGE
+	//PANEL BLOG PAGE
+
+	$wp_customize->add_panel(
+		'blog_page_panel',
+		array(
+			'title' => __('BLog  Page', 'blog-theme'),
+			'description' => __('Settings for the blog  page of the theme.', 'blog-theme'),
+			'priority' => 12, // panel priority
 		)
 	);
 
@@ -248,23 +259,7 @@ function blog_theme_customizer($wp_customize)
 		)
 	);
 
-	$wp_customize->add_setting(        // FOR BLOG SECTION AS WELL //
-		'card_1_background_color',     // FOR BLOG SECTION AS WELL //
-		array(                         // FOR BLOG SECTION AS WELL //
-			'default' => '#ffe005',    // FOR BLOG SECTION AS WELL //
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'card_1_background_color',
-			array(
-				'label' => __('Card 1 Background Color', 'blog-theme'),
-				'section' => 'color_cards_section',
-			)
-		)
-	);
+
 
 	// Second card
 	$wp_customize->add_setting(
@@ -299,23 +294,7 @@ function blog_theme_customizer($wp_customize)
 		)
 	);
 
-	$wp_customize->add_setting(
-		'card_2_background_color',
-		array(
-			'default' => '#5f369c',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'card_2_background_color',
-			array(
-				'label' => __('Card 2 Background Color', 'blog-theme'),
-				'section' => 'color_cards_section',
-			)
-		)
-	);
+
 
 
 	// Third card
@@ -335,23 +314,6 @@ function blog_theme_customizer($wp_customize)
 		)
 	);
 
-	$wp_customize->add_setting(
-		'card_3_background_color',
-		array(
-			'default' => '#d63798',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'card_3_background_color',
-			array(
-				'label' => __('Card 3 Background Color', 'blog-theme'),
-				'section' => 'color_cards_section',
-			)
-		)
-	);
 
 
 
@@ -676,6 +638,155 @@ function blog_theme_customizer($wp_customize)
 			)
 		);
 	}
+
+
+	// ADDING Tech Stack SECTION //
+	// ADDING Tech Stack SECTION //
+	// ADDING Tech Stack SECTION //
+	// ADDING Tech Stack SECTION //
+	$wp_customize->add_section(
+		'tech_stack_section',
+		array(
+			'title' => __('Tech Stack Section', 'blog-theme'),
+			'panel' => 'front_page_panel',
+			'priority' => 30,
+		)
+	);
+
+	// SETUP FOR HEADER
+	$wp_customize->add_setting(
+		'tech_stack_title',
+		array(
+			'default' => __('Tech Stack', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'tech_stack_title',
+		array(
+			'label' => __('Title', 'blog-theme'),
+			'section' => 'tech_stack_section',
+			'type' => 'text',
+		)
+	);
+
+	// SETUP FOR DESCRIPTION
+	$wp_customize->add_setting(
+		'tech_stack_description',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		'tech_stack_description',
+		array(
+			'label' => __('Description', 'blog-theme'),
+			'section' => 'tech_stack_section',
+			'type' => 'textarea',
+		)
+	);
+
+
+
+	// SETUP BUTTON TEXT
+	$wp_customize->add_setting(
+		'tech_stack_button_text',
+		array(
+			'default' => __('How we code', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'tech_stack_button_text',
+		array(
+			'label' => __('Button Text', 'blog-theme'),
+			'section' => 'tech_stack_section',
+			'type' => 'text',
+		)
+	);
+
+	// SETUP BUTTON LINK
+	$wp_customize->add_setting(
+		'tech_stack_button_url',
+		array(
+			'default' => '/about',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control(
+		'tech_stack_button_url',
+		array(
+			'label' => __('Button URL', 'blog-theme'),
+			'section' => 'tech_stack_section',
+			'type' => 'url',
+		)
+	);
+
+
+
+
+	//BLOG PAGE 
+
+	// Blog page title section
+	$wp_customize->add_section(
+		'blog_page_title_section',
+		array(
+			'title' => __('Blog page title', 'blog-theme'),
+			'panel' => 'blog_page_panel',
+			'priority' => 30,
+		)
+	);
+
+	// Blog page CONTENT section
+	$wp_customize->add_section(
+		'blog_page_content_section',
+		array(
+			'title' => __('Blog page content', 'blog-theme'),
+			'panel' => 'blog_page_panel',
+			'priority' => 30,
+		)
+	);
+
+	// Settings for text in title
+	$wp_customize->add_setting(
+		'blog_page_title',
+		array(
+			'default' => __('Want to stay up to date with our latest topics?', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_page_title',
+		array(
+			'label' => __('Header Text', 'blog-theme'),
+			'section' => 'blog_page_title_section',
+			'type' => 'text',
+		)
+	);
+
+	// Settings for posts count on the page by default
+	$wp_customize->add_setting(
+		'blog_page_count',
+		array(
+			'default' => __('8', 'blog-theme'),
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'blog_page_count',
+		array(
+			'label' => __('Number of posts by default', 'blog-theme'),
+			'section' => 'blog_page_content_section',
+			'type' => 'number',
+		)
+	);
 }
 
 add_action('customize_register', 'blog_theme_customizer');
@@ -703,22 +814,22 @@ add_action('admin_head', 'blog_theme_fix_svg');
 
 //CREATING CUSTOM TYPE OF POST
 
-function create_about_us_cards_post_type()
+function create_tech_stack_cards_post_type()
 {
 	register_post_type(
-		'about_us_card',
+		'tech_stack_card',
 		array(
 			'labels' => array(
-				'name' => __('About Us Cards'),
-				'singular_name' => __('About Us Card')
+				'name' => __('Tech Stack Cards'),
+				'singular_name' => __('Tech Stack Card')
 			),
 			'public' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'supports' => array('title', 'editor', 'thumbnail'),
 		)
 	);
 }
-add_action('init', 'create_about_us_cards_post_type');
+add_action('init', 'create_tech_stack_cards_post_type');
 
 
 
