@@ -2,39 +2,58 @@
 /**
  * The template for displaying all single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package blog_theme
  */
 
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-
+<section class="section-single">
 	<?php
 	while (have_posts()):
-		the_post();
+		the_post(); ?>
+		<div class="single-header">
+			<p class="single-author"><?php the_author(); ?></p>
+			<h1 class="single-title"><?php the_title(); ?></h1>
 
-		get_template_part('template-parts/content', get_post_type());
-
-		the_post_navigation(
-			array(
-				'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'blog_theme') . '</span> <span class="nav-title">%title</span>',
-				'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'blog_theme') . '</span> <span class="nav-title">%title</span>',
-			)
-		);
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if (comments_open() || get_comments_number()):
-			comments_template();
-		endif;
-
+			<div class="single-picture">
+				<div class="picture-container">
+					<?php if (has_post_thumbnail()): ?>
+						<?php the_post_thumbnail('full'); ?>
+					<?php else: ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/post_picture_fallback.png"
+							alt="<?php the_title(); ?>">
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+		<div class="single-content">
+			<div class="content-info">
+				<span><?php echo get_the_date(); ?></span>
+				<span>Schlagwörter: <?php the_category(', '); ?></span>
+			</div>
+			<div class="content-body">
+				<?php the_content(); ?>
+			</div>
+			<!-- <div class="comments">
+				<div class="comment-field">
+					<p><?php esc_html_e('Write a comment', 'blog_theme'); ?></p>
+				</div>
+			</div> -->
+			<?php
 	endwhile; // End of the loop.
-	?>
+	
+	the_post_navigation(
+		array(
+			'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'blog_theme') . '</span> <span class="nav-title">%title</span>',
+			'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'blog_theme') . '</span> <span class="nav-title">%title</span>',
+		)
+	);
 
-</main><!-- #main -->
+	?>
+	</div>
+
+</section>
 
 <?php
-get_sidebar();
+
 get_footer();

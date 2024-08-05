@@ -132,7 +132,7 @@ get_header();
 
 	</div>
 	<div class="explore-button-container">
-		<a href="/blog-single"><button class="explore-button">Load More</button></a>
+		<button id="load-more" class="explore-button">Load More</button>
 	</div>
 </section>
 

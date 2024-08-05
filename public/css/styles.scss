@@ -1858,7 +1858,7 @@ body {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 10rem 2rem 2rem 2rem;
+                padding: 5rem 2rem 2rem 2rem;
                 max-width: 1500px;
                 width: 92%;
 
@@ -1892,6 +1892,7 @@ body {
                     position: relative;
                     z-index: 1;
                     margin-bottom: 6rem;
+                    width: 100%;
 
                     @media (max-width:950px) {
 
@@ -1941,7 +1942,7 @@ body {
                         position: relative;
                         border-radius: 2rem;
                         width: 100%;
-                        height: calc(100vw* 0.3);
+                        height: calc(100vw* 0.25);
                         max-height: 700px;
                         display: inline-block;
 
@@ -1978,6 +1979,7 @@ body {
                                 display: block;
                                 border-radius: 2rem;
                                 transform: translateY(-10rem);
+                                min-height: calc(100vw* 0.4);
 
                                 @media (max-width:1000px) {
                                     transform: translateY(-8rem);
@@ -2023,6 +2025,50 @@ body {
                         padding: 2rem 2rem;
                     }
 
+                    .navigation {
+                        .nav-links {
+                            display: flex;
+                            justify-content: space-around;
+                            width: 100%;
+                            gap: 3rem;
+                            font-size: 1.5rem;
+
+                            .nav-previous {
+                                .nav-subtitle {
+                                    font-size: 1.5rem;
+                                }
+
+                                .nav-title {
+                                    padding: 1rem;
+                                    font-weight: bold;
+                                    display: inline-block;
+                                    border-radius: 1rem;
+                                    background-repeat: no-repeat;
+                                    background-position: center bottom;
+                                    background-size: 120% 120%;
+                                    background-image: linear-gradient(to right, #ffe005, #ffe005);
+                                }
+                            }
+
+                            .nav-next {
+                                .nav-subtitle {
+                                    font-size: 1.5rem;
+                                }
+
+                                .nav-title {
+                                    padding: 1rem;
+                                    font-weight: bold;
+                                    display: inline-block;
+                                    border-radius: 1rem;
+                                    background-repeat: no-repeat;
+                                    background-position: center bottom;
+                                    background-size: 120% 120%;
+                                    background-image: linear-gradient(to right, #ffe005, #ffe005);
+                                }
+                            }
+                        }
+                    }
+
                     .content-info {
                         color: rgb(149, 149, 149);
                         font-size: 1.7rem;
@@ -2058,7 +2104,23 @@ body {
                     .content-body {
                         margin-bottom: 5rem;
 
+                        .wp-block-syntaxhighlighter-code {
 
+                            div {
+                                .syntaxhighlighter {
+                                    background-color: #b42424;
+                                    color: #f8f8f2;
+                                    padding: 1rem;
+                                    border-radius: 5px;
+                                    font-family: 'Courier New', Courier, monospace;
+                                    font-size: 1rem;
+                                }
+                            }
+
+
+
+
+                        }
 
                         h2 {
 

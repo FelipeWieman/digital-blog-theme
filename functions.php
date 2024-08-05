@@ -26,7 +26,7 @@ function my_theme_enqueue_assets()
 
 	wp_enqueue_style('custom-style', get_template_directory_uri() . '/public/css/tailwind.css');
 
-	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/custom.js', array(), null, true);
+	wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/load-more.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 
@@ -41,6 +41,35 @@ function my_theme_setup()
 	);
 }
 add_action('after_setup_theme', 'my_theme_setup');
+
+
+//Support code-Highlits
+function enqueue_syntaxhighlighter()
+{
+	wp_enqueue_style('syntaxhighlighter-core', plugins_url('syntaxhighlighter/syntaxhighlighter3/styles/shCore.css'));
+	wp_enqueue_style('syntaxhighlighter-theme', plugins_url('syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css'));
+	wp_enqueue_script('syntaxhighlighter-core', plugins_url('syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'), array('jquery'), null, true);
+	wp_enqueue_script('syntaxhighlighter-brush', plugins_url('syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js'), array('syntaxhighlighter-core'), null, true);
+	wp_add_inline_script('syntaxhighlighter-core', 'SyntaxHighlighter.all();');
+}
+add_action('wp_enqueue_scripts', 'enqueue_syntaxhighlighter');
+
+
+
+
+
+
+// function enqueue_prism()
+// {
+// 	wp_enqueue_style('prism-css', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css');
+// 	wp_enqueue_script('prism-js', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js', array(), null, true);
+// 	wp_enqueue_script('prism-groovy', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-groovy.min.js', array('prism-js'), null, true);
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_prism');
+
+
+
+
 
 
 
@@ -832,13 +861,85 @@ function create_tech_stack_cards_post_type()
 add_action('init', 'create_tech_stack_cards_post_type');
 
 
+function blog_theme_load_more_posts()
+{
+	// Получаем номер следующей страницы из POST-запроса
+	$paged = $_POST['paged'] + 1;
+
+	// Настройка параметров запроса
+	$args = array(
+		'post_type' => 'post',
+		'posts_per_page' => 4, // Количество постов на одной странице
+		'paged' => $paged
+	);
+
+	// Выполнение запроса
+	$query = new WP_Query($args);
+
+	// Если есть посты, выводим их
+	if ($query->have_posts()):
+		while ($query->have_posts()):
+			$query->the_post(); ?>
+			<div class="card">
+				<?php if (has_post_thumbnail()): ?>
+					<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+				<?php else: ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/post_picture_fallback.png" alt="<?php the_title(); ?>">
+				<?php endif; ?>
+				<div class="card-body">
+					<div class="card-top">
+						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						<?php the_excerpt(); ?>
+					</div>
+					<div class="author-info flex">
+						<div class="author-left">
+							<div class="font-bold"><span><?php the_author(); ?></span> •</div>
+							<div><span><?php echo get_the_date(); ?></span> • &bull; <span><?php comments_number(); ?></span></div>
+						</div>
+						<a href="<?php the_permalink(); ?>">
+							<div class="author-right flex w-[2rem] hover:scale-[1.3] transition-all cursor-pointer">
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<g>
+										<path d="M0 0h24v24H0z" fill="none" />
+										<path
+											d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
+									</g>
+								</svg>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		<?php endwhile;
+		wp_reset_postdata();
+	else:
+		echo 'no_more_posts';
+	endif;
+
+	wp_die(); // Завершение выполнения скрипта
+}
+
+// Регистрация AJAX-действий для авторизованных и неавторизованных пользователей
+add_action('wp_ajax_load_more_posts', 'blog_theme_load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'blog_theme_load_more_posts');
 
 
 
 
+function blog_theme_enqueue_scripts()
+{
+	wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array(), null, true);
 
-
-
+	wp_localize_script(
+		'load-more',
+		'load_more_params',
+		array(
+			'ajaxurl' => admin_url('admin-ajax.php'),
+			'paged' => 1
+		)
+	);
+}
+add_action('wp_enqueue_scripts', 'blog_theme_enqueue_scripts');
 
 
 
