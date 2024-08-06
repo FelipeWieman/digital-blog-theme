@@ -46,8 +46,17 @@ add_action('after_setup_theme', 'my_theme_setup');
 
 
 
-
-
+//Additional classes for BODY (for pseudoelements)
+function add_custom_body_class($classes)
+{
+	if (is_page('about-us')) {
+		$classes[] = 'about-page';
+	} elseif (is_home() || is_archive()) {
+		$classes[] = 'blog-page';
+	}
+	return $classes;
+}
+add_filter('body_class', 'add_custom_body_class');
 
 
 
