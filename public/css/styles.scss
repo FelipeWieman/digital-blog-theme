@@ -1879,12 +1879,31 @@ html {
                         .blog-search {
                             display: flex;
                             justify-content: space-between;
-                            min-width: 25rem;
+
                             border: 2px white solid;
                             border-radius: 0.5rem;
                             padding: 0.7rem;
                             font-size: 1.1rem;
-                            cursor: pointer;
+
+
+                            form {
+                                cursor: pointer;
+
+                                select {
+                                    background: transparent;
+                                    cursor: pointer;
+
+                                    option {
+                                        background: black;
+                                        // color: black;
+                                        cursor: pointer;
+                                    }
+
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                            }
 
                             @media (max-width:680px) {
                                 min-width: 18rem;

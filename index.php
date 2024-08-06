@@ -25,13 +25,21 @@ get_header();
 	<div class="hero-blog-info">
 		<div class="blog-count"><?php echo wp_count_posts('post')->publish; ?> Articles</div>
 		<div class="blog-search">
-			<span>Sort by: Newest</span>
-			<div class="search-arrow"><svg height="1.2rem" id="Layer_1" fill="white"
+			<form method="GET" id="sort-posts">
+				<label for="sort">Sort by:</label>
+				<select name="sort" id="sort" onchange="this.form.submit()">
+					<option value="date_desc" <?php selected($_GET['sort'], 'date_desc'); ?>>Newest</option>
+					<option value="date_asc" <?php selected($_GET['sort'], 'date_asc'); ?>>Oldest</option>
+					<option value="title_asc" <?php selected($_GET['sort'], 'title_asc'); ?>>Title (A-Z)</option>
+					<option value="title_desc" <?php selected($_GET['sort'], 'title_desc'); ?>>Title (Z-A)</option>
+				</select>
+			</form>
+			<!-- <div class="search-arrow"><svg height="1.2rem" id="Layer_1" fill="white"
 					style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve"
 					xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<path
 						d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
-				</svg></div>
+				</svg></div> -->
 		</div>
 	</div>
 </section>
@@ -39,9 +47,32 @@ get_header();
 	<div class="blog-grid">
 
 		<?php
+		$orderby = 'date';
+		$order = 'DESC';
+
+		if (isset($_GET['sort'])) {
+			switch ($_GET['sort']) {
+				case 'date_asc':
+					$order = 'ASC';
+					break;
+				case 'title_asc':
+					$orderby = 'title';
+					$order = 'ASC';
+					break;
+				case 'title_desc':
+					$orderby = 'title';
+					$order = 'DESC';
+					break;
+			}
+		}
+
 		$args = array(
+
 			'post_type' => 'post',
 			'posts_per_page' => get_theme_mod('blog_page_count', 8),
+			'orderby' => $orderby,
+			'order' => $order,
+
 		);
 		$blog_posts = new WP_Query($args);
 		if ($blog_posts->have_posts()):

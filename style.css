@@ -1607,12 +1607,20 @@ html {
             html body .wrapper .main .section-hero-blog .hero-blog-info .blog-search {
               display: flex;
               justify-content: space-between;
-              min-width: 25rem;
               border: 2px white solid;
               border-radius: 0.5rem;
               padding: 0.7rem;
-              font-size: 1.1rem;
-              cursor: pointer; }
+              font-size: 1.1rem; }
+              html body .wrapper .main .section-hero-blog .hero-blog-info .blog-search form {
+                cursor: pointer; }
+                html body .wrapper .main .section-hero-blog .hero-blog-info .blog-search form select {
+                  background: transparent;
+                  cursor: pointer; }
+                  html body .wrapper .main .section-hero-blog .hero-blog-info .blog-search form select option {
+                    background: black;
+                    cursor: pointer; }
+                  html body .wrapper .main .section-hero-blog .hero-blog-info .blog-search form select:focus {
+                    outline: none; }
               @media (max-width: 680px) {
                 html body .wrapper .main .section-hero-blog .hero-blog-info .blog-search {
                   min-width: 18rem;
