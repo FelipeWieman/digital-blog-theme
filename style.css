@@ -31,7 +31,8 @@ html {
   height: 100%;
   position: relative;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  scroll-behavior: smooth; }
   html body {
     cursor: default;
     color: #f7f7f7;
@@ -42,6 +43,10 @@ html {
     overflow-x: hidden; }
     html body:has(.menu-toggle:checked) {
       overflow: hidden; }
+    html body.scroll .wrapper .header .header-container {
+      padding: .2rem 2rem; }
+      html body.scroll .wrapper .header .header-container .logo {
+        padding: .5rem 1rem .5rem 1rem; }
     html body.blog-page .wrapper {
       overflow: hidden;
       position: relative; }
@@ -94,52 +99,14 @@ html {
       display: flex;
       flex-direction: column;
       background: linear-gradient(to bottom, black, #424242); }
-      html body .wrapper .header-old {
-        flex-shrink: 0;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        background: black;
-        z-index: 10; }
-        html body .wrapper .header-old .logo {
-          padding: 1rem;
-          display: flex;
-          align-items: flex-start;
-          gap: 2rem; }
-          html body .wrapper .header-old .logo span {
-            font-size: 1.5rem; }
-        html body .wrapper .header-old .header-right-block {
-          justify-self: end;
-          display: grid;
-          grid-template-columns: 12fr 1fr;
-          justify-items: end; }
-          html body .wrapper .header-old .header-right-block .nav_menu {
-            display: grid;
-            grid-template-columns: repeat(5, auto);
-            justify-items: center;
-            gap: 2rem; }
-            html body .wrapper .header-old .header-right-block .nav_menu div {
-              position: relative; }
-              html body .wrapper .header-old .header-right-block .nav_menu div:nth-child(1) ::before, html body .wrapper .header-old .header-right-block .nav_menu div:hover ::before {
-                content: '';
-                position: absolute;
-                bottom: -15px;
-                left: 0;
-                width: 100%;
-                height: 0.3rem;
-                background-color: #1ab7b7; }
-              html body .wrapper .header-old .header-right-block .nav_menu div a {
-                text-transform: uppercase;
-                font-weight: 600;
-                position: relative; }
       html body .wrapper .header {
         width: 100%;
         background: black;
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        z-index: 10; }
         html body .wrapper .header .header-container {
           flex-shrink: 0;
           display: flex;
@@ -147,11 +114,10 @@ html {
           align-items: center;
           width: 100%;
           max-width: 1800px;
-          position: fixed;
-          top: 0;
           background: black;
+          transition: padding 0.2s linear;
           padding: 1rem 2rem;
-          z-index: 10; }
+          margin: 0 auto; }
           html body .wrapper .header .header-container .logo {
             padding: 1rem;
             display: flex;
@@ -436,7 +402,7 @@ html {
                   padding: .3rem 0rem 2rem 0rem;
                   align-items: center;
                   position: fixed;
-                  top: 4rem;
+                  top: 3rem;
                   left: 0;
                   opacity: 1;
                   width: 100%;
@@ -600,46 +566,25 @@ html {
               html body .wrapper .main .section-hero .hero-cards-container {
                 flex-direction: column;
                 gap: .3rem; } }
-            html body .wrapper .main .section-hero .hero-cards-container .card {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              min-width: 33%;
-              padding: 2rem 2rem 1rem 2rem;
-              border-radius: 2rem;
-              height: 18rem;
-              cursor: pointer;
+            html body .wrapper .main .section-hero .hero-cards-container a {
               transition: all;
-              transition-duration: .25s; }
-              html body .wrapper .main .section-hero .hero-cards-container .card:hover {
+              transition-duration: .25s;
+              display: inline-block;
+              width: 33%; }
+              @media (max-width: 1150px) {
+                html body .wrapper .main .section-hero .hero-cards-container a {
+                  width: 100%; } }
+              html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) {
                 transform: scale(1.05); }
-                html body .wrapper .main .section-hero .hero-cards-container .card:hover .card-content {
+                html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) .card .card-content {
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
                   height: 100%; }
-                  html body .wrapper .main .section-hero .hero-cards-container .card:hover .card-content .card-top {
+                  html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) .card .card-content .card-top {
                     display: flex;
                     justify-content: space-between; }
-                    html body .wrapper .main .section-hero .hero-cards-container .card:hover .card-content .card-top .card-name span {
-                      padding: .5rem 1rem;
-                      background: transparent;
-                      color: white;
-                      font-size: 1.6rem;
-                      font-weight: bold;
-                      border-radius: 2rem;
-                      border: 2px white solid; }
-              html body .wrapper .main .section-hero .hero-cards-container .card:hover:nth-child(1) {
-                transform: scale(1.05); }
-                html body .wrapper .main .section-hero .hero-cards-container .card:hover:nth-child(1) .card-content {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: space-between;
-                  height: 100%; }
-                  html body .wrapper .main .section-hero .hero-cards-container .card:hover:nth-child(1) .card-content .card-top {
-                    display: flex;
-                    justify-content: space-between; }
-                    html body .wrapper .main .section-hero .hero-cards-container .card:hover:nth-child(1) .card-content .card-top .card-name span {
+                    html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) .card .card-content .card-top .card-name span {
                       padding: .5rem 1rem;
                       background: transparent;
                       color: black;
@@ -647,99 +592,128 @@ html {
                       font-weight: bold;
                       border-radius: 2rem;
                       border: 2px #030303 solid; }
-              @media (max-width: 1400px) {
-                html body .wrapper .main .section-hero .hero-cards-container .card {
-                  padding: 2rem 2rem 1rem 2rem; } }
-              @media (max-width: 1280px) {
-                html body .wrapper .main .section-hero .hero-cards-container .card {
-                  height: 15rem;
-                  padding: 1.5rem .8rem .1rem 1.3rem;
-                  margin-bottom: .5rem;
-                  border-radius: 1.8rem; } }
-              @media (max-width: 1024px) {
-                html body .wrapper .main .section-hero .hero-cards-container .card {
-                  height: 10rem;
-                  padding: 1.5rem .8rem .1rem 1.3rem;
-                  margin-bottom: .5rem;
-                  border-radius: 1.6rem; } }
-              @media (max-width: 780px) {
-                html body .wrapper .main .section-hero .hero-cards-container .card {
-                  height: 10rem;
-                  padding: 1.3rem .8rem .1rem 1rem;
-                  margin-bottom: .5rem;
-                  border-radius: 1.4rem; } }
-              @media (max-width: 500px) {
-                html body .wrapper .main .section-hero .hero-cards-container .card {
-                  height: 9rem;
-                  padding: 1.3rem .8rem .1rem 1rem;
-                  margin-bottom: .5rem;
-                  border-radius: 1.2rem; } }
-              @media (max-width: 330px) {
-                html body .wrapper .main .section-hero .hero-cards-container .card {
-                  height: 8rem;
-                  padding: 1.3rem .8rem .1rem 1rem;
-                  margin-bottom: .5rem;
-                  border-radius: 1rem; } }
-              html body .wrapper .main .section-hero .hero-cards-container .card .card-content {
+              html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2), html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) {
+                transform: scale(1.05); }
+                html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2) .card .card-content, html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) .card .card-content {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  height: 100%; }
+                  html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2) .card .card-content .card-top, html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) .card .card-content .card-top {
+                    display: flex;
+                    justify-content: space-between; }
+                    html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2) .card .card-content .card-top .card-name span, html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) .card .card-content .card-top .card-name span {
+                      padding: .5rem 1rem;
+                      background: transparent;
+                      color: white;
+                      font-size: 1.6rem;
+                      font-weight: bold;
+                      border-radius: 2rem;
+                      border: 2px white solid; }
+              html body .wrapper .main .section-hero .hero-cards-container a .card {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 100%; }
-                html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-top {
+                min-width: 33%;
+                padding: 2rem 2rem 1rem 2rem;
+                border-radius: 2rem;
+                height: 18rem;
+                cursor: pointer;
+                transition: all;
+                transition-duration: .25s; }
+                @media (max-width: 1400px) {
+                  html body .wrapper .main .section-hero .hero-cards-container a .card {
+                    padding: 2rem 2rem 1rem 2rem; } }
+                @media (max-width: 1280px) {
+                  html body .wrapper .main .section-hero .hero-cards-container a .card {
+                    height: 15rem;
+                    padding: 1.5rem .8rem .1rem 1.3rem;
+                    margin-bottom: .5rem;
+                    border-radius: 1.8rem; } }
+                @media (max-width: 1024px) {
+                  html body .wrapper .main .section-hero .hero-cards-container a .card {
+                    height: 10rem;
+                    padding: 1.5rem .8rem .1rem 1.3rem;
+                    margin-bottom: .5rem;
+                    border-radius: 1.6rem; } }
+                @media (max-width: 780px) {
+                  html body .wrapper .main .section-hero .hero-cards-container a .card {
+                    height: 10rem;
+                    padding: 1.3rem .8rem .1rem 1rem;
+                    margin-bottom: .5rem;
+                    border-radius: 1.4rem; } }
+                @media (max-width: 500px) {
+                  html body .wrapper .main .section-hero .hero-cards-container a .card {
+                    height: 9rem;
+                    padding: 1.3rem .8rem .1rem 1rem;
+                    margin-bottom: .5rem;
+                    border-radius: 1.2rem; } }
+                @media (max-width: 330px) {
+                  html body .wrapper .main .section-hero .hero-cards-container a .card {
+                    height: 8rem;
+                    padding: 1.3rem .8rem .1rem 1rem;
+                    margin-bottom: .5rem;
+                    border-radius: 1rem; } }
+                html body .wrapper .main .section-hero .hero-cards-container a .card .card-content {
                   display: flex;
-                  justify-content: space-between; }
-                  html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-top .card-name span {
-                    padding: .5rem 1rem;
-                    background: white;
-                    color: black;
-                    font-size: 1.6rem;
-                    font-weight: bold;
-                    border-radius: 1rem;
-                    border: 2px black solid; }
-                    @media (max-width: 780px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-top .card-name span {
-                        padding: .3rem .5rem;
-                        font-size: 1.3rem; } }
-                    @media (max-width: 330px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-top .card-name span {
-                        font-size: 1rem; } }
-                  html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-top .card-arrow {
-                    width: 2rem; }
-                html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom {
-                  display: flex;
+                  flex-direction: column;
                   justify-content: space-between;
-                  align-items: center;
-                  max-height: 4rem; }
-                  html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-text {
-                    font-size: 1.5rem;
-                    font-weight: bold; }
-                    @media (max-width: 1480px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-text {
-                        font-size: 1.3rem; } }
-                    @media (max-width: 1280px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-text {
-                        font-size: 1.4rem; } }
-                    @media (max-width: 1210px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-text {
-                        font-size: 1.2rem; } }
-                    @media (max-width: 780px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-text {
-                        font-size: 1.2rem; } }
-                    @media (max-width: 500px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-text {
-                        font-size: 1rem; } }
-                  html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-number {
-                    font-size: 4rem;
-                    font-weight: bold; }
-                    @media (max-width: 1400px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-number {
-                        font-size: 3rem; } }
-                    @media (max-width: 780px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-number {
-                        font-size: 2rem; } }
-                    @media (max-width: 500px) {
-                      html body .wrapper .main .section-hero .hero-cards-container .card .card-content .card-bottom .bottom-number {
-                        font-size: 1.7rem; } }
+                  height: 100%; }
+                  html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-top {
+                    display: flex;
+                    justify-content: space-between; }
+                    html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-top .card-name span {
+                      padding: .5rem 1rem;
+                      background: white;
+                      color: black;
+                      font-size: 1.6rem;
+                      font-weight: bold;
+                      border-radius: 1rem;
+                      border: 2px black solid; }
+                      @media (max-width: 780px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-top .card-name span {
+                          padding: .3rem .5rem;
+                          font-size: 1.3rem; } }
+                      @media (max-width: 330px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-top .card-name span {
+                          font-size: 1rem; } }
+                    html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-top .card-arrow {
+                      width: 2rem; }
+                  html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-height: 4rem; }
+                    html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-text {
+                      font-size: 1.5rem;
+                      font-weight: bold; }
+                      @media (max-width: 1480px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-text {
+                          font-size: 1.3rem; } }
+                      @media (max-width: 1280px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-text {
+                          font-size: 1.4rem; } }
+                      @media (max-width: 1210px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-text {
+                          font-size: 1.2rem; } }
+                      @media (max-width: 780px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-text {
+                          font-size: 1.2rem; } }
+                      @media (max-width: 500px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-text {
+                          font-size: 1rem; } }
+                    html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-number {
+                      font-size: 4rem;
+                      font-weight: bold; }
+                      @media (max-width: 1400px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-number {
+                          font-size: 3rem; } }
+                      @media (max-width: 780px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-number {
+                          font-size: 2rem; } }
+                      @media (max-width: 500px) {
+                        html body .wrapper .main .section-hero .hero-cards-container a .card .card-content .card-bottom .bottom-number {
+                          font-size: 1.7rem; } }
           @media (max-width: 1670px) {
             html body .wrapper .main .section-hero {
               padding: 1.7rem; }
@@ -801,7 +775,7 @@ html {
                 font-size: 2.9rem;
                 font-weight: bold;
                 line-height: 4rem;
-                padding: 0rem .5rem 0rem .5rem; } }
+                padding: 0rem 1rem 0rem 1rem; } }
           @media (max-width: 380px) {
             html body .wrapper .main .section-hero {
               padding: 0rem .6rem 1rem .6rem; }
@@ -809,7 +783,7 @@ html {
                 font-size: 2.5rem;
                 font-weight: bold;
                 line-height: 3rem;
-                padding: 0rem .5rem 0rem .5rem; } }
+                padding: 0rem 1rem 0rem 1rem; } }
           @media (max-width: 330px) {
             html body .wrapper .main .section-hero {
               padding: 0rem .6rem 1rem .6rem; }
@@ -817,7 +791,7 @@ html {
                 font-size: 2.3rem;
                 font-weight: bold;
                 line-height: 3rem;
-                padding: 0rem .5rem 0rem .5rem; } }
+                padding: 0rem 1rem 0rem 1rem; } }
         html body .wrapper .main .section-info {
           min-height: calc(100vh - 5.5rem);
           display: flex;
@@ -1032,10 +1006,8 @@ html {
                     html body .wrapper .main .section-blog .section-content .card .card-body .author-info {
                       font-size: 0.7rem; } }
           html body .wrapper .main .section-blog .explore-button-container {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 3rem;
-            padding-top: 3rem;
+            padding-bottom: 1rem;
+            min-height: 100px;
             min-height: 100px; }
             @media (max-width: 426px) {
               html body .wrapper .main .section-blog .explore-button-container {
@@ -1240,10 +1212,8 @@ html {
                     html body .wrapper .main .section-about-us .section-content .card .card-body .author-info {
                       font-size: 0.7rem; } }
           html body .wrapper .main .section-about-us .explore-button-container {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 3rem;
-            padding-top: 3rem;
+            padding-bottom: 1rem;
+            min-height: 100px;
             min-height: 100px; }
             @media (max-width: 426px) {
               html body .wrapper .main .section-about-us .explore-button-container {
@@ -1272,7 +1242,7 @@ html {
                 border-radius: 2rem;
                 color: #ffffff; }
         html body .wrapper .main .section-tech-stack {
-          min-height: calc(100vh - 5.5rem);
+          min-height: calc(100vh - 6rem);
           display: flex;
           flex-direction: column;
           justify-content: space-around;
@@ -1725,10 +1695,8 @@ html {
                     html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info {
                       font-size: 0.7rem; } }
           html body .wrapper .main .section-blog-blog .explore-button-container {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 3rem;
-            padding-top: 3rem;
+            padding-bottom: 1rem;
+            min-height: 100px;
             min-height: 100px; }
             @media (max-width: 426px) {
               html body .wrapper .main .section-blog-blog .explore-button-container {
@@ -2003,8 +1971,22 @@ html {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          padding: 10rem 2rem 2rem 2rem;
-          max-width: 1450px; }
+          padding: 6rem 2rem 2rem 2rem;
+          max-width: 1450px;
+          width: 90%; }
+          @media (max-width: 1440px) {
+            html body .wrapper .main .section-what-we-do {
+              padding: 4rem 2rem 2rem 2rem; } }
+          @media (max-width: 1200px) {
+            html body .wrapper .main .section-what-we-do {
+              padding: 2rem 2rem 2rem 2rem; } }
+          @media (max-width: 800px) {
+            html body .wrapper .main .section-what-we-do {
+              padding: 0rem 1rem 0rem 1rem; } }
+          @media (max-width: 500px) {
+            html body .wrapper .main .section-what-we-do {
+              padding: 0rem 0rem 0rem 0rem;
+              width: 95%; } }
           html body .wrapper .main .section-what-we-do .single-header {
             display: flex;
             flex-direction: column;
@@ -2043,10 +2025,19 @@ html {
                   display: block;
                   border-radius: 2rem;
                   transform: translateY(-10rem); }
+                  @media (max-width: 800px) {
+                    html body .wrapper .main .section-what-we-do .single-header .single-picture .picture-container img {
+                      transform: translateY(-6em); } }
+                  @media (max-width: 500px) {
+                    html body .wrapper .main .section-what-we-do .single-header .single-picture .picture-container img {
+                      transform: translateY(-3em); } }
               html body .wrapper .main .section-what-we-do .single-header .single-picture .title {
                 position: absolute;
                 bottom: 25%;
                 left: 3%; }
+                @media (max-width: 1100px) {
+                  html body .wrapper .main .section-what-we-do .single-header .single-picture .title {
+                    bottom: 30%; } }
                 html body .wrapper .main .section-what-we-do .single-header .single-picture .title span {
                   padding: .5rem 9rem .5rem 2rem;
                   background: #5f369c9a;
@@ -2054,86 +2045,178 @@ html {
                   font-size: 4.5rem;
                   font-weight: bold;
                   border-radius: 2rem; }
+                  @media (max-width: 1100px) {
+                    html body .wrapper .main .section-what-we-do .single-header .single-picture .title span {
+                      font-size: 2.5rem; } }
+                  @media (max-width: 500px) {
+                    html body .wrapper .main .section-what-we-do .single-header .single-picture .title span {
+                      font-size: 1.5rem;
+                      padding: .5rem 1rem .5rem 1rem; } }
           html body .wrapper .main .section-what-we-do .single-content {
             background: white;
             border-radius: 2rem;
             color: black;
             padding: 4rem 0; }
+            @media (max-width: 1100px) {
+              html body .wrapper .main .section-what-we-do .single-content {
+                padding: 1rem 0; } }
             html body .wrapper .main .section-what-we-do .single-content .content-info {
               color: #959595;
               font-size: 1.7rem;
               margin-bottom: 1.5rem; }
             html body .wrapper .main .section-what-we-do .single-content .content-body {
-              margin-bottom: 5rem; }
+              margin-bottom: 3rem; }
               html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row {
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
                 padding-bottom: 3rem; }
+                @media (max-width: 1200px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row {
+                    padding: 0rem 4rem 0rem 4rem;
+                    flex-direction: column-reverse; } }
+                @media (max-width: 800px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row {
+                    padding: 0rem 2rem 0rem 2rem; } }
+                @media (max-width: 500px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row {
+                    padding: 0rem 1rem 0rem 1rem; } }
                 html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text {
                   flex: 1 1 50%;
                   max-width: 50%;
                   padding: 1rem 2rem 1rem 7rem; }
+                  @media (max-width: 1200px) {
+                    html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text {
+                      padding: 0rem;
+                      max-width: 100%; } }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text .text-underline {
                     margin: 0 0 20px 0; }
                     html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text .text-underline h2 {
+                      font-size: 2.2rem;
+                      font-weight: bold;
                       display: inline;
                       background-repeat: no-repeat;
                       background-position: center bottom 12px;
                       background-size: 100% 10px;
                       background-image: linear-gradient(to right, #cfb1fc, #cfb1fc); }
+                      @media (max-width: 500px) {
+                        html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text .text-underline h2 {
+                          font-size: 1.8rem;
+                          background-position: center bottom 9px;
+                          background-size: 100% 8px; } }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text p {
                     margin-bottom: 2.5rem;
                     font-size: 1.4rem; }
+                    @media (max-width: 800px) {
+                      html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .text p {
+                        font-size: 1.2rem; } }
                 html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .image {
                   flex: 1 1 47%;
                   max-width: 47%;
                   height: auto; }
+                  @media (max-width: 1200px) {
+                    html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .image {
+                      max-width: 100%;
+                      margin-bottom: 1rem; } }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .image img {
                     max-height: 30rem;
                     width: 100%;
                     border-radius: 2rem 0rem 0rem 2rem; }
+                    @media (max-width: 1200px) {
+                      html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row .image img {
+                        border-radius: 2rem; } }
               html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 {
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
-                padding-bottom: 3rem; }
+                padding-bottom: 3rem;
+                padding: 0rem 4rem 3rem 4rem; }
+                @media (max-width: 1200px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 {
+                    flex-direction: column;
+                    padding: 0rem 4rem 0rem 4rem; } }
+                @media (max-width: 800px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 {
+                    padding: 0rem 2rem 0rem 2rem; } }
+                @media (max-width: 500px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 {
+                    padding: 0rem 1rem 0rem 1rem; } }
                 html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text {
                   flex: 1 1 50%;
                   max-width: 50%;
                   padding: 1rem 3rem 1rem 2rem; }
+                  @media (max-width: 1200px) {
+                    html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text {
+                      padding: 0rem;
+                      max-width: 100%; } }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text .text-underline {
                     margin: 0 0 20px 0; }
                     html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text .text-underline h2 {
+                      font-size: 2.2rem;
+                      font-weight: bold;
                       display: inline;
                       background-repeat: no-repeat;
                       background-position: center bottom 12px;
                       background-size: 100% 10px;
                       background-image: linear-gradient(to right, #cfb1fc, #cfb1fc); }
+                      @media (max-width: 500px) {
+                        html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text .text-underline h2 {
+                          font-size: 1.8rem;
+                          background-position: center bottom 9px;
+                          background-size: 100% 8px; } }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text p {
                     margin-bottom: 2.5rem;
                     font-size: 1.4rem; }
+                    @media (max-width: 800px) {
+                      html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .text p {
+                        font-size: 1.2rem; } }
                 html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .image {
                   flex: 1 1 47%;
                   max-width: 47%;
                   height: auto; }
+                  @media (max-width: 1200px) {
+                    html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .image {
+                      max-width: 100%;
+                      margin-bottom: 1rem; } }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .image img {
                     max-height: 30rem;
                     width: 100%;
                     border-radius: 0rem 2rem 2rem 0rem; }
+                    @media (max-width: 1200px) {
+                      html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 .image img {
+                        border-radius: 2rem; } }
               html body .wrapper .main .section-what-we-do .single-content .content-body .text-row {
                 padding: 0rem 7rem 3rem 7rem; }
+                @media (max-width: 1200px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .text-row {
+                    padding: 0rem 4rem 0rem 4rem; } }
+                @media (max-width: 800px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .text-row {
+                    padding: 0rem 2rem 0rem 2rem; } }
+                @media (max-width: 500px) {
+                  html body .wrapper .main .section-what-we-do .single-content .content-body .text-row {
+                    padding: 0rem 1rem 0rem 1rem; } }
                 html body .wrapper .main .section-what-we-do .single-content .content-body .text-row .text-underline {
                   margin: 0 0 20px 0; }
                   html body .wrapper .main .section-what-we-do .single-content .content-body .text-row .text-underline h2 {
+                    font-size: 2.2rem;
+                    font-weight: bold;
                     display: inline;
                     background-repeat: no-repeat;
                     background-position: center bottom 12px;
                     background-size: 100% 10px;
                     background-image: linear-gradient(to right, #cfb1fc, #cfb1fc); }
+                    @media (max-width: 500px) {
+                      html body .wrapper .main .section-what-we-do .single-content .content-body .text-row .text-underline h2 {
+                        font-size: 1.8rem;
+                        background-position: center bottom 9px;
+                        background-size: 100% 8px; } }
                 html body .wrapper .main .section-what-we-do .single-content .content-body .text-row p {
                   margin-bottom: 2.5rem;
                   font-size: 1.4rem; }
+                  @media (max-width: 800px) {
+                    html body .wrapper .main .section-what-we-do .single-content .content-body .text-row p {
+                      font-size: 1.2rem; } }
             html body .wrapper .main .section-what-we-do .single-content .comments .comment-field {
               width: 100%;
               min-height: 12rem;

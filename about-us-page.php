@@ -12,22 +12,49 @@ get_header();
             Us</span>
     </div>
     <div class="hero-about-header font-bold w-[88%]">
-        <div class="text we-are">We are</div>
-        <div class="text number">122</div>
+        <div class="text we-are"><?php echo get_theme_mod('about_text_1', 'We are'); ?></div>
+        <div class="text number"><?php echo get_theme_mod('about_number', '122'); ?></div>
         <div class="text vertical">
-            <div>Digital</div>
-            <div>Nerds</div>
+            <div><?php echo get_theme_mod('about_text_2', 'Digital'); ?></div>
+            <div><?php echo get_theme_mod('about_text_3', 'Nerds'); ?></div>
         </div>
 
     </div>
     <div class="hero-about-icons">
-        <div class="about-us-item">
-            <div class="icon-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/product_owner.png" alt="product owner">
+
+        <?php
+        $cards = array();
+        for ($i = 1; $i <= 4; $i++) {
+
+            $cards[] = array(
+                'order' => get_theme_mod("about_page_card_{$i}_order", $i),
+                'image' => get_theme_mod("about_page_card_{$i}_image"),
+                'text' => get_theme_mod("about_page_card_{$i}_text"),
+                'title' => get_theme_mod("about_page_card_{$i}_title"),
+            );
+
+        }
+
+        usort($cards, function ($a, $b) {
+            return $a['order'] - $b['order'];
+        });
+
+        foreach ($cards as $card): ?>
+
+            <div class="about-us-item">
+                <div class="icon-wrapper">
+                    <img src="<?php echo $card['image']; ?>" alt="product owner">
+                </div>
+                <div class="role-name"> <?php echo $card['title']; ?></div>
             </div>
-            <div class="role-name">Product Owner</div>
-        </div>
-        <div class="about-us-item">
+
+
+        <?php endforeach; ?>
+
+
+
+
+        <!-- <div class="about-us-item">
             <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/ux_designer.png" alt="product owner">
             </div>
@@ -44,7 +71,7 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/images/developer.png" alt="product owner">
             </div>
             <div class="role-name">Developer</div>
-        </div>
+        </div> -->
     </div>
 </section>
 <section class="section-content-about">

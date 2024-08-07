@@ -341,10 +341,9 @@ video {
   line-height: 1;
   font-weight: 700;
 }
- h2{
-  font-size: 2rem;
-  font-weight: 700;
-}
+ /*  h2 {*/
+ /*      @apply text-[2rem] font-bold;*/
+ /*  }*/
  h3{
   font-size: 2.25rem;
   line-height: 2.5rem;

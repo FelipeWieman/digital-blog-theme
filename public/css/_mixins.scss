@@ -216,10 +216,9 @@
 }
 
 @mixin explore-button-container($button-bg, $button-color, $button-hover-bg, $button-hover-color) {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding-bottom: 1rem;
+    min-height: 100px;
+
     min-height: 100px;
 
     @media (max-width: 426px) {

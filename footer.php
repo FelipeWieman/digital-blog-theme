@@ -75,14 +75,14 @@
 					<a href="/jobs">Jobs</a>
 				</nav>
 				<div class="footer-social">
-					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png"
-							alt="LinkedIn"></a>
-					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/instagram.png"
-							alt="Instagram"></a>
-					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png"
-							alt="Twitter"></a>
-					<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png"
-							alt="YouTube"></a>
+					<a href="https://linkedin.com/company/interhypgruppe"><img
+							src="<?php echo get_template_directory_uri(); ?>/images/linkedin.png" alt="LinkedIn"></a>
+					<a href="https://www.instagram.com/interhypofficial"><img
+							src="<?php echo get_template_directory_uri(); ?>/images/instagram.png" alt="Instagram"></a>
+					<!-- <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/twitter.png"
+							alt="Twitter"></a> -->
+					<a href="https://www.youtube.com/@InterhypAG"><img
+							src="<?php echo get_template_directory_uri(); ?>/images/youtube.png" alt="YouTube"></a>
 				</div>
 			</div>
 		</div>
@@ -94,7 +94,8 @@
 				informieren, persönliche Beratung zur optimalen Baufinanzierung und
 				Modernisierungsfinanzierung
 			</p>
-			<div class="info-links"><a href=" #">Impressum</a> <a href="#">Datenschutz</a>
+			<div class="info-links"><a href=" https://www.interhyp.de/impressum/">Impressum</a> <a
+					href="https://www.interhyp.de/ueber-interhyp/datenschutz/">Datenschutz</a>
 				<a href="#">Cookie-Einstellungen
 					ändern</a>
 			</div>

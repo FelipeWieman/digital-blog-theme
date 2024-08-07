@@ -9,63 +9,72 @@ get_header(); ?>
         <?php echo get_theme_mod('slogan_text', 'Our space for technology 👾, design 🎨 and innovation 🚀.'); ?>
     </div>
     <div class="hero-cards-container">
-        <div class="card group " style="background-color:<?php echo get_theme_mod('main_color_1', '#ffe005'); ?>">
-            <div class="card-content">
-                <div class="card-top">
-                    <div class="card-name text-black"><span><?php echo get_theme_mod('card_1_title', 'Blog'); ?></span>
+        <a href="/blog">
+            <div class="card  " style="background-color:<?php echo get_theme_mod('main_color_1', '#ffe005'); ?>">
+                <div class="card-content">
+                    <div class="card-top">
+                        <div class="card-name text-black">
+                            <span><?php echo get_theme_mod('card_1_title', 'Blog'); ?></span>
+                        </div>
+                        <div class="card-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
+                                </g>
+                            </svg></div>
                     </div>
-                    <div class="card-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
-                            </g>
-                        </svg></div>
-                </div>
-                <div class="card-bottom">
-                    <div class="bottom-text text-black">Number of Posts</div>
-                    <div class="bottom-number text-black"><?php echo wp_count_posts('post')->publish; ?></div>
+                    <div class="card-bottom">
+                        <div class="bottom-text text-black">Number of Posts</div>
+                        <div class="bottom-number text-black"><?php echo wp_count_posts('post')->publish; ?></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card  " style="background-color:<?php echo get_theme_mod('main_color_2', '#5f369c'); ?>">
-            <div class="card-content">
-                <div class="card-top">
-                    <div class="card-name"><span><?php echo get_theme_mod('card_2_title', 'About Us'); ?></span></div>
-                    <div class="card-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z"
-                                    fill="white" />
-                            </g>
-                        </svg></div>
-                </div>
-                <div class="card-bottom ">
-                    <div class="bottom-text">Number of Digital Nerds</div>
-                    <div class="bottom-number"><?php echo get_theme_mod('card_2_count', '122'); ?></div>
-                </div>
-            </div>
-        </div>
-        <div class="card  " style="background-color:<?php echo get_theme_mod('main_color_3', '#d63798'); ?>">
-            <div class="card-content">
-                <div class="card-top">
-                    <div class="card-name"><span><?php echo get_theme_mod('card_3_title', 'Tech Stack'); ?></span></div>
-                    <div class="card-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z"
-                                    fill="white" />
-                            </g>
-                        </svg></div>
-                </div>
-                <div class="card-bottom ">
-                    <div class="bottom-text">Number of Frameworks</div>
-                    <div class="bottom-number">33</div>
+        </a>
+        <a href="/about-us">
+            <div class="card  " style="background-color:<?php echo get_theme_mod('main_color_2', '#5f369c'); ?>">
+                <div class="card-content">
+                    <div class="card-top">
+                        <div class="card-name"><span><?php echo get_theme_mod('card_2_title', 'About Us'); ?></span>
+                        </div>
+                        <div class="card-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z"
+                                        fill="white" />
+                                </g>
+                            </svg></div>
+                    </div>
+                    <div class="card-bottom ">
+                        <div class="bottom-text">Number of Digital Nerds</div>
+                        <div class="bottom-number"><?php echo get_theme_mod('card_2_count', '122'); ?></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
+        <a href="#tech-anchor">
+            <div class="card  " style="background-color:<?php echo get_theme_mod('main_color_3', '#d63798'); ?>">
+                <div class="card-content">
+                    <div class="card-top">
+                        <div class="card-name"><span><?php echo get_theme_mod('card_3_title', 'Tech Stack'); ?></span>
+                        </div>
+                        <div class="card-arrow"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z"
+                                        fill="white" />
+                                </g>
+                            </svg></div>
+                    </div>
+                    <div class="card-bottom ">
+                        <div class="bottom-text">Number of Frameworks</div>
+                        <div class="bottom-number">33</div>
+                    </div>
+                </div>
+            </div>
+        </a>
 
     </div>
 
@@ -198,17 +207,7 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                     <p><?php echo $card['text']; ?></p>
 
                     <div class="author-info flex">
-                        <div class="author-left">
-                        </div>
-                        <div class="author-right flex w-[2rem] hover:scale-[1.3] transition-all cursor-pointer">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <g>
-                                    <path d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
-                                </g>
-                            </svg>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -221,8 +220,9 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                 class="explore-button"><?php echo get_theme_mod('about_us_button_text', 'More about us'); ?></button></a>
     </div>
 </section>
-
-<section id="tech_stack" class="section-tech-stack rounded-[2rem]"
+<p id="tech-anchor" style="
+    font-size: 0;">.</p>
+<section id=" tech_stack" class="section-tech-stack rounded-[2rem]"
     style="background-color:<?php echo get_theme_mod('main_color_3', '#d63798'); ?>">
     <div class="section-header">
         <div class="section-header-left">
@@ -254,12 +254,7 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
 
 
     </div>
-    <div class="explore-button-container">
-        <a href="<?php echo get_theme_mod('tech_stack_button_url', '/about'); ?>">
-            <button
-                class="explore-button"><?php echo get_theme_mod('tech_stack_button_text', 'How we code'); ?></button>
-        </a>
-    </div>
+
 </section>
 
 <?php get_footer();

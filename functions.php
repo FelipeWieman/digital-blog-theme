@@ -60,7 +60,23 @@ add_filter('body_class', 'add_custom_body_class');
 
 
 
-
+function custom_scroll_script()
+{
+	?>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			window.addEventListener('scroll', function () {
+				if (window.scrollY > 100) {
+					document.body.classList.add('scroll');
+				} else {
+					document.body.classList.remove('scroll');
+				}
+			});
+		});
+	</script>
+	<?php
+}
+add_action('wp_footer', 'custom_scroll_script');
 
 
 function blog_theme_customizer($wp_customize)
@@ -86,6 +102,18 @@ function blog_theme_customizer($wp_customize)
 			'title' => __('BLog  Page', 'blog-theme'),
 			'description' => __('Settings for the blog  page of the theme.', 'blog-theme'),
 			'priority' => 12, // panel priority
+		)
+	);
+
+	//ABOUT US PAGE
+	//ABOUT US PAGE
+
+	$wp_customize->add_panel(
+		'about_page_panel',
+		array(
+			'title' => __('About us page', 'blog-theme'),
+			'description' => __('Settings for the ABOUT US page of the theme.', 'blog-theme'),
+			'priority' => 13, // panel priority
 		)
 	);
 
@@ -806,6 +834,168 @@ function blog_theme_customizer($wp_customize)
 			'type' => 'number',
 		)
 	);
+
+
+
+	$wp_customize->add_section(
+		'big_text_section',
+		array(
+			'title' => __('Big text section', 'blog-theme'),
+			'panel' => 'about_page_panel',
+			'priority' => 30,
+		)
+	);
+
+	// Settings for number 
+	$wp_customize->add_setting(
+		'about_number',
+		array(
+			'default' => __('122', 'blog-theme'),
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_number',
+		array(
+			'label' => __('Number', 'blog-theme'),
+			'section' => 'big_text_section',
+			'type' => 'number',
+			'priority' => 10,
+		)
+	);
+
+	// Settings for text1
+	$wp_customize->add_setting(
+		'about_text_1',
+		array(
+			'default' => __('We are', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_text_1',
+		array(
+			'label' => __('We are', 'blog-theme'),
+			'section' => 'big_text_section',
+			'type' => 'text',
+			'priority' => 9,
+		)
+	);
+
+	// Settings for DIGITAL
+	$wp_customize->add_setting(
+		'about_text_2',
+		array(
+			'default' => __('Digital', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_text_2',
+		array(
+			'label' => __('Digital', 'blog-theme'),
+			'section' => 'big_text_section',
+			'type' => 'text',
+			'priority' => 11,
+		)
+	);
+	// Settings for NERDS
+	$wp_customize->add_setting(
+		'about_text_3',
+		array(
+			'default' => __('Nerds', 'blog-theme'),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		'about_text_3',
+		array(
+			'label' => __('Nerds', 'blog-theme'),
+			'section' => 'big_text_section',
+			'type' => 'text',
+			'priority' => 12,
+		)
+	);
+
+	//SECTION WITH CARDS
+	$wp_customize->add_section(
+		'about_cards',
+		array(
+			'title' => __('Role Cards', 'blog-theme'),
+			'panel' => 'about_page_panel',
+			'priority' => 30,
+		)
+	);
+
+	// SETTINGS FOR ROLE CARDS
+	for ($i = 1; $i <= 4; $i++) {
+
+
+
+		// Card title
+		$wp_customize->add_setting(
+			"about_page_card_{$i}_title",
+			array(
+				'default' => '',
+				'sanitize_callback' => 'wp_kses_post',
+			)
+		);
+
+		$wp_customize->add_control(
+			"about_page_card_{$i}_title",
+			array(
+				'label' => __("Card {$i} Title", 'blog-theme'),
+				'section' => 'about_cards',
+				'type' => 'textarea',
+			)
+		);
+
+
+
+		// Card Image
+		$wp_customize->add_setting("about_page_card_{$i}_image");
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				"about_page_card_{$i}_image",
+				array(
+					'label' => __("Card {$i} Image", 'blog-theme'),
+					'section' => 'about_cards',
+				)
+			)
+		);
+
+
+		// Cards order
+		$wp_customize->add_setting(
+			"about_page_card_{$i}_order",
+			array(
+				'default' => $i,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			"about_page_card_{$i}_order",
+			array(
+				'label' => __("Card {$i} Order", 'blog-theme'),
+				'section' => 'about_cards',
+				'type' => 'select',
+				'choices' => array(
+					1 => __('1', 'blog-theme'),
+					2 => __('2', 'blog-theme'),
+					3 => __('3', 'blog-theme'),
+					4 => __('4', 'blog-theme'),
+
+				),
+			)
+		);
+	}
 }
 
 add_action('customize_register', 'blog_theme_customizer');
