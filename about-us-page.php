@@ -54,30 +54,64 @@ get_header();
 
 
 
-        <!-- <div class="about-us-item">
-            <div class="icon-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/ux_designer.png" alt="product owner">
-            </div>
-            <div class="role-name">UX-Designer</div>
-        </div>
-        <div class="about-us-item">
-            <div class="icon-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/service_designer.png" alt="product owner">
-            </div>
-            <div class="role-name">Service Designer</div>
-        </div>
-        <div class="about-us-item">
-            <div class="icon-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/developer.png" alt="product owner">
-            </div>
-            <div class="role-name">Developer</div>
-        </div> -->
+
     </div>
 </section>
 <section class="section-content-about">
-    <div class="content-about-header">Lorem Ipsum</div>
+    <div class="content-about-header"></div>
     <div class="content-about-main">
-        <div class="main-item-a">
+
+        <div class="main-content">
+            <?php
+
+            $about_query = new WP_Query(
+                array(
+                    'post_type' => 'about',
+                    'posts_per_page' => -1,
+                )
+            );
+
+
+            if ($about_query->have_posts()):
+                $index = 0;
+
+                while ($about_query->have_posts()):
+                    $about_query->the_post();
+                    // Setting element class
+                    $class = ($index % 2 == 0) ? 'main-item-a' : 'main-item-b';
+                    ?>
+                    <div class="<?php echo $class; ?>">
+                        <?php if ($class == 'main-item-a'): ?>
+                            <div class="item-image-wrapper">
+                                <?php if (has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail(); ?>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="item-body">
+                            <div class="item-header"><?php the_title(); ?></div>
+                            <div class="item-text"><?php the_content(); ?></div>
+                            <div class="item-button"><a href="<?php the_permalink(); ?>"><span>Mehr erfahren</span></a></div>
+                        </div>
+                        <?php if ($class == 'main-item-b'): ?>
+                            <div class="item-image-wrapper">
+                                <?php if (has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail(); ?>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php
+                    $index++;
+                endwhile;
+
+                wp_reset_postdata();
+            else:
+                echo '<p>No posts found.</p>';
+            endif;
+            ?>
+        </div>
+        <!-- <div class="main-item-a">
             <div class="item-image-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/was_machen_wir.png" alt="">
             </div>
@@ -132,7 +166,7 @@ get_header();
             <div class="item-image-wrapper"> <img
                     src="<?php echo get_template_directory_uri(); ?>/images/agile_arbeitsweise.png" alt=""></div>
 
-        </div>
+        </div> -->
     </div>
 </section>
 

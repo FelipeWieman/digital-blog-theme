@@ -2056,7 +2056,7 @@ html {
             background: white;
             border-radius: 2rem;
             color: black;
-            padding: 4rem 0; }
+            padding: 1rem 0; }
             @media (max-width: 1100px) {
               html body .wrapper .main .section-what-we-do .single-content {
                 padding: 1rem 0; } }
@@ -2130,7 +2130,7 @@ html {
                 justify-content: space-between;
                 width: 100%;
                 padding-bottom: 3rem;
-                padding: 0rem 4rem 3rem 4rem; }
+                padding: 0rem 4rem 3rem 0rem; }
                 @media (max-width: 1200px) {
                   html body .wrapper .main .section-what-we-do .single-content .content-body .flex-row-2 {
                     flex-direction: column;

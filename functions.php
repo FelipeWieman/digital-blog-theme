@@ -1040,68 +1040,152 @@ function create_tech_stack_cards_post_type()
 }
 add_action('init', 'create_tech_stack_cards_post_type');
 
-
-function blog_theme_load_more_posts()
+function register_about_post_type()
 {
-	// Получаем номер следующей страницы из POST-запроса
-	$paged = $_POST['paged'] + 1;
-
-	// Настройка параметров запроса
-	$args = array(
-		'post_type' => 'post',
-		'posts_per_page' => 4, // Количество постов на одной странице
-		'paged' => $paged
+	$labels = array(
+		'name' => 'About Posts',
+		'singular_name' => 'About Post',
+		'menu_name' => 'About Posts',
+		'name_admin_bar' => 'About Post',
+		'add_new' => 'Add New',
+		'add_new_item' => 'Add New About Post',
+		'new_item' => 'New About Post',
+		'edit_item' => 'Edit About Post',
+		'view_item' => 'View About Post',
+		'all_items' => 'All About Posts',
+		'search_items' => 'Search About Posts',
+		'parent_item_colon' => 'Parent About Posts:',
+		'not_found' => 'No about posts found.',
+		'not_found_in_trash' => 'No about posts found in Trash.'
 	);
 
-	// Выполнение запроса
-	$query = new WP_Query($args);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'about'),
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'hierarchical' => false,
+		'menu_position' => null,
+		'supports' => array('title', 'editor', 'thumbnail'),
+	);
 
-	// Если есть посты, выводим их
-	if ($query->have_posts()):
-		while ($query->have_posts()):
-			$query->the_post(); ?>
-			<div class="card">
-				<?php if (has_post_thumbnail()): ?>
-					<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-				<?php else: ?>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/post_picture_fallback.png" alt="<?php the_title(); ?>">
-				<?php endif; ?>
-				<div class="card-body">
-					<div class="card-top">
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<?php the_excerpt(); ?>
-					</div>
-					<div class="author-info flex">
-						<div class="author-left">
-							<div class="font-bold"><span><?php the_author(); ?></span> •</div>
-							<div><span><?php echo get_the_date(); ?></span> • &bull; <span><?php comments_number(); ?></span></div>
-						</div>
-						<a href="<?php the_permalink(); ?>">
-							<div class="author-right flex w-[2rem] hover:scale-[1.3] transition-all cursor-pointer">
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0h24v24H0z" fill="none" />
-										<path
-											d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
-									</g>
-								</svg>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		<?php endwhile;
-		wp_reset_postdata();
-	else:
-		echo 'no_more_posts';
-	endif;
+	register_post_type('about', $args);
+}
+add_action('init', 'register_about_post_type');
 
-	wp_die(); // Завершение выполнения скрипта
+function add_about_meta_boxes()
+{
+	add_meta_box(
+		'about_meta_box',
+		'Additional Information',
+		'about_meta_box_callback',
+		'about',
+		'normal',
+		'high'
+	);
+}
+add_action('add_meta_boxes', 'add_about_meta_boxes');
+
+function about_meta_box_callback($post)
+{
+	wp_nonce_field('save_about_meta_box_data', 'about_meta_box_nonce');
+
+	$fields = array(
+		'title1' => "Title 1",
+		'text1' => 'Text Block 1',
+		'title2' => 'Title 2',
+		'text2' => 'Text Block 2',
+		'image2' => 'Image 2',
+		'title3' => 'Title 3',
+		'text3' => 'Text Block 3',
+		'image3' => 'Image 3',
+		'text4' => 'Text Block 4'
+	);
+
+	foreach ($fields as $field => $label) {
+		$value = get_post_meta($post->ID, "_about_$field", true);
+		echo '<p>';
+		echo '<label for="about_' . $field . '">' . $label . '</label>';
+		if (strpos($field, 'text') !== false) {
+			wp_editor(
+				$value,
+				'about_' . $field,
+				array(
+					'textarea_name' => 'about_' . $field,
+					'media_buttons' => true,
+					'textarea_rows' => 5,
+					'teeny' => false,
+					'tinymce' => true,
+				)
+			);
+		} elseif (strpos($field, 'title') !== false) {
+			echo '<input type="text" id="about_' . $field . '" name="about_' . $field . '" value="' . esc_attr($value) . '" size="50" />';
+		} elseif (strpos($field, 'image') !== false) {
+			echo '<input type="text" id="about_' . $field . '" name="about_' . $field . '" value="' . esc_attr($value) . '" size="50" />';
+			echo '<input type="button" class="button upload_image_button" value="Upload Image" />';
+		}
+		echo '</p>';
+	}
 }
 
-// Регистрация AJAX-действий для авторизованных и неавторизованных пользователей
-add_action('wp_ajax_load_more_posts', 'blog_theme_load_more_posts');
-add_action('wp_ajax_nopriv_load_more_posts', 'blog_theme_load_more_posts');
+function save_about_meta_box_data($post_id)
+{
+	if (!isset($_POST['about_meta_box_nonce']) || !wp_verify_nonce($_POST['about_meta_box_nonce'], 'save_about_meta_box_data')) {
+		return;
+	}
+
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
+
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
+
+	$fields = array('title1', 'text1', 'title2', 'text2', 'image2', 'title3', 'text3', 'image3', 'text4');
+
+	foreach ($fields as $field) {
+		if (isset($_POST["about_$field"])) {
+			if (strpos($field, 'text') !== false) {
+				$value = wp_kses_post($_POST["about_$field"]); // Очищаем данные WYSIWYG редактора
+			} else {
+				$value = sanitize_text_field($_POST["about_$field"]);
+			}
+			update_post_meta($post_id, "_about_$field", $value);
+		}
+	}
+}
+add_action('save_post', 'save_about_meta_box_data');
+
+
+function load_wp_media_files()
+{
+	wp_enqueue_media();
+	wp_enqueue_script('meta-box-image', get_template_directory_uri() . '/js/meta-box-image.js', array('jquery'));
+}
+add_action('admin_enqueue_scripts', 'load_wp_media_files');
+
+
+
+
+function add_custom_message_above_editor()
+{
+	global $post_type;
+
+	// post type - only "about"
+	if ($post_type == 'about') {
+		echo '<div class="custom-editor-message" style="font-size: 2rem; margin-bottom: 10px; padding: 10px; background-color: #f1f1f1; border-left: 4px solid #0073aa;">
+                <p style="font-size: 1.5rem;"><strong>Note:</strong> Use main field to enter the short content for the post. This text will appear on the "About us" page.</p>
+              </div>';
+	}
+}
+add_action('edit_form_after_title', 'add_custom_message_above_editor');
+
 
 
 
