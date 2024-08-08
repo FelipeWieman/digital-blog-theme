@@ -1833,7 +1833,8 @@ html {
             background: white;
             border-radius: 2rem;
             color: black;
-            padding: 3rem 17rem; }
+            padding: 3rem 17rem;
+            width: 100%; }
             @media (max-width: 1400px) {
               html body .wrapper .main .section-single .single-content {
                 padding: 3rem 14rem; } }
