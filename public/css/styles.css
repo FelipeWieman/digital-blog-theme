@@ -27,6 +27,14 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   font-weight: bold;
   font-style: normal; }
 
+@keyframes slideInDiagonal {
+  from {
+    opacity: 0;
+    transform: translate(100%, 100%); }
+  to {
+    opacity: 1;
+    transform: translate(0, 0); } }
+
 html {
   height: 100%;
   position: relative;
@@ -550,6 +558,11 @@ html {
           display: flex;
           flex-direction: column;
           justify-content: space-around; }
+          html body .wrapper .main .section-hero.animated {
+            animation-duration: 0.3s;
+            animation-fill-mode: both; }
+          html body .wrapper .main .section-hero.slide-in-diagonal {
+            animation-name: slideInDiagonal; }
           @media (max-width: 1000px) {
             html body .wrapper .main .section-hero {
               width: 97%; } }
@@ -977,13 +990,22 @@ html {
                 flex-direction: column;
                 justify-content: space-between;
                 flex-grow: 1; }
+                html body .wrapper .main .section-blog .section-content .card .card-body h2 {
+                  font-size: 1.5rem;
+                  margin-bottom: 0.5rem;
+                  line-height: 1.8rem;
+                  font-weight: bold; }
+                  @media (max-width: 1440px) {
+                    html body .wrapper .main .section-blog .section-content .card .card-body h2 {
+                      font-size: 1.4rem; } }
                 @media (max-width: 1440px) {
                   html body .wrapper .main .section-blog .section-content .card .card-body {
                     padding: 1.3rem; } }
                 html body .wrapper .main .section-blog .section-content .card .card-body .card-top h2 {
                   font-size: 1.5rem;
                   margin-bottom: 0.5rem;
-                  line-height: 1.8rem; }
+                  line-height: 1.8rem;
+                  font-weight: bold; }
                   @media (max-width: 1440px) {
                     html body .wrapper .main .section-blog .section-content .card .card-body .card-top h2 {
                       font-size: 1.4rem; } }
@@ -1183,13 +1205,22 @@ html {
                 flex-direction: column;
                 justify-content: space-between;
                 flex-grow: 1; }
+                html body .wrapper .main .section-about-us .section-content .card .card-body h2 {
+                  font-size: 1.5rem;
+                  margin-bottom: 0.5rem;
+                  line-height: 1.8rem;
+                  font-weight: bold; }
+                  @media (max-width: 1440px) {
+                    html body .wrapper .main .section-about-us .section-content .card .card-body h2 {
+                      font-size: 1.4rem; } }
                 @media (max-width: 1440px) {
                   html body .wrapper .main .section-about-us .section-content .card .card-body {
                     padding: 1.3rem; } }
                 html body .wrapper .main .section-about-us .section-content .card .card-body .card-top h2 {
                   font-size: 1.5rem;
                   margin-bottom: 0.5rem;
-                  line-height: 1.8rem; }
+                  line-height: 1.8rem;
+                  font-weight: bold; }
                   @media (max-width: 1440px) {
                     html body .wrapper .main .section-about-us .section-content .card .card-body .card-top h2 {
                       font-size: 1.4rem; } }
@@ -1457,6 +1488,11 @@ html {
           max-width: 1750px;
           width: 100%;
           position: relative; }
+          html body .wrapper .main .section-hero-blog.animated {
+            animation-duration: 0.3s;
+            animation-fill-mode: both; }
+          html body .wrapper .main .section-hero-blog.slide-in-diagonal {
+            animation-name: slideInDiagonal; }
           @media (max-width: 960px) {
             html body .wrapper .main .section-hero-blog {
               padding: 3rem 2rem 1rem 2rem;
@@ -1666,13 +1702,22 @@ html {
                 flex-direction: column;
                 justify-content: space-between;
                 flex-grow: 1; }
+                html body .wrapper .main .section-blog-blog .blog-grid .card .card-body h2 {
+                  font-size: 1.5rem;
+                  margin-bottom: 0.5rem;
+                  line-height: 1.8rem;
+                  font-weight: bold; }
+                  @media (max-width: 1440px) {
+                    html body .wrapper .main .section-blog-blog .blog-grid .card .card-body h2 {
+                      font-size: 1.4rem; } }
                 @media (max-width: 1440px) {
                   html body .wrapper .main .section-blog-blog .blog-grid .card .card-body {
                     padding: 1.3rem; } }
                 html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .card-top h2 {
                   font-size: 1.5rem;
                   margin-bottom: 0.5rem;
-                  line-height: 1.8rem; }
+                  line-height: 1.8rem;
+                  font-weight: bold; }
                   @media (max-width: 1440px) {
                     html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .card-top h2 {
                       font-size: 1.4rem; } }
@@ -2234,6 +2279,11 @@ html {
           max-width: 1400px;
           width: 100%;
           z-index: 1; }
+          html body .wrapper .main .section-hero-about.animated {
+            animation-duration: 0.3s;
+            animation-fill-mode: both; }
+          html body .wrapper .main .section-hero-about.slide-in-diagonal {
+            animation-name: slideInDiagonal; }
           @media (max-width: 1330px) {
             html body .wrapper .main .section-hero-about {
               padding: 6rem 2rem 2rem 2rem; } }

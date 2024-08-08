@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<section class="section-hero-about ">
+<section class="section-hero-about animated slide-in-diagonal">
     <div class="blog-label  mb-[1rem] ">
         <span>About
             Us</span>

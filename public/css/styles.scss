@@ -35,6 +35,19 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 
 
+@keyframes slideInDiagonal {
+    from {
+        opacity: 0;
+        transform: translate(100%, 100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
 
 
 html {
@@ -946,6 +959,15 @@ html {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
+
+                    &.animated {
+                        animation-duration: 0.3s;
+                        animation-fill-mode: both;
+                    }
+
+                    &.slide-in-diagonal {
+                        animation-name: slideInDiagonal;
+                    }
 
                     @media (max-width:1000px) {
                         width: 97%;
@@ -1920,6 +1942,16 @@ html {
                     position: relative;
 
 
+
+
+                    &.animated {
+                        animation-duration: 0.3s;
+                        animation-fill-mode: both;
+                    }
+
+                    &.slide-in-diagonal {
+                        animation-name: slideInDiagonal;
+                    }
 
 
 
@@ -2963,6 +2995,15 @@ html {
                     max-width: 1400px;
                     width: 100%;
                     z-index: 1;
+
+                    &.animated {
+                        animation-duration: 0.3s;
+                        animation-fill-mode: both;
+                    }
+
+                    &.slide-in-diagonal {
+                        animation-name: slideInDiagonal;
+                    }
 
                     @media (max-width:1330px) {
                         padding: 6rem 2rem 2rem 2rem;

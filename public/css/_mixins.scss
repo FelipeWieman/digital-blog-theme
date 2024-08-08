@@ -139,6 +139,17 @@
         justify-content: space-between;
         flex-grow: 1;
 
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.8rem;
+            font-weight: bold;
+
+            @media (max-width: 1440px) {
+                font-size: 1.4rem;
+            }
+        }
+
         @media (max-width: 1440px) {
             padding: 1.3rem;
         }
@@ -148,6 +159,7 @@
                 font-size: 1.5rem;
                 margin-bottom: 0.5rem;
                 line-height: 1.8rem;
+                font-weight: bold;
 
                 @media (max-width: 1440px) {
                     font-size: 1.4rem;

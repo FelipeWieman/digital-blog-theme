@@ -12,7 +12,7 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
-add_filter('show_admin_bar', '__return_true');
+add_filter('show_admin_bar', '__return_false');
 function custom_excerpt_length($length)
 {
 	return 30; // Замените 20 на нужное вам количество слов

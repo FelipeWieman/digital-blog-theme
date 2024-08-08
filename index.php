@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<section class="section-hero-blog">
+<section class="section-hero-blog animated slide-in-diagonal">
 	<div class="blog-label">
 		<span>Blog</span>
 	</div>

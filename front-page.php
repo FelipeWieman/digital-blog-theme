@@ -4,7 +4,7 @@ Template Name: Front Page
 */
 get_header(); ?>
 
-<section id="hero" class="section-hero">
+<section id="hero" class="section-hero animated slide-in-diagonal">
     <div class="hero-text">
         <?php echo get_theme_mod('slogan_text', 'Our space for technology 👾, design 🎨 and innovation 🚀.'); ?>
     </div>
