@@ -90,7 +90,13 @@ get_header();
                         <?php endif; ?>
                         <div class="item-body">
                             <div class="item-header"><?php the_title(); ?></div>
-                            <div class="item-text"><?php the_content(); ?></div>
+                            <div class="item-text">
+                                <?php
+                                $content = get_the_content();
+                                $trimmed_content = wp_trim_words($content, 30, '...'); // 20 - количество слов, '...' - символы, добавляемые в конце
+                                echo $trimmed_content;
+                                ?>
+                            </div>
                             <div class="item-button"><a href="<?php the_permalink(); ?>"><span>Mehr erfahren</span></a></div>
                         </div>
                         <?php if ($class == 'main-item-b'): ?>

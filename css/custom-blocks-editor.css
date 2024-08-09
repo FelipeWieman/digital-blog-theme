@@ -1,0 +1,28 @@
+/* custom-blocks-editor.css */
+
+.wp-block .flex-row,
+.wp-block .flex-row-2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.wp-block .flex-row .image img,
+.wp-block .flex-row-2 .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-block .flex-row .text,
+.wp-block .flex-row-2 .text {
+    flex: 1;
+    padding: 10px;
+}
+
+.wp-block .flex-row .image,
+.wp-block .flex-row-2 .image {
+    flex: 1;
+    max-width: 50%;
+    padding: 10px;
+}

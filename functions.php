@@ -12,7 +12,7 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
-add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_true');
 function custom_excerpt_length($length)
 {
 	return 30; // Замените 20 на нужное вам количество слов
@@ -1071,96 +1071,42 @@ function register_about_post_type()
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => null,
-		'supports' => array('title', 'editor', 'thumbnail'),
+		'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'custom-fields'),
+		'show_in_rest' => true,
 	);
 
 	register_post_type('about', $args);
 }
 add_action('init', 'register_about_post_type');
 
-function add_about_meta_boxes()
-{
-	add_meta_box(
-		'about_meta_box',
-		'Additional Information',
-		'about_meta_box_callback',
-		'about',
-		'normal',
-		'high'
-	);
-}
-add_action('add_meta_boxes', 'add_about_meta_boxes');
 
-function about_meta_box_callback($post)
-{
-	wp_nonce_field('save_about_meta_box_data', 'about_meta_box_nonce');
 
-	$fields = array(
-		'title1' => "Title 1",
-		'text1' => 'Text Block 1',
-		'title2' => 'Title 2',
-		'text2' => 'Text Block 2',
-		'image2' => 'Image 2',
-		'title3' => 'Title 3',
-		'text3' => 'Text Block 3',
-		'image3' => 'Image 3',
-		'text4' => 'Text Block 4'
+function custom_blocks_enqueue_assets()
+{
+	// Подключение JS файла блока
+	wp_enqueue_script(
+		'custom-blocks',
+		get_template_directory_uri() . '/js/custom-blocks.js',
+		array('wp-blocks', 'wp-element', 'wp-editor', 'wp-components'),
+		filemtime(get_template_directory() . '/js/custom-blocks.js')
 	);
 
-	foreach ($fields as $field => $label) {
-		$value = get_post_meta($post->ID, "_about_$field", true);
-		echo '<p>';
-		echo '<label for="about_' . $field . '">' . $label . '</label>';
-		if (strpos($field, 'text') !== false) {
-			wp_editor(
-				$value,
-				'about_' . $field,
-				array(
-					'textarea_name' => 'about_' . $field,
-					'media_buttons' => true,
-					'textarea_rows' => 5,
-					'teeny' => false,
-					'tinymce' => true,
-				)
-			);
-		} elseif (strpos($field, 'title') !== false) {
-			echo '<input type="text" id="about_' . $field . '" name="about_' . $field . '" value="' . esc_attr($value) . '" size="50" />';
-		} elseif (strpos($field, 'image') !== false) {
-			echo '<input type="text" id="about_' . $field . '" name="about_' . $field . '" value="' . esc_attr($value) . '" size="50" />';
-			echo '<input type="button" class="button upload_image_button" value="Upload Image" />';
-		}
-		echo '</p>';
-	}
+	// Подключение CSS файла блока
+	wp_enqueue_style(
+		'custom-blocks-style',
+		get_template_directory_uri() . '/css/custom-blocks-editor.css',
+		array(),
+		filemtime(get_template_directory() . '/css/custom-blocks-editor.css')
+	);
 }
 
-function save_about_meta_box_data($post_id)
-{
-	if (!isset($_POST['about_meta_box_nonce']) || !wp_verify_nonce($_POST['about_meta_box_nonce'], 'save_about_meta_box_data')) {
-		return;
-	}
+add_action('enqueue_block_editor_assets', 'custom_blocks_enqueue_assets');
 
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-		return;
-	}
 
-	if (!current_user_can('edit_post', $post_id)) {
-		return;
-	}
 
-	$fields = array('title1', 'text1', 'title2', 'text2', 'image2', 'title3', 'text3', 'image3', 'text4');
 
-	foreach ($fields as $field) {
-		if (isset($_POST["about_$field"])) {
-			if (strpos($field, 'text') !== false) {
-				$value = wp_kses_post($_POST["about_$field"]); // Очищаем данные WYSIWYG редактора
-			} else {
-				$value = sanitize_text_field($_POST["about_$field"]);
-			}
-			update_post_meta($post_id, "_about_$field", $value);
-		}
-	}
-}
-add_action('save_post', 'save_about_meta_box_data');
+
+
 
 
 function load_wp_media_files()
