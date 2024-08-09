@@ -131,7 +131,7 @@ function blog_theme_customizer($wp_customize)
 	$wp_customize->add_setting(
 		'header_text',
 		array(
-			'default' => __('FOR DIGITAL NERDS', 'blog-theme'),
+			'default' => __('FOR DIGITAL NERDS!!!', 'blog-theme'),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -1136,20 +1136,6 @@ add_action('edit_form_after_title', 'add_custom_message_above_editor');
 
 
 
-function blog_theme_enqueue_scripts()
-{
-	wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array(), null, true);
-
-	wp_localize_script(
-		'load-more',
-		'load_more_params',
-		array(
-			'ajaxurl' => admin_url('admin-ajax.php'),
-			'paged' => 1
-		)
-	);
-}
-add_action('wp_enqueue_scripts', 'blog_theme_enqueue_scripts');
 
 
 
