@@ -11,19 +11,19 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 */
 @font-face {
   font-family: 'TT Norms Pro';
-  src: url("/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-Normal.otf") format("opentype");
+  src: url("/wp-content/themes/digital-blog-theme/fonts/TT-Norms-Pro-Normal.otf") format("opentype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'TT Norms Pro';
-  src: url("/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-DemiBold.otf") format("opentype");
+  src: url("/wp-content/themes/digital-blog-theme/fonts/TT-Norms-Pro-DemiBold.otf") format("opentype");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: 'TT Norms Pro';
-  src: url("/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-Bold.otf") format("opentype");
+  src: url("/wp-content/themes/digital-blog-theme/fonts/TT-Norms-Pro-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal; }
 
