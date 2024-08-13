@@ -96,8 +96,8 @@
 			</p>
 			<div class="info-links"><a href=" https://www.interhyp.de/impressum/">Impressum</a> <a
 					href="https://www.interhyp.de/ueber-interhyp/datenschutz/">Datenschutz</a>
-				<a href="#">Cookie-Einstellungen
-					ändern</a>
+				<p style="text-decoration:underline; cursor:pointer;" id="cookie-settings-button">Cookie-Einstellungen
+					ändern</p>
 			</div>
 		</div>
 	</div>

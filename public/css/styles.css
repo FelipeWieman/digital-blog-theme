@@ -27,6 +27,24 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   font-weight: bold;
   font-style: normal; }
 
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url("/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-Normal.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url("/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-DemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url("/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal; }
+
 @keyframes slideInDiagonal {
   from {
     opacity: 0;
@@ -102,7 +120,7 @@ html {
         transform: rotate(11deg);
         background: url(/wp-content/themes/blog-theme/images/background_image_bottom_left_about.svg) no-repeat center/contain; }
     html body .wrapper {
-      min-height: 100%;
+      min-height: 100vh;
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
@@ -2580,6 +2598,101 @@ html {
                     background-color: #5f369c;
                     padding: 0.5rem 1rem 0.5rem 1rem;
                     border-radius: .3rem; }
+        html body .wrapper .main .employee-card {
+          background-color: black;
+          border-radius: 2rem;
+          overflow: hidden;
+          width: 100%;
+          max-width: 400px;
+          margin: 20px auto;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 0 0 2rem 0; }
+          html body .wrapper .main .employee-card__header {
+            position: relative;
+            text-align: center; }
+            html body .wrapper .main .employee-card__header::before {
+              content: '';
+              display: block;
+              padding-top: 56.25%; }
+            html body .wrapper .main .employee-card__header .employee-card__background {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 0.5; }
+            html body .wrapper .main .employee-card__header .employee-card__photo {
+              position: absolute;
+              bottom: -27%;
+              left: 22%;
+              transform: translateX(-50%);
+              width: 127px;
+              height: 133px;
+              clip-path: polygon(50% -0.75%, 100% 21.25%, 100% 79.36%, 50% 100.14%, 0% 79.36%, 0% 21.25%);
+              overflow: hidden; }
+              html body .wrapper .main .employee-card__header .employee-card__photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; }
+            html body .wrapper .main .employee-card__header .employee-card__logo {
+              position: absolute;
+              right: 15px;
+              top: 60px;
+              border: solid 3px #fff;
+              width: 80px;
+              height: 80px;
+              margin: auto;
+              text-align: center;
+              background: #fff;
+              vertical-align: middle;
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+              background-size: 80%;
+              clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+              background-position: center;
+              background-repeat: no-repeat;
+              z-index: 99; }
+          html body .wrapper .main .employee-card__body {
+            padding: 60px 20px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; }
+            html body .wrapper .main .employee-card__body .employee-card__name {
+              font-size: 1.5rem;
+              font-weight: 600;
+              color: #ffffff; }
+            html body .wrapper .main .employee-card__body .employee-card__position {
+              font-size: 1rem;
+              color: #d3ebf0;
+              margin-top: 5px; }
+            html body .wrapper .main .employee-card__body .employee-card__company {
+              font-size: .8rem;
+              color: #ffffffb3;
+              margin-top: .4rem;
+              font-weight: bold; }
+          html body .wrapper .main .employee-card__contacts {
+            padding: 1.2rem;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; }
+            html body .wrapper .main .employee-card__contacts .employee-card__contact {
+              display: flex;
+              align-items: center;
+              padding: 1.5rem 2rem;
+              border-radius: 2rem;
+              background-color: #ffffff;
+              text-decoration: none;
+              color: #333;
+              font-size: 1.2rem;
+              box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.05); }
+              html body .wrapper .main .employee-card__contacts .employee-card__contact img {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem; }
       html body .wrapper footer {
         color: white;
         padding: 2rem;
@@ -2676,3 +2789,29 @@ html {
             @media (max-width: 520px) {
               html body .wrapper footer .footer-content .footer-info a {
                 font-size: 0.8rem; } }
+    html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt {
+      background-color: black;
+      font-family: 'TT Norms Pro' !important;
+      border-radius: 2rem;
+      color: white; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content h1 {
+        font-family: 'TT Norms Pro' !important; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label:before {
+        background-color: #de00fc; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label:before span {
+          color: black; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label {
+        background-color: #ffe600; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label span {
+          color: black; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:not(checked) + label {
+        background-color: #646464; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:not(checked) + label span {
+          color: black; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_footer .button {
+        border-radius: 2rem;
+        background-color: #ffe005;
+        color: black;
+        font-family: 'TT Norms Pro' !important; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .close_btn_thick::after {
+        color: #ffe005; }

@@ -33,6 +33,27 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-Normal.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-DemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/wp-content/themes/blog-theme/fonts/TT-Norms-Pro-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 
 
 @keyframes slideInDiagonal {
@@ -183,7 +204,7 @@ html {
 
         .wrapper {
             //  @include first();
-            min-height: 100%;
+            min-height: 100vh;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
@@ -3443,6 +3464,153 @@ html {
                     }
                 }
 
+
+                //employee cards
+                .employee-card {
+                    background-color: black; // Основной фон карточки
+                    border-radius: 2rem;
+                    overflow: hidden;
+                    width: 100%;
+                    max-width: 400px;
+                    margin: 20px auto;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    padding: 0 0 2rem 0;
+
+                    &__header {
+                        position: relative;
+                        text-align: center;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            padding-top: 56.25%; // Соотношение сторон для фона
+                        }
+
+
+
+                        .employee-card__background {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            opacity: 0.5;
+                        }
+
+                        .employee-card__photo {
+                            position: absolute;
+                            bottom: -27%;
+                            left: 22%;
+                            transform: translateX(-50%);
+                            width: 127px;
+                            height: 133px;
+                            clip-path: polygon(50% -0.75%, 100% 21.25%, 100% 79.36%, 50% 100.14%, 0% 79.36%, 0% 21.25%);
+                            overflow: hidden;
+
+
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .employee-card__logo {
+                            position: absolute;
+                            right: 15px;
+                            top: 60px;
+                            border: solid 3px #fff;
+                            width: 80px;
+                            height: 80px;
+                            margin: auto;
+                            text-align: center;
+                            background: #fff;
+                            vertical-align: middle;
+                            display: flex;
+                            align-items: center;
+                            overflow: hidden;
+                            background-size: 80%;
+                            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            z-index: 99;
+                        }
+                    }
+
+                    &__body {
+                        padding: 60px 20px 20px;
+                        text-align: center;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .employee-card__name {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+
+                        .employee-card__position {
+                            font-size: 1rem;
+                            color: #d3ebf0;
+                            margin-top: 5px;
+                        }
+
+                        .employee-card__company {
+                            font-size: .8rem;
+                            color: #ffffffb3;
+                            margin-top: .4rem;
+                            font-weight: bold;
+                        }
+                    }
+
+                    &__contacts {
+                        padding: 1.2rem;
+                        background-color: black;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        .employee-card__contact {
+                            display: flex;
+                            align-items: center;
+                            padding: 1.5rem 2rem;
+                            border-radius: 2rem;
+                            background-color: #ffffff;
+                            text-decoration: none;
+                            color: #333;
+                            font-size: 1.2rem;
+                            box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.05);
+
+                            // &:nth-of-type(3n+1) {
+                            //     background-color: #ffe005;
+                            // }
+
+                            // &:nth-of-type(3n+2) {
+                            //     background-color: #8800ff;
+                            //     color: white;
+                            // }
+
+                            // &:nth-of-type(3n) {
+                            //     background-color: #d63798;
+                            //     color: white;
+                            // }
+
+                            img {
+                                width: 2rem;
+                                height: 2rem;
+                                margin-right: 1rem;
+                            }
+
+
+                        }
+                    }
+                }
+
+
             }
 
             footer {
@@ -3605,6 +3773,75 @@ html {
                         }
                     }
                 }
+            }
+        }
+
+        #__tealiumGDPRcpPrefs {
+            .privacy-modal {
+                .privacy_prompt {
+                    background-color: rgb(0, 0, 0);
+                    font-family: 'TT Norms Pro' !important;
+                    border-radius: 2rem;
+                    color: white;
+
+                    .privacy_prompt_content {
+
+                        h1 {
+                            font-family: 'TT Norms Pro' !important;
+                        }
+
+                        div {
+                            table {
+                                tbody {
+                                    tr {
+                                        td {
+                                            input[type="checkbox"].toggle:checked+label:before {
+                                                background-color: #de00fc;
+
+                                                span {
+                                                    color: black;
+                                                }
+                                            }
+
+                                            input[type="checkbox"].toggle:checked+label {
+                                                background-color: #ffe600;
+
+                                                span {
+                                                    color: black;
+                                                }
+                                            }
+
+                                            input[type="checkbox"].toggle:not(checked)+label {
+                                                background-color: #646464;
+
+                                                span {
+                                                    color: black;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .privacy_prompt_footer {
+                        .button {
+                            border-radius: 2rem;
+                            background-color: #ffe005;
+                            color: black;
+                            font-family: 'TT Norms Pro' !important;
+                        }
+                    }
+
+                    .close_btn_thick {
+                        &::after {
+                            color: #ffe005;
+                        }
+                    }
+                }
+
             }
         }
     }

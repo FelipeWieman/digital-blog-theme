@@ -12,7 +12,7 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
-add_filter('show_admin_bar', '__return_true');
+add_filter('show_admin_bar', '__return_false');
 function custom_excerpt_length($length)
 {
 	return 30; // Замените 20 на нужное вам количество слов
@@ -1081,6 +1081,29 @@ add_action('init', 'register_about_post_type');
 
 
 
+//EMPLOYEE CARDS POST TYPE
+
+function create_employee_post_type()
+{
+	register_post_type(
+		'employee_card',
+		array(
+			'labels' => array(
+				'name' => __('Employee Cards'),
+				'singular_name' => __('Employee Card')
+			),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array('title', 'editor', 'thumbnail'),
+			'menu_icon' => 'dashicons-id', // Иконка в меню админки
+			'rewrite' => array('slug' => 'employees'),
+		)
+	);
+}
+add_action('init', 'create_employee_post_type');
+
+
+
 function custom_blocks_enqueue_assets()
 {
 	// Подключение JS файла блока
@@ -1104,6 +1127,21 @@ add_action('enqueue_block_editor_assets', 'custom_blocks_enqueue_assets');
 
 
 
+
+//TEALIUM SCRIPT
+
+function enqueue_tealium_script()
+{
+
+	wp_enqueue_script(
+		'tealium-consent-script', // Uniq id
+		get_template_directory_uri() . '/js/tealium-consent.js', // Path
+		array(), // dependences
+		null, // Version
+		true // Used in footer (true) or in Header (false)
+	);
+}
+add_action('wp_enqueue_scripts', 'enqueue_tealium_script');
 
 
 
