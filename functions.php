@@ -1183,9 +1183,6 @@ add_action('edit_form_after_title', 'add_custom_message_above_editor');
 
 
 
-
-
-
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
