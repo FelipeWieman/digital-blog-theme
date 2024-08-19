@@ -2821,6 +2821,7 @@ html {
       align-items: center;
       justify-content: center; }
       html body .wrapper-event .container {
+        width: 100%;
         max-width: 112.5rem;
         margin: 0 auto;
         padding: 0 1.25rem; }
@@ -2931,7 +2932,7 @@ html {
             html body .wrapper-event .hero .hero-buttons a.btn-register:hover {
               background: #d72f00; }
       html body .wrapper-event .speakers-section {
-        background: #333;
+        background: #242424;
         width: 100%;
         margin: 0 auto;
         padding: 3rem 3rem;
@@ -2957,7 +2958,8 @@ html {
           margin-bottom: 2rem;
           padding-left: 5rem;
           display: flex;
-          color: #fa4311; }
+          color: #fa4311;
+          justify-content: center; }
         html body .wrapper-event .speakers-section .speakers-list {
           display: flex;
           flex-wrap: wrap;
@@ -3010,8 +3012,7 @@ html {
         html body .wrapper-event .agenda-section::before {
           content: '';
           position: absolute;
-          z-index: 0; }
-        html body .wrapper-event .agenda-section::before {
+          z-index: 0;
           top: 0;
           right: -22rem;
           width: 120%;
@@ -3022,7 +3023,8 @@ html {
         html body .wrapper-event .agenda-section h2 {
           font-size: 2.5rem;
           margin-bottom: 2rem;
-          display: flex; }
+          display: flex;
+          justify-content: center; }
         html body .wrapper-event .agenda-section .agenda-items {
           display: flex;
           flex-wrap: wrap;
@@ -3049,21 +3051,165 @@ html {
                 color: #666;
                 margin-bottom: 0.5rem; }
           html body .wrapper-event .agenda-section .agenda-items .keynote {
-            border-left: 0.5rem solid #ff8b80; }
+            border-left: 0.5rem solid #ff6f61; }
           html body .wrapper-event .agenda-section .agenda-items .panel {
-            border-left: 0.5rem solid #ff4534; }
+            border-left: 0.5rem solid #6b8e23; }
           html body .wrapper-event .agenda-section .agenda-items .workshop {
-            border-left: 0.5rem solid #ffb428; }
+            border-left: 0.5rem solid #1e90ff; }
           html body .wrapper-event .agenda-section .agenda-items .roundtable {
-            border-left: 0.5rem solid #ff5100; }
+            border-left: 0.5rem solid #ffa500; }
           html body .wrapper-event .agenda-section .agenda-items .networking {
-            border-left: 0.5rem solid #ffdd00; }
+            border-left: 0.5rem solid #20b2aa; }
+      html body .wrapper-event .schedule-section {
+        background: #0d0d0d;
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem 3rem;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        overflow: hidden; }
+        html body .wrapper-event .schedule-section h2 {
+          font-size: 2.5rem;
+          margin-bottom: 2rem; }
+        html body .wrapper-event .schedule-section .schedule-table {
+          display: flex;
+          flex-direction: column; }
+          html body .wrapper-event .schedule-section .schedule-table .schedule-header,
+          html body .wrapper-event .schedule-section .schedule-table .schedule-row {
+            display: flex;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ff6a00; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-header:last-child,
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row:last-child {
+              border-bottom: none; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-header div,
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row div {
+              flex: 1;
+              padding: 0 1rem;
+              text-align: left; }
+          html body .wrapper-event .schedule-section .schedule-table .schedule-header {
+            background: #272727;
+            font-weight: bold; }
+          html body .wrapper-event .schedule-section .schedule-table .schedule-row:nth-child(even) {
+            background: #505050; }
+          html body .wrapper-event .schedule-section .schedule-table .schedule-row .type {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            text-align: center; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row .type.keynote {
+              background-color: #ff6f61; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row .type.panel {
+              background-color: #6b8e23; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row .type.workshop {
+              background-color: #1e90ff; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row .type.roundtable {
+              background-color: #ffa500; }
+            html body .wrapper-event .schedule-section .schedule-table .schedule-row .type.networking {
+              background-color: #20b2aa; }
+      html body .wrapper-event .how-it-was-section {
+        width: 100%;
+        min-height: 100vh;
+        padding: 2rem 0;
+        background-color: #333333;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 7rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1; }
+        html body .wrapper-event .how-it-was-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -22rem;
+          width: 120%;
+          height: 120%;
+          background: url(/wp-content/themes/blog-theme/images/polygon-scatter-haikei-agenda.svg) no-repeat center/contain;
+          z-index: -1;
+          opacity: 0.6; }
+        html body .wrapper-event .how-it-was-section title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fa4311;
+          font-size: 3rem; }
+        html body .wrapper-event .how-it-was-section .slider-container {
+          position: relative;
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          overflow: hidden; }
+        html body .wrapper-event .how-it-was-section .slider-track {
+          width: 90%;
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+          will-change: transform; }
+        html body .wrapper-event .how-it-was-section .slide {
+          min-width: 33.333%;
+          transition: transform 0.5s ease-in-out;
+          opacity: 1;
+          transform: scale(0.9);
+          padding: 0 0.5rem; }
+          html body .wrapper-event .how-it-was-section .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+          html body .wrapper-event .how-it-was-section .slide.active {
+            opacity: 1;
+            transform: scale(1); }
+        html body .wrapper-event .how-it-was-section .prev,
+        html body .wrapper-event .how-it-was-section .next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          border: none;
+          padding: 1rem;
+          cursor: pointer;
+          z-index: 10;
+          border-radius: 50%;
+          user-select: none; }
+          html body .wrapper-event .how-it-was-section .prev:hover,
+          html body .wrapper-event .how-it-was-section .next:hover {
+            background-color: rgba(0, 0, 0, 0.8); }
+        html body .wrapper-event .how-it-was-section .prev {
+          left: 1rem; }
+        html body .wrapper-event .how-it-was-section .next {
+          right: 1rem; }
+        html body .wrapper-event .how-it-was-section .dots {
+          position: absolute;
+          bottom: 1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 0.5rem; }
+          html body .wrapper-event .how-it-was-section .dots .dot {
+            width: 1rem;
+            height: 1rem;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease; }
+            html body .wrapper-event .how-it-was-section .dots .dot.active {
+              background-color: #717171; }
       html body .wrapper-event footer {
         background: #333;
         color: #fff;
         padding: 1.25rem 0;
-        text-align: center; }
+        text-align: center;
+        width: 100%; }
         html body .wrapper-event footer .logo-placeholder {
           font-size: 1.125rem;
           padding: 0.625rem;
-          border: 0.125rem dashed #fff; }
+          border: 0.125rem dashed #7f7f7f; }

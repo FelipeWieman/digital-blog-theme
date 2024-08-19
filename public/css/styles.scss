@@ -3854,6 +3854,7 @@ html {
             justify-content: center;
 
             .container {
+                width: 100%;
                 max-width: 112.5rem;
                 margin: 0 auto;
                 padding: 0 1.25rem;
@@ -4027,7 +4028,7 @@ html {
 
             // Speakers Section
             .speakers-section {
-                background: #333;
+                background: #242424;
                 width: 100%;
                 // max-width: 100rem;
                 margin: 0 auto;
@@ -4062,6 +4063,7 @@ html {
                     padding-left: 5rem;
                     display: flex;
                     color: #fa4311;
+                    justify-content: center;
                 }
 
                 .speakers-list {
@@ -4122,7 +4124,7 @@ html {
             .agenda-section {
                 background: #0d0d0d;
                 width: 100%;
-                // max-width: 100rem;
+
                 margin: 0 auto;
                 padding: 3rem 3rem;
                 text-align: center;
@@ -4135,13 +4137,12 @@ html {
                 overflow: hidden;
 
 
+
+
                 &::before {
                     content: '';
                     position: absolute;
                     z-index: 0;
-                }
-
-                &::before {
                     top: 0;
                     right: -22rem;
                     width: 120%;
@@ -4160,6 +4161,7 @@ html {
                     font-size: 2.5rem;
                     margin-bottom: 2rem;
                     display: flex;
+                    justify-content: center;
                 }
 
                 .agenda-items {
@@ -4205,37 +4207,251 @@ html {
 
 
                     .keynote {
-                        border-left: 0.5rem solid #ff8b80;
+                        border-left: 0.5rem solid #ff6f61;
                     }
 
                     .panel {
-                        border-left: 0.5rem solid #ff4534;
+                        border-left: 0.5rem solid #6b8e23;
                     }
 
                     .workshop {
-                        border-left: 0.5rem solid #ffb428;
+                        border-left: 0.5rem solid #1e90ff;
                     }
 
                     .roundtable {
-                        border-left: 0.5rem solid #ff5100;
+                        border-left: 0.5rem solid #ffa500;
                     }
 
                     .networking {
-                        border-left: 0.5rem solid #ffdd00;
+                        border-left: 0.5rem solid #20b2aa;
                     }
                 }
             }
+
+            .schedule-section {
+                background: #0d0d0d;
+                width: 100%;
+
+                margin: 0 auto;
+                padding: 3rem 3rem;
+                text-align: center;
+
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+                position: relative;
+                overflow: hidden;
+
+                h2 {
+                    font-size: 2.5rem;
+                    margin-bottom: 2rem;
+                }
+
+                .schedule-table {
+                    display: flex;
+                    flex-direction: column;
+
+                    .schedule-header,
+                    .schedule-row {
+                        display: flex;
+                        padding: 1rem 0;
+                        border-bottom: 1px solid #ff6a00;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        div {
+                            flex: 1;
+                            padding: 0 1rem;
+                            text-align: left;
+                        }
+                    }
+
+                    .schedule-header {
+                        background: #272727;
+                        font-weight: bold;
+                    }
+
+                    .schedule-row {
+                        &:nth-child(even) {
+                            background: #505050;
+                        }
+
+                        .type {
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            color: #fff;
+                            padding: 0.5rem;
+                            border-radius: 0.25rem;
+                            text-align: center;
+
+                            &.keynote {
+                                background-color: #ff6f61;
+                            }
+
+                            &.panel {
+                                background-color: #6b8e23;
+                            }
+
+                            &.workshop {
+                                background-color: #1e90ff;
+                            }
+
+                            &.roundtable {
+                                background-color: #ffa500;
+                            }
+
+                            &.networking {
+                                background-color: #20b2aa;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .how-it-was-section {
+                width: 100%;
+                min-height: 100vh;
+
+                padding: 2rem 0;
+                background-color: #333333;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 7rem;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+
+
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+
+                    top: 0;
+                    right: -22rem;
+                    width: 120%;
+                    height: 120%;
+                    background: url(/wp-content/themes/blog-theme/images/polygon-scatter-haikei-agenda.svg) no-repeat center / contain;
+                    z-index: -1;
+                    opacity: 0.6;
+
+                }
+
+                title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fa4311;
+                    // font-weight: bold;
+                    font-size: 3rem;
+                }
+
+                .slider-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 100%;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+
+                .slider-track {
+                    width: 90%;
+                    display: flex;
+                    transition: transform 0.5s ease-in-out;
+                    will-change: transform;
+                }
+
+                .slide {
+                    min-width: 33.333%;
+                    transition: transform 0.5s ease-in-out;
+                    opacity: 1;
+                    transform: scale(0.9);
+                    padding: 0 0.5rem;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                    }
+
+                    &.active {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+
+                .prev,
+                .next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: #fff;
+                    border: none;
+                    padding: 1rem;
+                    cursor: pointer;
+                    z-index: 10;
+                    border-radius: 50%;
+                    user-select: none;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.8);
+                    }
+                }
+
+                .prev {
+                    left: 1rem;
+                }
+
+                .next {
+                    right: 1rem;
+                }
+
+                .dots {
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 0.5rem;
+
+                    .dot {
+                        width: 1rem;
+                        height: 1rem;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+
+                        &.active {
+                            background-color: #717171;
+                        }
+                    }
+                }
+            }
+
+
+
+
 
             footer {
                 background: #333;
                 color: #fff;
                 padding: 1.25rem 0;
                 text-align: center;
+                width: 100%;
 
                 .logo-placeholder {
                     font-size: 1.125rem;
                     padding: 0.625rem;
-                    border: 0.125rem dashed #fff;
+                    border: 0.125rem dashed #7f7f7f;
                 }
             }
         }
