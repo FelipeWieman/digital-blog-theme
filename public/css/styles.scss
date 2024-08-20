@@ -1698,26 +1698,26 @@ html {
                     .section-header {
                         color: #ffffff;
                         text-transform: uppercase;
-                        padding-left: 13rem;
+                        padding-left: 2rem;
                         padding-right: 4rem;
                         margin-bottom: 3rem;
                         width: 100%;
                         display: flex;
 
                         @media (max-width:1440px) {
-                            padding-left: 9rem;
+                            padding-left: 2rem;
                             padding-right: 3rem;
                             margin-bottom: 2rem;
                         }
 
                         @media (max-width:920px) {
-                            padding-left: 7rem;
+                            padding-left: 2rem;
                             padding-right: 3rem;
                             margin-bottom: 2rem;
                         }
 
                         @media (max-width:790px) {
-                            padding-left: 5rem;
+                            padding-left: 2rem;
                             padding-right: 3rem;
                             margin-bottom: .5rem;
                         }
@@ -1730,7 +1730,7 @@ html {
                         }
 
                         .section-header-left {
-                            width: 70%;
+                            width: 100%;
 
                             @media (max-width:610px) {
                                 width: 100%;
