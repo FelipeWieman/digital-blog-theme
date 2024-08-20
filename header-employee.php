@@ -13,4 +13,4 @@
 	<div class="wrapper">
 
 		<main class="main" style="
-	padding-top: 0; padding-left:.5rem; padding-right:.5rem; display:flex;">
+	background-color:#5fa9ba; display:flex; padding-top:0; padding-left:.3rem; padding-right:.3rem;">
