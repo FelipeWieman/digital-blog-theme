@@ -92,9 +92,15 @@ get_header();
                             <div class="item-header"><?php the_title(); ?></div>
                             <div class="item-text">
                                 <?php
-                                $content = get_the_content();
-                                $trimmed_content = wp_trim_words($content, 30, '...'); // 20 - количество слов, '...' - символы, добавляемые в конце
-                                echo $trimmed_content;
+                                $excerpt = get_post_meta(get_the_ID(), '_about_post_excerpt', true);
+
+                                if (!empty($excerpt)) {
+                                    echo wp_trim_words($excerpt, 30, '...');
+                                } else {
+                                    $content = get_the_content();
+                                    $trimmed_content = wp_trim_words($content, 30, '...');
+                                    echo $trimmed_content;
+                                }
                                 ?>
                             </div>
                             <div class="item-button"><a href="<?php the_permalink(); ?>"><span>Mehr erfahren</span></a></div>

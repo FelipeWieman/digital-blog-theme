@@ -1081,6 +1081,54 @@ add_action('init', 'register_about_post_type');
 
 
 
+//Metaboxes for small description
+
+function add_about_post_excerpt_metabox()
+{
+	add_meta_box(
+		'about_post_excerpt',
+		'Short description',
+		'render_about_post_excerpt_metabox',
+		'about',
+		'side',
+		'default'
+	);
+}
+add_action('add_meta_boxes', 'add_about_post_excerpt_metabox');
+
+function render_about_post_excerpt_metabox($post)
+{
+	wp_nonce_field('save_about_post_excerpt', 'about_post_excerpt_nonce');
+
+	$value = get_post_meta($post->ID, '_about_post_excerpt', true);
+
+	echo '<textarea style="width:100%" id="about_post_excerpt" name="about_post_excerpt" rows="4">' . esc_attr($value) . '</textarea>';
+}
+
+function save_about_post_excerpt($post_id)
+{
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return;
+	}
+
+
+	if (!isset($_POST['about_post_excerpt_nonce']) || !wp_verify_nonce($_POST['about_post_excerpt_nonce'], 'save_about_post_excerpt')) {
+		return;
+	}
+
+
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
+
+
+	if (isset($_POST['about_post_excerpt'])) {
+		update_post_meta($post_id, '_about_post_excerpt', sanitize_text_field($_POST['about_post_excerpt']));
+	}
+}
+add_action('save_post', 'save_about_post_excerpt');
+
+
 //EMPLOYEE CARDS POST TYPE
 
 function create_employee_post_type()
