@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		<div class="footer-info font-[100]">
-			<p class="mb-[2rem]">© 2022 Interhyp AG, Domagkstr. 34, 80807 München</p>
+			<p class="mb-[2rem]">© 2024 Interhyp AG, Domagkstr. 34, 80807 München</p>
 			<p class="mb-[2rem]">Baufinanzierung beim Testsieger in der Kategorie „Vermittler“ (Euro
 				08/2023):
 				online berechnen,

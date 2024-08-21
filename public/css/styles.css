@@ -262,7 +262,10 @@ html {
             padding: 1rem 2rem;
             width: 100%; }
             html body .wrapper .header .header-container .header-right-block-mobile .menu-icon {
-              display: flex; }
+              display: flex;
+              position: fixed;
+              top: 2.2rem;
+              right: 1.5rem; }
             html body .wrapper .header .header-container .header-right-block-mobile .mobile-menu {
               display: flex;
               flex-direction: column;
@@ -402,7 +405,7 @@ html {
           @media (max-width: 900px) {
             html body .wrapper .header .header-container {
               align-items: flex-start;
-              padding: .8rem 1darem; }
+              padding: .8rem 1rem; }
               html body .wrapper .header .header-container .header-right-block {
                 display: none; }
               html body .wrapper .header .header-container .header-right-block-mobile {
@@ -413,7 +416,8 @@ html {
                 html body .wrapper .header .header-container .header-right-block-mobile .menu-toggle {
                   display: none; }
                 html body .wrapper .header .header-container .header-right-block-mobile .menu-icon {
-                  display: flex; }
+                  display: flex;
+                  top: 1.5rem; }
                 html body .wrapper .header .header-container .header-right-block-mobile .mobile-menu {
                   display: flex;
                   height: 0;
@@ -516,7 +520,7 @@ html {
                         position: relative; } }
             @media (max-width: 900px) and (max-width: 1000px) {
               html body .wrapper .header .header-container .header-right-block-mobile .menu-toggle:checked + .menu-icon + .mobile-menu .menu-nav-menu-container .nav_menu li.menu-item a {
-                font-size: 1rem; } }
+                font-size: 1.6rem; } }
           @media (max-width: 900px) {
                   html body .wrapper .header .header-container .header-right-block-mobile .menu-toggle:checked + .menu-icon + .mobile-menu .menu-nav-menu-container div {
                     position: relative; }
@@ -558,7 +562,13 @@ html {
                 display: none; } }
           @media (max-width: 500px) {
             html body .wrapper .header .header-container {
-              padding: .3rem .5rem; } }
+              align-items: flex-start;
+              padding: .3rem .5rem; }
+              html body .wrapper .header .header-container .header-right-block-mobile .menu-icon {
+                display: flex;
+                top: 1.2rem; }
+              html body .wrapper .header .header-container .header-left-block .logo span {
+                display: none; } }
       html body .wrapper .main {
         flex: 1;
         display: flex;
@@ -606,7 +616,7 @@ html {
                 html body .wrapper .main .section-hero .hero-cards-container a {
                   width: 100%; } }
               html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) {
-                transform: scale(1.05); }
+                transform: scale(1.03); }
                 html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) .card .card-content {
                   display: flex;
                   flex-direction: column;
@@ -616,15 +626,14 @@ html {
                     display: flex;
                     justify-content: space-between; }
                     html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(1) .card .card-content .card-top .card-name span {
-                      padding: .5rem 1rem;
-                      background: transparent;
+                      background: white;
                       color: black;
-                      font-size: 1.6rem;
+                      font-size: 1.3rem;
                       font-weight: bold;
-                      border-radius: 2rem;
+                      border-radius: 1rem;
                       border: 2px #030303 solid; }
               html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2), html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) {
-                transform: scale(1.05); }
+                transform: scale(1.03); }
                 html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2) .card .card-content, html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) .card .card-content {
                   display: flex;
                   flex-direction: column;
@@ -634,13 +643,12 @@ html {
                     display: flex;
                     justify-content: space-between; }
                     html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(2) .card .card-content .card-top .card-name span, html body .wrapper .main .section-hero .hero-cards-container a:hover:nth-of-type(3) .card .card-content .card-top .card-name span {
-                      padding: .5rem 1rem;
-                      background: transparent;
-                      color: white;
-                      font-size: 1.6rem;
+                      background: white;
+                      color: black;
+                      font-size: 1.3rem;
                       font-weight: bold;
-                      border-radius: 2rem;
-                      border: 2px white solid; }
+                      border-radius: 1rem;
+                      border: 2px #030303 solid; }
               html body .wrapper .main .section-hero .hero-cards-container a .card {
                 display: flex;
                 flex-direction: column;
@@ -697,7 +705,7 @@ html {
                       padding: .5rem 1rem;
                       background: white;
                       color: black;
-                      font-size: 1.6rem;
+                      font-size: 1.3rem;
                       font-weight: bold;
                       border-radius: 1rem;
                       border: 2px black solid; }
@@ -798,7 +806,7 @@ html {
                 font-size: 3rem;
                 font-weight: bold;
                 line-height: 4rem;
-                padding: 0rem 1rem 2rem 2rem; } }
+                padding: 0rem 1rem 4rem 2rem; } }
           @media (max-width: 415px) {
             html body .wrapper .main .section-hero {
               padding: 0rem .6rem 1rem .6rem; }
@@ -806,7 +814,7 @@ html {
                 font-size: 2.9rem;
                 font-weight: bold;
                 line-height: 4rem;
-                padding: 0rem 1rem 0rem 1rem; } }
+                padding: 0rem 1rem 2rem 1rem; } }
           @media (max-width: 380px) {
             html body .wrapper .main .section-hero {
               padding: 0rem .6rem 1rem .6rem; }
@@ -814,7 +822,7 @@ html {
                 font-size: 2.5rem;
                 font-weight: bold;
                 line-height: 3rem;
-                padding: 0rem 1rem 0rem 1rem; } }
+                padding: 0rem 1rem 2rem 1rem; } }
           @media (max-width: 330px) {
             html body .wrapper .main .section-hero {
               padding: 0rem .6rem 1rem .6rem; }
@@ -864,36 +872,37 @@ html {
           min-height: calc(100vh - 5.5rem);
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
-          padding: 10rem 2rem 2rem 2rem;
+          padding: 2rem 2rem 0rem 2rem;
           width: 90%;
           max-width: 1800px;
           margin-bottom: 7rem;
           background-color: #ffe005; }
           @media (max-width: 1440px) {
             html body .wrapper .main .section-blog {
-              padding: 6rem 1.2rem 2rem 1.2rem;
+              padding: 2rem 1.2rem 0rem 1.2rem;
               width: 92%; } }
           @media (max-width: 1025px) {
             html body .wrapper .main .section-blog {
               margin-bottom: 5rem;
-              padding: 4rem 1rem 2rem 1rem; } }
+              padding: 2rem 1rem 0rem 1rem; } }
           @media (max-width: 605px) {
             html body .wrapper .main .section-blog {
               margin-bottom: 3rem;
               width: 95%;
-              padding: 2rem .2rem .2rem .1rem; } }
+              padding: 1rem .2rem 0rem .1rem; } }
           html body .wrapper .main .section-blog .section-header {
             color: #323232;
             text-transform: uppercase;
             padding-left: 2em;
-            padding-right: 4rem;
-            margin-bottom: 3rem; }
+            padding-right: 2rem;
+            margin-bottom: 3rem;
+            justify-content: space-between; }
             @media (max-width: 1440px) {
               html body .wrapper .main .section-blog .section-header {
                 padding-left: 2rem;
-                padding-right: 3rem; } }
+                padding-right: 2rem; } }
             @media (max-width: 1025px) {
               html body .wrapper .main .section-blog .section-header {
                 padding-left: 2rem;
@@ -967,7 +976,7 @@ html {
             gap: 2rem;
             width: 100%;
             align-self: center;
-            margin-bottom: 2rem;
+            margin-bottom: 0rem;
             padding: 0rem 2rem; }
             @media (max-width: 1500px) {
               html body .wrapper .main .section-blog .section-content {
@@ -1046,13 +1055,20 @@ html {
                     html body .wrapper .main .section-blog .section-content .card .card-body .author-info {
                       font-size: 0.7rem; } }
           html body .wrapper .main .section-blog .explore-button-container {
-            padding-bottom: 1rem;
             min-height: 100px;
-            min-height: 100px; }
+            display: flex;
+            padding: 3rem;
+            min-height: 11rem;
+            align-content: center;
+            align-items: center; }
+            @media (max-width: 726px) {
+              html body .wrapper .main .section-blog .explore-button-container {
+                padding: 2rem;
+                min-height: 9rem; } }
             @media (max-width: 426px) {
               html body .wrapper .main .section-blog .explore-button-container {
-                min-height: 80px;
-                padding-top: 1rem; } }
+                padding: 1rem;
+                min-height: 6rem; } }
             html body .wrapper .main .section-blog .explore-button-container .explore-button {
               background-color: #313131;
               border-radius: 1rem;
@@ -1079,36 +1095,37 @@ html {
           min-height: calc(100vh - 5.5rem);
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
-          padding: 10rem 2rem 2rem 2rem;
+          padding: 2rem 2rem 0rem 2rem;
           width: 90%;
           max-width: 1800px;
           margin-bottom: 7rem;
           background-color: #5f369c; }
           @media (max-width: 1440px) {
             html body .wrapper .main .section-about-us {
-              padding: 6rem 1.2rem 2rem 1.2rem;
+              padding: 2rem 1.2rem 0rem 1.2rem;
               width: 92%; } }
           @media (max-width: 1025px) {
             html body .wrapper .main .section-about-us {
               margin-bottom: 5rem;
-              padding: 4rem 1rem 2rem 1rem; } }
+              padding: 2rem 1rem 0rem 1rem; } }
           @media (max-width: 605px) {
             html body .wrapper .main .section-about-us {
               margin-bottom: 3rem;
               width: 95%;
-              padding: 2rem .2rem .2rem .1rem; } }
+              padding: 1rem .2rem 0rem .1rem; } }
           html body .wrapper .main .section-about-us .section-header {
             color: #ffffff;
             text-transform: uppercase;
             padding-left: 2em;
-            padding-right: 4rem;
-            margin-bottom: 3rem; }
+            padding-right: 2rem;
+            margin-bottom: 3rem;
+            justify-content: space-between; }
             @media (max-width: 1440px) {
               html body .wrapper .main .section-about-us .section-header {
                 padding-left: 2rem;
-                padding-right: 3rem; } }
+                padding-right: 2rem; } }
             @media (max-width: 1025px) {
               html body .wrapper .main .section-about-us .section-header {
                 padding-left: 2rem;
@@ -1182,7 +1199,7 @@ html {
             gap: 2rem;
             width: 100%;
             align-self: center;
-            margin-bottom: 2rem;
+            margin-bottom: 0rem;
             padding: 0rem 2rem; }
             @media (max-width: 1500px) {
               html body .wrapper .main .section-about-us .section-content {
@@ -1261,13 +1278,20 @@ html {
                     html body .wrapper .main .section-about-us .section-content .card .card-body .author-info {
                       font-size: 0.7rem; } }
           html body .wrapper .main .section-about-us .explore-button-container {
-            padding-bottom: 1rem;
             min-height: 100px;
-            min-height: 100px; }
+            display: flex;
+            padding: 3rem;
+            min-height: 11rem;
+            align-content: center;
+            align-items: center; }
+            @media (max-width: 726px) {
+              html body .wrapper .main .section-about-us .explore-button-container {
+                padding: 2rem;
+                min-height: 9rem; } }
             @media (max-width: 426px) {
               html body .wrapper .main .section-about-us .explore-button-container {
-                min-height: 80px;
-                padding-top: 1rem; } }
+                padding: 1rem;
+                min-height: 6rem; } }
             html body .wrapper .main .section-about-us .explore-button-container .explore-button {
               background-color: #ffffff;
               border-radius: 1rem;
@@ -1294,27 +1318,27 @@ html {
           min-height: calc(100vh - 6rem);
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
-          padding: 5rem 2rem 2rem 2rem;
+          padding: 2rem 2rem 2rem 2rem;
           width: 90%;
           max-width: 1800px;
           margin-bottom: 7rem; }
           @media (max-width: 1440px) {
             html body .wrapper .main .section-tech-stack {
-              padding: 5rem 1rem 2rem 1rem;
+              padding: 2rem 1rem 2rem 1rem;
               width: 92%; } }
           @media (max-width: 1208px) {
             html body .wrapper .main .section-tech-stack {
-              padding: 5rem 1rem 2rem 1rem;
+              padding: 2rem 1rem 2rem 1rem;
               width: 92%; } }
           @media (max-width: 1150px) {
             html body .wrapper .main .section-tech-stack {
-              padding: 5rem 1rem 1rem 1rem;
+              padding: 2rem 1rem 1rem 1rem;
               width: 92%; } }
           @media (max-width: 920px) {
             html body .wrapper .main .section-tech-stack {
-              padding: 4rem 1rem 1rem 1rem;
+              padding: 2rem 1rem 1rem 1rem;
               width: 92%; } }
           @media (max-width: 620px) {
             html body .wrapper .main .section-tech-stack {
@@ -1384,7 +1408,7 @@ html {
             margin-bottom: 2rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; }
+            justify-content: space-evenly; }
             @media (max-width: 1440px) {
               html body .wrapper .main .section-tech-stack .section-content {
                 gap: 1.8rem; } }
@@ -1758,13 +1782,20 @@ html {
                     html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info {
                       font-size: 0.7rem; } }
           html body .wrapper .main .section-blog-blog .explore-button-container {
-            padding-bottom: 1rem;
             min-height: 100px;
-            min-height: 100px; }
+            display: flex;
+            padding: 3rem;
+            min-height: 11rem;
+            align-content: center;
+            align-items: center; }
+            @media (max-width: 726px) {
+              html body .wrapper .main .section-blog-blog .explore-button-container {
+                padding: 2rem;
+                min-height: 9rem; } }
             @media (max-width: 426px) {
               html body .wrapper .main .section-blog-blog .explore-button-container {
-                min-height: 80px;
-                padding-top: 1rem; } }
+                padding: 1rem;
+                min-height: 6rem; } }
             html body .wrapper .main .section-blog-blog .explore-button-container .explore-button {
               background-color: #ffe005;
               border-radius: 1rem;

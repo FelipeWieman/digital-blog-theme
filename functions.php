@@ -99,7 +99,7 @@ function blog_theme_customizer($wp_customize)
 	$wp_customize->add_panel(
 		'blog_page_panel',
 		array(
-			'title' => __('BLog  Page', 'blog-theme'),
+			'title' => __('Blog  Page', 'blog-theme'),
 			'description' => __('Settings for the blog  page of the theme.', 'blog-theme'),
 			'priority' => 12, // panel priority
 		)

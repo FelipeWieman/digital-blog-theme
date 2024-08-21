@@ -426,6 +426,9 @@ html {
 
                         .menu-icon {
                             display: flex;
+                            position: fixed;
+                            top: 2.2rem;
+                            right: 1.5rem;
                         }
 
 
@@ -670,7 +673,7 @@ html {
 
                     @media (max-width: 900px) {
                         align-items: flex-start;
-                        padding: .8rem 1darem;
+                        padding: .8rem 1rem;
 
                         .header-right-block {
                             display: none;
@@ -688,6 +691,7 @@ html {
 
                             .menu-icon {
                                 display: flex;
+                                top: 1.5rem;
 
                             }
 
@@ -843,7 +847,7 @@ html {
 
 
                                                     @media (max-width:1000px) {
-                                                        font-size: 1rem;
+                                                        font-size: 1.6rem;
                                                     }
 
                                                     // @media (max-width:960px) {
@@ -947,14 +951,48 @@ html {
                     }
 
 
-
-
                     @media (max-width: 500px) {
+                        align-items: flex-start;
                         padding: .3rem .5rem;
 
 
 
+                        .header-right-block-mobile {
+
+
+
+
+                            .menu-icon {
+                                display: flex;
+                                top: 1.2rem;
+
+                            }
+
+
+
+
+
+
+
+
+
+
+                        }
+
+
+
+
+
+                        .header-left-block {
+                            .logo {
+                                span {
+                                    display: none;
+                                }
+                            }
+                        }
                     }
+
+
                 }
             }
 
@@ -1000,6 +1038,7 @@ html {
                         font-weight: bold;
                         line-height: 8rem;
                         padding: 7rem 9rem;
+
                     }
 
                     .hero-cards-container {
@@ -1023,7 +1062,7 @@ html {
                             }
 
                             &:hover:nth-of-type(1) {
-                                transform: scale(1.05);
+                                transform: scale(1.03);
 
                                 .card {
                                     .card-content {
@@ -1038,26 +1077,22 @@ html {
 
                                             .card-name {
                                                 span {
-                                                    padding: .5rem 1rem;
-                                                    background: transparent;
-                                                    color: rgb(0, 0, 0);
-                                                    font-size: 1.6rem;
+                                                    background: white;
+                                                    color: black;
+                                                    font-size: 1.3rem;
                                                     font-weight: bold;
-                                                    border-radius: 2rem;
+                                                    border-radius: 1rem;
                                                     border: 2px rgb(3, 3, 3) solid;
                                                 }
                                             }
                                         }
-
-
-
                                     }
                                 }
                             }
 
                             &:hover:nth-of-type(2),
                             &:hover:nth-of-type(3) {
-                                transform: scale(1.05);
+                                transform: scale(1.03);
 
                                 .card {
                                     .card-content {
@@ -1072,13 +1107,12 @@ html {
 
                                             .card-name {
                                                 span {
-                                                    padding: .5rem 1rem;
-                                                    background: transparent;
-                                                    color: rgb(255, 255, 255);
-                                                    font-size: 1.6rem;
+                                                    background: white;
+                                                    color: black;
+                                                    font-size: 1.3rem;
                                                     font-weight: bold;
-                                                    border-radius: 2rem;
-                                                    border: 2px rgb(255, 255, 255) solid;
+                                                    border-radius: 1rem;
+                                                    border: 2px rgb(3, 3, 3) solid;
                                                 }
                                             }
                                         }
@@ -1165,7 +1199,7 @@ html {
                                                 padding: .5rem 1rem;
                                                 background: white;
                                                 color: black;
-                                                font-size: 1.6rem;
+                                                font-size: 1.3rem;
                                                 font-weight: bold;
                                                 border-radius: 1rem;
                                                 border: 2px black solid;
@@ -1534,7 +1568,7 @@ html {
                             font-size: 3rem;
                             font-weight: bold;
                             line-height: 4rem;
-                            padding: 0rem 1rem 2rem 2rem;
+                            padding: 0rem 1rem 4rem 2rem;
                         }
                     }
 
@@ -1545,7 +1579,7 @@ html {
                             font-size: 2.9rem;
                             font-weight: bold;
                             line-height: 4rem;
-                            padding: 0rem 1rem 0rem 1rem;
+                            padding: 0rem 1rem 2rem 1rem;
                         }
                     }
 
@@ -1556,7 +1590,7 @@ html {
                             font-size: 2.5rem;
                             font-weight: bold;
                             line-height: 3rem;
-                            padding: 0rem 1rem 0rem 1rem;
+                            padding: 0rem 1rem 2rem 1rem;
                         }
                     }
 
@@ -1662,30 +1696,30 @@ html {
                     min-height: calc(100vh - 6rem);
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
+                    justify-content: space-between;
                     align-items: center;
-                    padding: 5rem 2rem 2rem 2rem;
+                    padding: 2rem 2rem 2rem 2rem;
                     width: 90%;
                     max-width: 1800px;
                     margin-bottom: 7rem;
 
                     @media (max-width:1440px) {
-                        padding: 5rem 1rem 2rem 1rem;
+                        padding: 2rem 1rem 2rem 1rem;
                         width: 92%;
                     }
 
                     @media (max-width:1208px) {
-                        padding: 5rem 1rem 2rem 1rem;
+                        padding: 2rem 1rem 2rem 1rem;
                         width: 92%;
                     }
 
                     @media (max-width:1150px) {
-                        padding: 5rem 1rem 1rem 1rem;
+                        padding: 2rem 1rem 1rem 1rem;
                         width: 92%;
                     }
 
                     @media (max-width:920px) {
-                        padding: 4rem 1rem 1rem 1rem;
+                        padding: 2rem 1rem 1rem 1rem;
                         width: 92%;
                     }
 
@@ -1784,7 +1818,7 @@ html {
                         margin-bottom: 2rem;
                         display: flex;
                         flex-wrap: wrap;
-                        justify-content: center;
+                        justify-content: space-evenly;
 
                         @media (max-width:1440px) {
                             gap: 1.8rem;
@@ -1914,6 +1948,135 @@ html {
 
 
                     }
+
+                    // .section-content {
+                    //     display: flex;
+                    //     flex-wrap: wrap;
+                    //     justify-content: space-evenly;
+                    //     gap: 2rem;
+                    //     margin-bottom: 2rem;
+
+                    //     @media (max-width: 1440px) {
+                    //         gap: 1.8rem;
+                    //     }
+
+                    //     @media (max-width: 1210px) {
+                    //         gap: 1.6rem;
+                    //     }
+
+                    //     @media (max-width: 1150px) {
+                    //         gap: 1.4rem;
+                    //     }
+
+                    //     @media (max-width: 720px) {
+                    //         gap: 1rem;
+                    //     }
+
+                    //     @media (max-width: 450px) {
+                    //         gap: 0.6rem;
+                    //     }
+
+                    //     .tech-card {
+                    //         flex: 1 1 calc(25% - 2rem);
+                    //         /* Карточки занимают 25% от ширины родителя минус отступы */
+                    //         max-width: 12rem;
+                    //         background: white;
+                    //         border-radius: 2rem;
+                    //         border: 1px solid black;
+                    //         overflow: hidden;
+                    //         text-align: center;
+                    //         display: flex;
+                    //         flex-direction: column;
+                    //         align-items: center;
+                    //         justify-content: space-between;
+                    //         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    //         color: black;
+                    //         min-width: 180px;
+                    //         min-height: 180px;
+                    //         aspect-ratio: 1/1;
+
+                    //         @media (max-width: 1210px) {
+                    //             flex: 1 1 calc(33.33% - 1.6rem);
+                    //             /* Карточки занимают треть ширины родителя на узких экранах */
+                    //             max-width: 160px;
+                    //             max-height: 160px;
+                    //         }
+
+                    //         @media (max-width: 1130px) {
+                    //             flex: 1 1 calc(50% - 1.4rem);
+                    //             /* Карточки занимают половину ширины родителя на еще более узких экранах */
+                    //             max-width: 140px;
+                    //             max-height: 140px;
+                    //             border-radius: 1.8rem;
+                    //         }
+
+                    //         @media (max-width: 720px) {
+                    //             flex: 1 1 calc(50% - 1rem);
+                    //             /* Карточки продолжают занимать 50%, но становятся меньше */
+                    //             max-width: 120px;
+                    //             max-height: 120px;
+                    //             border-radius: 1.5rem;
+                    //         }
+
+                    //         @media (max-width: 450px) {
+                    //             flex: 1 1 calc(33% - 0.6rem);
+                    //             /* На самом маленьком экране карточки занимают всю ширину */
+                    //             max-width: 90px;
+                    //             max-height: 90px;
+                    //             border-radius: 1rem;
+                    //         }
+
+                    //         .tech-card-image {
+                    //             width: 100%;
+                    //             overflow: hidden;
+                    //             min-height: 9rem;
+
+                    //             @media (max-width: 1210px) {
+                    //                 min-height: 8rem;
+                    //             }
+
+                    //             @media (max-width: 1130px) {
+                    //                 min-height: 6rem;
+                    //             }
+
+                    //             @media (max-width: 720px) {
+                    //                 min-height: 5rem;
+                    //             }
+
+                    //             @media (max-width: 450px) {
+                    //                 min-height: 3rem;
+                    //             }
+
+                    //             img {
+                    //                 width: 100%;
+                    //                 height: auto;
+                    //                 object-fit: cover;
+                    //                 display: block;
+                    //             }
+                    //         }
+
+                    //         p {
+                    //             font-size: 1.3rem;
+                    //             font-weight: bold;
+                    //             padding: 0.5rem;
+
+                    //             @media (max-width: 720px) {
+                    //                 font-size: 0.8rem;
+                    //                 padding: 0.3rem;
+                    //             }
+
+                    //             @media (max-width: 440px) {
+                    //                 font-size: 0.6rem;
+                    //                 font-weight: 400;
+                    //                 padding: 0.3rem;
+                    //             }
+                    //         }
+                    //     }
+                    // }
+
+
+
+
 
                     .explore-button-container {
                         padding-bottom: 1rem;

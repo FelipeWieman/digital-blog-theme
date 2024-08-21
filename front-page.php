@@ -97,7 +97,7 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
 
 <section class="section-blog rounded-[2rem]  px-[5rem] pb-[1rem]"
     style="background-color:<?php echo get_theme_mod('main_color_1', '#ffe005'); ?>">
-    <div class="section-header flex justify-between">
+    <div class="section-header flex ">
         <div class="section-header-left">
             <h1><?php echo esc_html($blog_section_title); ?></h1>
             <p><?php echo wp_kses_post($blog_section_description); ?></p>
