@@ -898,7 +898,8 @@ html {
             padding-left: 2em;
             padding-right: 2rem;
             margin-bottom: 3rem;
-            justify-content: space-between; }
+            justify-content: space-between;
+            width: 100%; }
             @media (max-width: 1440px) {
               html body .wrapper .main .section-blog .section-header {
                 padding-left: 2rem;
@@ -1121,7 +1122,8 @@ html {
             padding-left: 2em;
             padding-right: 2rem;
             margin-bottom: 3rem;
-            justify-content: space-between; }
+            justify-content: space-between;
+            width: 100%; }
             @media (max-width: 1440px) {
               html body .wrapper .main .section-about-us .section-header {
                 padding-left: 2rem;
