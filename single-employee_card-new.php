@@ -50,8 +50,27 @@ get_header('employee'); ?>
 
     <!-- Mitarbeiterfoto -->
     <div class="employee-card__photo">
-        <img src="<?php the_field('profil_bild'); ?>" alt="<?php the_field('employee_name'); ?>">
+        <?php
+        echo wp_get_attachment_image(get_the_ID());
+        ?>
     </div>
+
+
+    <div class="employee-card__photo">
+        <?php
+        $image_url = get_field('profil_bild'); // Holt die Bild-URL aus dem ACF-Feld
+        $image_id = attachment_url_to_postid($image_url); // Holt die Bild-ID basierend auf der URL
+        
+        if ($image_id) {
+            echo wp_get_attachment_image($image_id, 'custom-size'); // 'custom-size' ist die benutzerdefinierte Bildgröße
+        } else {
+            // Falls keine ID gefunden wird, Bild direkt aus URL anzeigen
+            echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr(get_field('employee_name')) . '" style="width:300px; height:auto;">';
+        }
+        ?>
+    </div>
+
+
 
     <!-- Name, Position und Unternehmen -->
     <div class="employee-card-petrol__body">

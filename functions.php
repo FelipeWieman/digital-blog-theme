@@ -1152,6 +1152,18 @@ add_action('init', 'create_employee_post_type');
 
 
 
+
+
+function custom_image_sizes()
+{
+	add_image_size('custom-size', 300, 300, true); // 300px Breite, 200px Höhe, true bedeutet hartes Zuschneiden
+}
+add_action('after_setup_theme', 'custom_image_sizes');
+
+
+
+
+
 function custom_blocks_enqueue_assets()
 {
 	// Подключение JS файла блока
