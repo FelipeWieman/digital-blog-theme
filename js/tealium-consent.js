@@ -25,7 +25,7 @@ function waitForTealium() {
             console.log('Tealium object is now initialized');
             checkConsentStatus();
             addConsentChangeListener();
-            addManualConsentButtonListener();
+            activateConsentButton();
         } else {
             retries++;
             if (retries >= maxRetries) {
@@ -69,6 +69,11 @@ function activateConsentButton() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    waitForTealium();
-    activateConsentButton()
+    // Check if we're on an employee_card page
+    if (!document.body.classList.contains('single-employee_card')) {
+        waitForTealium();
+        activateConsentButton();
+    } else {
+        console.log('This is an employee_card page, skipping consent prompt.');
+    }
 });
