@@ -1156,9 +1156,12 @@ add_action('init', 'create_employee_post_type');
 
 function custom_image_sizes()
 {
-	add_image_size('custom-size', 300, 300, true); // 300px Breite, 200px Höhe, true bedeutet hartes Zuschneiden
+	add_image_size('custom-size', 300, 300, true);
+	add_image_size('tech-card-size', 160, 160, false);
 }
 add_action('after_setup_theme', 'custom_image_sizes');
+
+
 
 
 

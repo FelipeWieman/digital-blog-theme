@@ -69,10 +69,14 @@
 
 			<div class="footer-right">
 				<nav class="footer-nav">
-					<a href="/blog">Blog</a>
-					<a href="/about">About Us</a>
-					<a href="tech-stack">Tech Stack</a>
-					<a href="/jobs">Jobs</a>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'menu_class' => 'nav_menu',
+						)
+					);
+					?>
 				</nav>
 				<div class="footer-social">
 					<a href="https://linkedin.com/company/interhypgruppe"><img

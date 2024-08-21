@@ -232,6 +232,7 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
         <div class="section-header-right"> </div>
     </div>
     <div class="section-content">
+
         <?php
         $args = array(
             'post_type' => 'tech_stack_card',
@@ -243,7 +244,7 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                 $tech_stack_query->the_post(); ?>
                 <div class="tech-card">
                     <div class="tech-card-image">
-                        <?php the_post_thumbnail('medium'); ?>
+                        <?php the_post_thumbnail('tech-card-size'); ?>
                     </div>
                     <p><?php the_title(); ?></p>
                 </div>
