@@ -2505,7 +2505,8 @@ html {
                             display: inline-block;
 
                             @media (max-width:500px) {
-                                max-height: calc(100vw* 0.45);
+                                min-height: 22vh;
+                                // max-height: calc(100vw* 0.45);
                             }
 
                             &::after {
@@ -2548,7 +2549,7 @@ html {
                                     }
 
                                     @media (max-width:550px) {
-                                        transform: translateY(-3rem);
+                                        transform: translateY(0);
                                     }
                                 }
                             }

@@ -1923,7 +1923,7 @@ html {
               display: inline-block; }
               @media (max-width: 500px) {
                 html body .wrapper .main .section-single .single-header .single-picture {
-                  max-height: calc(100vw* 0.45); } }
+                  min-height: 22vh; } }
               html body .wrapper .main .section-single .single-header .single-picture::after {
                 content: '';
                 position: absolute;
@@ -1955,7 +1955,7 @@ html {
                       transform: translateY(-5rem); } }
                   @media (max-width: 550px) {
                     html body .wrapper .main .section-single .single-header .single-picture .picture-container img {
-                      transform: translateY(-3rem); } }
+                      transform: translateY(0); } }
           html body .wrapper .main .section-single .single-content {
             background: white;
             border-radius: 2rem;
