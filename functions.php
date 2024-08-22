@@ -8,14 +8,14 @@
  */
 
 if (!defined('_S_VERSION')) {
-	// Replace the version number of the theme on each release.
+
 	define('_S_VERSION', '1.0.0');
 }
 
 add_filter('show_admin_bar', '__return_false');
 function custom_excerpt_length($length)
 {
-	return 30; // Замените 20 на нужное вам количество слов
+	return 30;
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
@@ -32,7 +32,7 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 
 function my_theme_setup()
 {
-	// Регистрация меню
+
 	register_nav_menus(
 		array(
 			'primary' => __('Primary Menu', 'blog-theme')
@@ -1376,8 +1376,7 @@ add_action('widgets_init', 'blog_theme_widgets_init');
  */
 function blog_theme_scripts()
 {
-	// wp_enqueue_style('blog_theme-style', get_stylesheet_uri(), array(), _S_VERSION);
-	// wp_style_add_data('blog_theme-style', 'rtl', 'replace');
+
 
 	wp_enqueue_script('blog_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 

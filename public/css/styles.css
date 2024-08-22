@@ -1335,7 +1335,6 @@ html {
                 border-radius: 2rem;
                 color: #ffffff; }
         html body .wrapper .main .section-tech-stack {
-          min-height: calc(100vh - 6rem);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
