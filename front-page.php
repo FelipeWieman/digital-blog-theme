@@ -139,8 +139,9 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                                     <span><?php comments_number(); ?></span>
                                 </div>
                             </div>
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="author-right flex w-[2rem] hover:scale-[1.3] transition-all cursor-pointer">
+
+                            <div class="author-right">
+                                <a href="<?php the_permalink(); ?>">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <g>
                                             <path d="M0 0h24v24H0z" fill="none" />
@@ -148,8 +149,9 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                                                 d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
                                         </g>
                                     </svg>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+
 
 
 

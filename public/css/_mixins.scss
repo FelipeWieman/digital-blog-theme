@@ -187,6 +187,22 @@
             font-size: 0.9rem;
             color: #666;
 
+            .author-right {
+
+                cursor: pointer;
+                transition: all;
+
+                &:hover {
+                    transform: scale(1.3);
+                }
+
+                a {
+                    display: block;
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
             @media(max-width: 1630px) {
                 font-size: 0.8rem;
             }

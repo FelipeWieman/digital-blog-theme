@@ -1049,6 +1049,15 @@ html {
                   justify-content: space-between;
                   font-size: 0.9rem;
                   color: #666; }
+                  html body .wrapper .main .section-blog .section-content .card .card-body .author-info .author-right {
+                    cursor: pointer;
+                    transition: all; }
+                    html body .wrapper .main .section-blog .section-content .card .card-body .author-info .author-right:hover {
+                      transform: scale(1.3); }
+                    html body .wrapper .main .section-blog .section-content .card .card-body .author-info .author-right a {
+                      display: block;
+                      width: 2rem;
+                      height: 2rem; }
                   @media (max-width: 1630px) {
                     html body .wrapper .main .section-blog .section-content .card .card-body .author-info {
                       font-size: 0.8rem; } }
@@ -1273,6 +1282,15 @@ html {
                   justify-content: space-between;
                   font-size: 0.9rem;
                   color: #666; }
+                  html body .wrapper .main .section-about-us .section-content .card .card-body .author-info .author-right {
+                    cursor: pointer;
+                    transition: all; }
+                    html body .wrapper .main .section-about-us .section-content .card .card-body .author-info .author-right:hover {
+                      transform: scale(1.3); }
+                    html body .wrapper .main .section-about-us .section-content .card .card-body .author-info .author-right a {
+                      display: block;
+                      width: 2rem;
+                      height: 2rem; }
                   @media (max-width: 1630px) {
                     html body .wrapper .main .section-about-us .section-content .card .card-body .author-info {
                       font-size: 0.8rem; } }
@@ -1782,6 +1800,15 @@ html {
                   justify-content: space-between;
                   font-size: 0.9rem;
                   color: #666; }
+                  html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info .author-right {
+                    cursor: pointer;
+                    transition: all; }
+                    html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info .author-right:hover {
+                      transform: scale(1.3); }
+                    html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info .author-right a {
+                      display: block;
+                      width: 2rem;
+                      height: 2rem; }
                   @media (max-width: 1630px) {
                     html body .wrapper .main .section-blog-blog .blog-grid .card .card-body .author-info {
                       font-size: 0.8rem; } }
