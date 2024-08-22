@@ -1376,8 +1376,8 @@ add_action('widgets_init', 'blog_theme_widgets_init');
  */
 function blog_theme_scripts()
 {
-	wp_enqueue_style('blog_theme-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_style_add_data('blog_theme-style', 'rtl', 'replace');
+	// wp_enqueue_style('blog_theme-style', get_stylesheet_uri(), array(), _S_VERSION);
+	// wp_style_add_data('blog_theme-style', 'rtl', 'replace');
 
 	wp_enqueue_script('blog_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
