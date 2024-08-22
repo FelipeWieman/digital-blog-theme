@@ -70,7 +70,7 @@ html {
     html body:has(.menu-toggle:checked) {
       overflow: hidden; }
     html body.scroll .wrapper .header .header-container {
-      padding: .2rem 2rem; }
+      padding: .3rem .5rem; }
       html body.scroll .wrapper .header .header-container .logo {
         padding: .5rem 1rem .5rem 1rem; }
     html body.blog-page .wrapper {
@@ -1897,7 +1897,7 @@ html {
               display: inline-block; }
               @media (max-width: 500px) {
                 html body .wrapper .main .section-single .single-header .single-picture {
-                  height: calc(100vw* 0.45); } }
+                  max-height: calc(100vw* 0.45); } }
               html body .wrapper .main .section-single .single-header .single-picture::after {
                 content: '';
                 position: absolute;
@@ -2549,7 +2549,8 @@ html {
               display: grid;
               grid-template-columns: 41% 59%;
               grid-template-rows: 1fr;
-              align-items: center; }
+              align-items: center;
+              margin-bottom: 1.5rem; }
               @media (max-width: 850px) {
                 html body .wrapper .main .section-content-about .content-about-main .main-item-a {
                   display: flex;
@@ -2565,7 +2566,8 @@ html {
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
-                justify-content: center; }
+                justify-content: center;
+                margin-bottom: 1.5rem; }
                 @media (max-width: 1100px) {
                   html body .wrapper .main .section-content-about .content-about-main .main-item-a .item-body {
                     padding: 1rem 1rem 1rem 1rem; } }
@@ -2959,32 +2961,36 @@ html {
                 font-size: 0.8rem; } }
       html body .wrapper .custom-footer {
         display: none; }
-    html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt {
-      background-color: black;
-      font-family: 'TT Norms Pro' !important;
-      border-radius: 2rem;
-      color: white; }
-      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content h1 {
-        font-family: 'TT Norms Pro' !important; }
-      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label:before {
-        background-color: #de00fc; }
-        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label:before span {
-          color: black; }
-      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label {
-        background-color: #ffe600; }
-        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label span {
-          color: black; }
-      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:not(checked) + label {
-        background-color: #646464; }
-        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:not(checked) + label span {
-          color: black; }
-      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_footer .button {
+    html body #__tealiumGDPRcpPrefs .privacy-modal {
+      overflow: hidden; }
+      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt {
+        transform: scale(0.85);
+        overflow: hidden;
+        background-color: black;
+        font-family: 'TT Norms Pro' !important;
         border-radius: 2rem;
-        background-color: #ffe005;
-        color: black;
-        font-family: 'TT Norms Pro' !important; }
-      html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .close_btn_thick::after {
-        color: #ffe005; }
+        color: white; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content h1 {
+          font-family: 'TT Norms Pro' !important; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label:before {
+          background-color: #de00fc; }
+          html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label:before span {
+            color: black; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label {
+          background-color: #ffe600; }
+          html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:checked + label span {
+            color: black; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:not(checked) + label {
+          background-color: #646464; }
+          html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_content div table tbody tr td input[type="checkbox"].toggle:not(checked) + label span {
+            color: black; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .privacy_prompt_footer .button {
+          border-radius: 2rem;
+          background-color: #ffe005;
+          color: black;
+          font-family: 'TT Norms Pro' !important; }
+        html body #__tealiumGDPRcpPrefs .privacy-modal .privacy_prompt .close_btn_thick::after {
+          color: #ffe005; }
     html body .wrapper-event {
       display: flex;
       flex-direction: column;
