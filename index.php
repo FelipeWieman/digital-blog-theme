@@ -110,9 +110,9 @@ get_header();
 		endif;
 		?>
 	</div>
-	<div class="explore-button-container">
+	<!-- <div class="explore-button-container">
 		<button id="load-more" class="explore-button">Load More</button>
-	</div>
+	</div> -->
 </section>
 
 <?php
