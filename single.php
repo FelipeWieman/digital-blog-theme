@@ -29,11 +29,13 @@ get_header();
 		<div class="single-content">
 			<div class="content-info">
 				<span><?php echo get_the_date(); ?></span>
-				<span>Schlagwörter: <?php the_category(', '); ?></span>
+
 			</div>
 			<div class="content-body">
 				<?php the_content(); ?>
 			</div>
+
+			<span>Schlagwörter: <?php the_category(', '); ?></span>
 			<!-- <div class="comments">
 				<div class="comment-field">
 					<p><?php esc_html_e('Write a comment', 'blog_theme'); ?></p>
