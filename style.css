@@ -2033,9 +2033,15 @@ html {
                 border-left: 5px #46afff solid;
                 margin-left: 4rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-image img {
-                height: auto;
+                height: auto !important;
                 width: 100%; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-heading {
+                margin-bottom: 1rem;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                background-size: 120% 120%;
+                background-image: linear-gradient(to right, #ffe005, #ffe005); }
+              html body .wrapper .main .section-single .single-content .content-body .wp-block-list {
                 margin-bottom: 1rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-syntaxhighlighter-code div .syntaxhighlighter {
                 background-color: #b42424;

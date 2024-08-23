@@ -2679,13 +2679,21 @@ html {
 
                             .wp-block-image {
                                 img {
-                                    height: auto;
+                                    height: auto !important;
                                     width: 100%;
 
                                 }
                             }
 
                             .wp-block-heading {
+                                margin-bottom: 1rem;
+                                background-repeat: no-repeat;
+                                background-position: center bottom;
+                                background-size: 120% 120%;
+                                background-image: linear-gradient(to right, #ffe005, #ffe005);
+                            }
+
+                            .wp-block-list {
                                 margin-bottom: 1rem;
                             }
 
