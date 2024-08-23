@@ -1497,7 +1497,7 @@ html {
                   html body .wrapper .main .section-tech-stack .section-content .tech-card .tech-card-image {
                     min-height: 3rem; } }
                 html body .wrapper .main .section-tech-stack .section-content .tech-card .tech-card-image img {
-                  width: 100%;
+                  width: auto;
                   height: 100% !important;
                   display: block;
                   padding: .3rem; }
