@@ -2586,49 +2586,49 @@ html {
                             padding: 2rem 2rem;
                         }
 
-                        .navigation {
-                            .nav-links {
-                                display: flex;
-                                justify-content: space-around;
-                                width: 100%;
-                                gap: 3rem;
-                                font-size: 1.5rem;
+                        // .navigation {
+                        //     .nav-links {
+                        //         display: flex;
+                        //         justify-content: space-around;
+                        //         width: 100%;
+                        //         gap: 3rem;
+                        //         font-size: 1.5rem;
 
-                                .nav-previous {
-                                    .nav-subtitle {
-                                        font-size: 1.5rem;
-                                    }
+                        //         .nav-previous {
+                        //             .nav-subtitle {
+                        //                 font-size: 1.5rem;
+                        //             }
 
-                                    .nav-title {
-                                        padding: 1rem;
-                                        font-weight: bold;
-                                        display: inline-block;
-                                        border-radius: 1rem;
-                                        background-repeat: no-repeat;
-                                        background-position: center bottom;
-                                        background-size: 120% 120%;
-                                        background-image: linear-gradient(to right, #ffe005, #ffe005);
-                                    }
-                                }
+                        //             .nav-title {
+                        //                 padding: 1rem;
+                        //                 font-weight: bold;
+                        //                 display: inline-block;
+                        //                 border-radius: 1rem;
+                        //                 background-repeat: no-repeat;
+                        //                 background-position: center bottom;
+                        //                 background-size: 120% 120%;
+                        //                 background-image: linear-gradient(to right, #ffe005, #ffe005);
+                        //             }
+                        //         }
 
-                                .nav-next {
-                                    .nav-subtitle {
-                                        font-size: 1.5rem;
-                                    }
+                        //         .nav-next {
+                        //             .nav-subtitle {
+                        //                 font-size: 1.5rem;
+                        //             }
 
-                                    .nav-title {
-                                        padding: 1rem;
-                                        font-weight: bold;
-                                        display: inline-block;
-                                        border-radius: 1rem;
-                                        background-repeat: no-repeat;
-                                        background-position: center bottom;
-                                        background-size: 120% 120%;
-                                        background-image: linear-gradient(to right, #ffe005, #ffe005);
-                                    }
-                                }
-                            }
-                        }
+                        //             .nav-title {
+                        //                 padding: 1rem;
+                        //                 font-weight: bold;
+                        //                 display: inline-block;
+                        //                 border-radius: 1rem;
+                        //                 background-repeat: no-repeat;
+                        //                 background-position: center bottom;
+                        //                 background-size: 120% 120%;
+                        //                 background-image: linear-gradient(to right, #ffe005, #ffe005);
+                        //             }
+                        //         }
+                        //     }
+                        // }
 
                         .content-info {
                             color: rgb(149, 149, 149);
@@ -2804,6 +2804,8 @@ html {
                         }
                     }
 
+
+
                 }
 
                 .related-posts {
@@ -2832,6 +2834,7 @@ html {
                         }
                     }
                 }
+
 
             }
 

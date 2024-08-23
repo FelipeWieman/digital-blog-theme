@@ -1975,34 +1975,6 @@ html {
             @media (max-width: 550px) {
               html body .wrapper .main .section-single .single-content {
                 padding: 2rem 2rem; } }
-            html body .wrapper .main .section-single .single-content .navigation .nav-links {
-              display: flex;
-              justify-content: space-around;
-              width: 100%;
-              gap: 3rem;
-              font-size: 1.5rem; }
-              html body .wrapper .main .section-single .single-content .navigation .nav-links .nav-previous .nav-subtitle {
-                font-size: 1.5rem; }
-              html body .wrapper .main .section-single .single-content .navigation .nav-links .nav-previous .nav-title {
-                padding: 1rem;
-                font-weight: bold;
-                display: inline-block;
-                border-radius: 1rem;
-                background-repeat: no-repeat;
-                background-position: center bottom;
-                background-size: 120% 120%;
-                background-image: linear-gradient(to right, #ffe005, #ffe005); }
-              html body .wrapper .main .section-single .single-content .navigation .nav-links .nav-next .nav-subtitle {
-                font-size: 1.5rem; }
-              html body .wrapper .main .section-single .single-content .navigation .nav-links .nav-next .nav-title {
-                padding: 1rem;
-                font-weight: bold;
-                display: inline-block;
-                border-radius: 1rem;
-                background-repeat: no-repeat;
-                background-position: center bottom;
-                background-size: 120% 120%;
-                background-image: linear-gradient(to right, #ffe005, #ffe005); }
             html body .wrapper .main .section-single .single-content .content-info {
               color: #959595;
               font-size: 1.7rem;
