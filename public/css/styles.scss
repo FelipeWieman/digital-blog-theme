@@ -2806,6 +2806,33 @@ html {
 
                 }
 
+                .related-posts {
+                    margin-top: 40px;
+                    padding-top: 20px;
+                    border-top: 1px solid #ddd;
+
+                    h2 {
+                        font-size: 2rem;
+                        margin-bottom: 1.5rem;
+                        text-align: center;
+                    }
+
+                    .related-posts-container {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                        gap: 3rem 1.5rem;
+                        padding: 2rem;
+                        width: 100%;
+                        z-index: 1;
+
+                        .card {
+                            @include card-preview-style;
+                            border: 2px rgb(128, 128, 128) solid;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
             }
 
 
@@ -3200,6 +3227,8 @@ html {
 
                     }
 
+
+
                     .comments {
                         .comment-field {
                             width: 100%;
@@ -3215,6 +3244,8 @@ html {
                         }
                     }
                 }
+
+
             }
 
 

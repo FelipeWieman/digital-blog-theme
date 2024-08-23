@@ -2117,6 +2117,95 @@ html {
               html body .wrapper .main .section-single .single-content .comments .comment-field p {
                 font-size: 1rem;
                 color: gray; }
+          html body .wrapper .main .section-single .related-posts {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd; }
+            html body .wrapper .main .section-single .related-posts h2 {
+              font-size: 2rem;
+              margin-bottom: 1.5rem;
+              text-align: center; }
+            html body .wrapper .main .section-single .related-posts .related-posts-container {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+              gap: 3rem 1.5rem;
+              padding: 2rem;
+              width: 100%;
+              z-index: 1; }
+              html body .wrapper .main .section-single .related-posts .related-posts-container .card {
+                background: white;
+                border-radius: 2rem;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                color: #313131;
+                border: 2px black solid;
+                border: 2px gray solid;
+                font-size: 1rem; }
+                @media (max-width: 1500px) {
+                  html body .wrapper .main .section-single .related-posts .related-posts-container .card {
+                    border-radius: 1.7rem; } }
+                html body .wrapper .main .section-single .related-posts .related-posts-container .card img {
+                  width: 100%;
+                  height: 50%;
+                  display: block;
+                  background-size: cover;
+                  height: 15rem;
+                  /* aspect-ratio: 1; */
+                  object-fit: cover; }
+                html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body {
+                  padding: 1.5rem;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  flex-grow: 1; }
+                  html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    line-height: 1.8rem;
+                    font-weight: bold; }
+                    @media (max-width: 1440px) {
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body h2 {
+                        font-size: 1.4rem; } }
+                  @media (max-width: 1440px) {
+                    html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body {
+                      padding: 1.3rem; } }
+                  html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .card-top h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    line-height: 1.8rem;
+                    font-weight: bold; }
+                    @media (max-width: 1440px) {
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .card-top h2 {
+                        font-size: 1.4rem; } }
+                  html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .card-top p {
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                    flex-grow: 1; }
+                    @media (max-width: 1440px) {
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .card-top p {
+                        font-size: 0.9rem; } }
+                  html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .author-info {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9rem;
+                    color: #666; }
+                    html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .author-info .author-right {
+                      cursor: pointer;
+                      transition: all; }
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .author-info .author-right:hover {
+                        transform: scale(1.3); }
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .author-info .author-right a {
+                        display: block;
+                        width: 2rem;
+                        height: 2rem; }
+                    @media (max-width: 1630px) {
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .author-info {
+                        font-size: 0.8rem; } }
+                    @media (max-width: 1450px) {
+                      html body .wrapper .main .section-single .related-posts .related-posts-container .card .card-body .author-info {
+                        font-size: 0.7rem; } }
         html body .wrapper .main .section-what-we-do {
           display: flex;
           flex-direction: column;
