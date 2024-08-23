@@ -2029,6 +2029,14 @@ html {
                   margin-bottom: .6rem; } }
             html body .wrapper .main .section-single .single-content .content-body {
               margin-bottom: 5rem; }
+              html body .wrapper .main .section-single .single-content .content-body .wp-block-columns .wp-block-column .wp-block-pullquote {
+                border-left: 5px #46afff solid;
+                margin-left: 4rem; }
+              html body .wrapper .main .section-single .single-content .content-body .wp-block-image img {
+                height: auto;
+                width: 100%; }
+              html body .wrapper .main .section-single .single-content .content-body .wp-block-heading {
+                margin-bottom: 1rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-syntaxhighlighter-code div .syntaxhighlighter {
                 background-color: #b42424;
                 color: #f8f8f2;

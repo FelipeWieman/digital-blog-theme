@@ -2665,6 +2665,30 @@ html {
                         .content-body {
                             margin-bottom: 5rem;
 
+
+
+                            .wp-block-columns {
+                                .wp-block-column {
+                                    .wp-block-pullquote {
+                                        border-left: 5px rgb(70, 175, 255) solid;
+                                        margin-left: 4rem;
+
+                                    }
+                                }
+                            }
+
+                            .wp-block-image {
+                                img {
+                                    height: auto;
+                                    width: 100%;
+
+                                }
+                            }
+
+                            .wp-block-heading {
+                                margin-bottom: 1rem;
+                            }
+
                             .wp-block-syntaxhighlighter-code {
 
                                 div {
