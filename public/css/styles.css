@@ -2108,7 +2108,6 @@ html {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
               gap: 3rem 1.5rem;
-              padding: 2rem;
               width: 100%;
               z-index: 1; }
               html body .wrapper .main .section-single .related-posts .related-posts-container .card {
