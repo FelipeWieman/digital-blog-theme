@@ -2687,10 +2687,6 @@ html {
 
                             .wp-block-heading {
                                 margin-bottom: 1rem;
-                                background-repeat: no-repeat;
-                                background-position: center bottom;
-                                background-size: 120% 120%;
-                                background-image: linear-gradient(to right, #ffe005, #ffe005);
                             }
 
                             .wp-block-list {
@@ -2715,7 +2711,10 @@ html {
 
                             }
 
-                            h2 {
+                            h2,
+                            h3,
+                            h4,
+                            h1 {
 
                                 display: inline;
                                 background-repeat: no-repeat;

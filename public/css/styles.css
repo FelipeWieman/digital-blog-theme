@@ -2036,11 +2036,7 @@ html {
                 height: auto !important;
                 width: 100%; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-heading {
-                margin-bottom: 1rem;
-                background-repeat: no-repeat;
-                background-position: center bottom;
-                background-size: 120% 120%;
-                background-image: linear-gradient(to right, #ffe005, #ffe005); }
+                margin-bottom: 1rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-list {
                 margin-bottom: 1rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-syntaxhighlighter-code div .syntaxhighlighter {
@@ -2050,7 +2046,10 @@ html {
                 border-radius: 5px;
                 font-family: 'Courier New', Courier, monospace;
                 font-size: 1rem; }
-              html body .wrapper .main .section-single .single-content .content-body h2 {
+              html body .wrapper .main .section-single .single-content .content-body h2,
+              html body .wrapper .main .section-single .single-content .content-body h3,
+              html body .wrapper .main .section-single .single-content .content-body h4,
+              html body .wrapper .main .section-single .single-content .content-body h1 {
                 display: inline;
                 background-repeat: no-repeat;
                 background-position: center bottom 12px;
@@ -2058,21 +2057,33 @@ html {
                 background-image: linear-gradient(to right, #ffe005, #ffe005);
                 font-size: 3rem; }
                 @media (max-width: 1400px) {
-                  html body .wrapper .main .section-single .single-content .content-body h2 {
+                  html body .wrapper .main .section-single .single-content .content-body h2,
+                  html body .wrapper .main .section-single .single-content .content-body h3,
+                  html body .wrapper .main .section-single .single-content .content-body h4,
+                  html body .wrapper .main .section-single .single-content .content-body h1 {
                     font-size: 2.5rem;
                     background-size: 100% 9px;
                     background-position: center bottom 12px; } }
                 @media (max-width: 1200px) {
-                  html body .wrapper .main .section-single .single-content .content-body h2 {
+                  html body .wrapper .main .section-single .single-content .content-body h2,
+                  html body .wrapper .main .section-single .single-content .content-body h3,
+                  html body .wrapper .main .section-single .single-content .content-body h4,
+                  html body .wrapper .main .section-single .single-content .content-body h1 {
                     font-size: 2.3rem;
                     background-size: 100% 8px;
                     background-position: center bottom 9px; } }
                 @media (max-width: 963px) {
-                  html body .wrapper .main .section-single .single-content .content-body h2 {
+                  html body .wrapper .main .section-single .single-content .content-body h2,
+                  html body .wrapper .main .section-single .single-content .content-body h3,
+                  html body .wrapper .main .section-single .single-content .content-body h4,
+                  html body .wrapper .main .section-single .single-content .content-body h1 {
                     font-size: 1.8rem;
                     background-size: 100% 7px; } }
                 @media (max-width: 700px) {
-                  html body .wrapper .main .section-single .single-content .content-body h2 {
+                  html body .wrapper .main .section-single .single-content .content-body h2,
+                  html body .wrapper .main .section-single .single-content .content-body h3,
+                  html body .wrapper .main .section-single .single-content .content-body h4,
+                  html body .wrapper .main .section-single .single-content .content-body h1 {
                     background-size: 100% 7px;
                     background-position: center bottom 9px; } }
               html body .wrapper .main .section-single .single-content .content-body p {
