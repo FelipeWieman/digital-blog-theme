@@ -1698,7 +1698,7 @@ html {
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 2rem 2rem 2rem 2rem;
+                    padding: 3rem 2rem 2rem 2rem;
                     width: 90%;
                     max-width: 1800px;
                     margin-bottom: 7rem;
@@ -1819,6 +1819,7 @@ html {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-evenly;
+                        padding: 0 2rem;
 
                         @media (max-width:1440px) {
                             gap: 1.8rem;
@@ -2131,7 +2132,7 @@ html {
                     flex-direction: column;
                     padding: 6rem 2rem 2rem 2rem;
                     max-width: 1750px;
-                    width: 100%;
+                    width: 90%;
                     position: relative;
 
 
@@ -2151,13 +2152,13 @@ html {
                     @media (max-width:960px) {
                         padding: 3rem 2rem 1rem 2rem;
                         max-width: 1750px;
-                        width: 100%;
+                        width: 90%;
                     }
 
                     @media (max-width:680px) {
-                        padding: 2rem 2rem 1rem 2rem;
+                        padding: 1rem;
                         max-width: 1750px;
-                        width: 100%;
+                        width: 90%;
                     }
 
                     .blog-label {
@@ -2375,7 +2376,7 @@ html {
                         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
                         gap: 3rem 1.5rem;
                         padding: 2rem;
-                        width: 90%;
+                        width: 100%;
                         z-index: 1;
 
                         @media (max-width:732px) {

@@ -71,13 +71,17 @@ get_header();
 		if ($blog_posts->have_posts()):
 			while ($blog_posts->have_posts()):
 				$blog_posts->the_post(); ?>
+
 				<div class="card">
-					<?php if (has_post_thumbnail()): ?>
-						<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-					<?php else: ?>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/post_picture_fallback.png"
-							alt="<?php the_title(); ?>">
-					<?php endif; ?>
+					<a href="<?php the_permalink(); ?>">
+						<?php if (has_post_thumbnail()): ?>
+							<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+						<?php else: ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/images/post_picture_fallback.png"
+								alt="<?php the_title(); ?>">
+						<?php endif; ?>
+					</a>
+
 					<div class="card-body">
 						<div class="card-top">
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -104,7 +108,9 @@ get_header();
 							</div>
 						</div>
 					</div>
+					</a>
 				</div>
+
 			<?php endwhile;
 			wp_reset_postdata();
 		endif;

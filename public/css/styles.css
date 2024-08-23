@@ -874,7 +874,7 @@ html {
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          padding: 2rem 2rem 0rem 2rem;
+          padding: 3rem 2rem 0rem 2rem;
           width: 90%;
           max-width: 1800px;
           margin-bottom: 7rem;
@@ -1099,7 +1099,6 @@ html {
               html body .wrapper .main .section-blog .explore-button-container .explore-button:hover {
                 background-color: #ffe005;
                 border: 2px black solid;
-                border-radius: 2rem;
                 color: #313131; }
         html body .wrapper .main .section-about-us {
           min-height: calc(100vh - 5.5rem);
@@ -1107,7 +1106,7 @@ html {
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          padding: 2rem 2rem 0rem 2rem;
+          padding: 3rem 2rem 0rem 2rem;
           width: 90%;
           max-width: 1800px;
           margin-bottom: 7rem;
@@ -1332,14 +1331,13 @@ html {
               html body .wrapper .main .section-about-us .explore-button-container .explore-button:hover {
                 background-color: #313131;
                 border: 2px black solid;
-                border-radius: 2rem;
                 color: #ffffff; }
         html body .wrapper .main .section-tech-stack {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          padding: 2rem 2rem 2rem 2rem;
+          padding: 3rem 2rem 2rem 2rem;
           width: 90%;
           max-width: 1800px;
           margin-bottom: 7rem; }
@@ -1427,7 +1425,8 @@ html {
             margin-bottom: 2rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly; }
+            justify-content: space-evenly;
+            padding: 0 2rem; }
             @media (max-width: 1440px) {
               html body .wrapper .main .section-tech-stack .section-content {
                 gap: 1.8rem; } }
@@ -1552,7 +1551,7 @@ html {
           flex-direction: column;
           padding: 6rem 2rem 2rem 2rem;
           max-width: 1750px;
-          width: 100%;
+          width: 90%;
           position: relative; }
           html body .wrapper .main .section-hero-blog.animated {
             animation-duration: 0.3s;
@@ -1563,12 +1562,12 @@ html {
             html body .wrapper .main .section-hero-blog {
               padding: 3rem 2rem 1rem 2rem;
               max-width: 1750px;
-              width: 100%; } }
+              width: 90%; } }
           @media (max-width: 680px) {
             html body .wrapper .main .section-hero-blog {
-              padding: 2rem 2rem 1rem 2rem;
+              padding: 1rem;
               max-width: 1750px;
-              width: 100%; } }
+              width: 90%; } }
           html body .wrapper .main .section-hero-blog .blog-label {
             padding-left: 10rem;
             margin-bottom: 1rem; }
@@ -1726,7 +1725,7 @@ html {
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 3rem 1.5rem;
             padding: 2rem;
-            width: 90%;
+            width: 100%;
             z-index: 1; }
             @media (max-width: 732px) {
               html body .wrapper .main .section-blog-blog .blog-grid {
@@ -1849,7 +1848,6 @@ html {
               html body .wrapper .main .section-blog-blog .explore-button-container .explore-button:hover {
                 background-color: #313131;
                 border: 2px black solid;
-                border-radius: 2rem;
                 color: #ffe005; }
         html body .wrapper .main .section-single {
           display: flex;

@@ -35,7 +35,7 @@ get_header();
 				<?php the_content(); ?>
 			</div>
 
-			<span>Schlagwörter: <?php the_category(', '); ?></span>
+			<!-- <span>Schlagwörter: <?php the_category(', '); ?></span> -->
 			<!-- <div class="comments">
 				<div class="comment-field">
 					<p><?php esc_html_e('Write a comment', 'blog_theme'); ?></p>
