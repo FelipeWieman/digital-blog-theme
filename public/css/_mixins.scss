@@ -304,20 +304,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 2rem 0rem 2rem;
+    padding: 3.7rem 2rem 0rem 2rem;
     width: 90%;
     max-width: 1800px;
     margin-bottom: 7rem;
     background-color: $bg-color;
 
     @media (max-width: 1440px) {
-        padding: 2rem 1.2rem 0rem 1.2rem;
+        padding: 3.7rem 1.2rem 0rem 1.2rem;
         width: 92%;
     }
 
     @media (max-width: 1025px) {
         margin-bottom: 5rem;
-        padding: 2rem 1rem 0rem 1rem;
+        padding: 3.7rem 1rem 0rem 1rem;
     }
 
     @media (max-width: 605px) {
