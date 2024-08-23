@@ -198,22 +198,23 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
             return $a['order'] - $b['order'];
         });
 
-        foreach ($cards as $card): ?>
-            <div class="card">
-                <img src="<?php echo $card['image']; ?>" alt="Card">
-                <div class="card-body">
-                    <h2>
-                        <?php echo $card['title']; ?>
-                    </h2>
-
-                    <p><?php echo $card['text']; ?></p>
-
-                    <div class="author-info flex">
-
+        foreach ($cards as $card):
+            $image_id = attachment_url_to_postid($card['image']);
+            if ($image_id):
+                ?>
+                <div class="card">
+                    <?php echo wp_get_attachment_image($image_id, 'about-us-image-size', false, array('alt' => 'Card')); ?>
+                    <div class="card-body">
+                        <h2><?php echo $card['title']; ?></h2>
+                        <p><?php echo $card['text']; ?></p>
+                        <div class="author-info flex"></div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+                <?php
+            endif;
+        endforeach;
+        ?>
+
 
 
     </div>

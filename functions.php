@@ -1158,6 +1158,7 @@ function custom_image_sizes()
 {
 	add_image_size('custom-size', 300, 300, true);
 	add_image_size('tech-card-size', 160, 160, false);
+	add_image_size('about-us-image-size', 780, 780, false);
 }
 add_action('after_setup_theme', 'custom_image_sizes');
 
