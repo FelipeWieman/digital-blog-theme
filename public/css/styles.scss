@@ -2850,6 +2850,10 @@ html {
             padding-top: 20px;
             border-top: 1px solid #ddd;
 
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+
             h2 {
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
