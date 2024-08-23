@@ -115,31 +115,28 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
             while ($blog_posts->have_posts()):
                 $blog_posts->the_post(); ?>
                 <div class="card">
-                    <?php if (has_post_thumbnail()): ?>
-                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-                    <?php endif; ?>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php if (has_post_thumbnail()): ?>
+                            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/post_picture_fallback.png"
+                                alt="<?php the_title(); ?>">
+                        <?php endif; ?>
+                    </a>
+
                     <div class="card-body">
                         <div class="card-top">
-                            <h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                            <!-- <p> <?php
-                            if (strpos(get_the_content(), '<!--more-->') !== false) {
-                                the_content('Read More');
-                            } else {
-                                the_excerpt();
-                            }
-                            ?>-->
+                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                             <?php the_excerpt(); ?>
                         </div>
 
                         <div class="author-info flex">
-
                             <div class="author-left">
-                                <div class="font-bold"> <span><?php the_author(); ?></span> •</div>
+                                <div class="font-bold"><span><?php the_author(); ?></span> •</div>
                                 <div><span><?php echo get_the_date(); ?></span> • &bull;
                                     <span><?php comments_number(); ?></span>
                                 </div>
                             </div>
-
                             <div class="author-right">
                                 <a href="<?php the_permalink(); ?>">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -151,12 +148,9 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
                                     </svg>
                                 </a>
                             </div>
-
-
-
-
                         </div>
                     </div>
+                    </a>
                 </div>
             <?php endwhile;
             wp_reset_postdata();
