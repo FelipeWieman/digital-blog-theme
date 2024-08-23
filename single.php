@@ -68,7 +68,8 @@ get_header();
 										<div class="author-left">
 											<div class="font-bold">
 												<span><?php echo get_the_author_meta('display_name', $prev_post->post_author); ?></span>
-												•</div>
+												•
+											</div>
 											<div><span><?php echo get_the_date('', $prev_post->ID); ?></span> • &bull;
 												<span><?php echo get_comments_number($prev_post->ID); ?></span>
 											</div>
@@ -113,29 +114,29 @@ get_header();
 										<div class="author-left">
 											<div class="font-bold">
 												<span><?php echo get_the_author_meta('display_name', $next_post->post_author); ?></span>
-												•</div>
-											<div><span><?php echo get_the_date('', $next_post->ID); ?></span> • &bull;
-												<span><?php echo get_comments_number($next_post->ID); ?></span>
 											</div>
+											<!-- <div><span><?php echo get_the_date('', $next_post->ID); ?></span> • &bull;
+												<span><?php echo get_comments_number($next_post->ID); ?></span> -->
 										</div>
-										<div class="author-right">
-											<a href="<?php echo get_permalink($next_post->ID); ?>">
-												<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-													<g>
-														<path d="M0 0h24v24H0z" fill="none" />
-														<path
-															d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
-													</g>
-												</svg>
-											</a>
-										</div>
+									</div>
+									<div class="author-right">
+										<a href="<?php echo get_permalink($next_post->ID); ?>">
+											<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+												<g>
+													<path d="M0 0h24v24H0z" fill="none" />
+													<path
+														d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 9H8v2h4v3l4-4-4-4v3z" />
+												</g>
+											</svg>
+										</a>
 									</div>
 								</div>
 							</div>
-						<?php endif; ?>
-					</div>
+						</div>
+					<?php endif; ?>
 				</div>
-			<?php endif; ?>
+			</div>
+		<?php endif; ?>
 
 		</div>
 	<?php endwhile; // End of the loop. ?>
