@@ -1482,10 +1482,8 @@ html {
                   border-radius: 1rem; } }
               html body .wrapper .main .section-tech-stack .section-content .tech-card .tech-card-image {
                 overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-grow: 1; }
+                flex-grow: 1;
+                height: 100%; }
                 @media (max-width: 1210px) {
                   html body .wrapper .main .section-tech-stack .section-content .tech-card .tech-card-image {
                     min-height: 8rem; } }

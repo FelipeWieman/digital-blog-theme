@@ -1895,11 +1895,11 @@ html {
 
                                 overflow: hidden;
                                 // min-height: 9rem;
-
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
+                                // display: flex;
+                                // align-items: center;
+                                // justify-content: center;
                                 flex-grow: 1;
+                                height: 100%;
 
                                 @media (max-width:1210px) {
                                     min-height: 8rem;
