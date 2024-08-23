@@ -2000,8 +2000,13 @@ html {
             html body .wrapper .main .section-single .single-content .content-body {
               margin-bottom: 5rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-columns .wp-block-column .wp-block-pullquote {
-                border-left: 5px #46afff solid;
-                margin-left: 4rem; }
+                border-left: 5px #ffe600 solid;
+                margin-left: 4rem;
+                padding: 1rem;
+                font-style: italic;
+                font-size: 2.3rem; }
+                html body .wrapper .main .section-single .single-content .content-body .wp-block-columns .wp-block-column .wp-block-pullquote blockquote {
+                  width: 80%; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-image {
                 margin-bottom: 1rem; }
                 html body .wrapper .main .section-single .single-content .content-body .wp-block-image img {
@@ -2012,7 +2017,10 @@ html {
               html body .wrapper .main .section-single .single-content .content-body .wp-block-list {
                 margin-bottom: 1rem;
                 list-style: disc;
-                padding-left: 3rem; }
+                padding-left: 3rem;
+                margin-bottom: 2.5rem; }
+                html body .wrapper .main .section-single .single-content .content-body .wp-block-list li {
+                  font-size: 1.4rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-syntaxhighlighter-code div .syntaxhighlighter {
                 background-color: #b42424;
                 color: #f8f8f2;

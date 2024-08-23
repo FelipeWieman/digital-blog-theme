@@ -132,10 +132,10 @@ $blog_section_button_url = get_theme_mod('blog_section_button_url', '');
 
                         <div class="author-info flex">
                             <div class="author-left">
-                                <div class="font-bold"><span><?php the_author(); ?></span> •</div>
-                                <div><span><?php echo get_the_date(); ?></span> • &bull;
+                                <div class="font-bold"><span><?php the_author(); ?></span> </div>
+                                <!-- <div><span><?php echo get_the_date(); ?></span> • &bull;
                                     <span><?php comments_number(); ?></span>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="author-right">
                                 <a href="<?php the_permalink(); ?>">
