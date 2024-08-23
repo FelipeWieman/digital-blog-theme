@@ -2001,11 +2001,12 @@ html {
               margin-bottom: 5rem; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-columns .wp-block-column .wp-block-pullquote {
                 border-left: 5px #ffe600 solid;
-                margin-left: 4rem;
+                margin-left: 1rem;
                 padding: 1rem;
                 font-style: italic;
                 font-size: 2.3rem; }
                 html body .wrapper .main .section-single .single-content .content-body .wp-block-columns .wp-block-column .wp-block-pullquote blockquote {
+                  max-width: 80%;
                   width: 80%; }
               html body .wrapper .main .section-single .single-content .content-body .wp-block-image {
                 margin-bottom: 1rem; }
